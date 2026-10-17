@@ -2,7 +2,7 @@
 
 B47ANCE’d Provisions (formerly foodWorks) is the planned food-production, cooking, preservation, spoilage, storage, nutrition, and food-safety framework for the theWorks ecosystem. It extends Build 42 food and crafting systems instead of replacing them.
 
-- Status: version `0.7.0` food inspection, recoverable appliance transactions, and a persistent named-preservation process framework; no production process is registered and this is not yet a gameplay release.
+- Status: version `0.8.0-dev.1` adds a read-only rack/apple drying preview to the food inspection and preservation foundations. No production process is registered; this is not yet a gameplay release.
 - Mod ID: `B47ANCEDProvisions`
 - Author: B47ANCE
 - Source: [B47ANCE/B47ANCEDProvisions](https://github.com/B47ANCE/B47ANCEDProvisions) (public).
@@ -56,8 +56,11 @@ Canonical project version: root `VERSION`; mirrors: `version-inventory.json`.
 See [versioning](docs/VERSIONING.md), [identity migration](docs/IDENTITY_MIGRATION.md),
 and [testing](docs/TESTING.md) for commands and evidence boundaries. Historical
 ZIPs, staging backups, upload hashes and original research remain historical.
-The 0.7.0 rename was merged through PR #1. The fruit-drying design/API audit is a
-documentation-only checkpoint on that version; proposed future gameplay target
-is 0.8.0-dev.1, subject to the documented implementation gates.
+The 0.7.0 rename was merged through PR #1; its design audit remains historical.
+The [0.8.0-dev.1 inspection prototype](docs/FRUIT_DRYING_PREVIEW.md) adds localized
+context actions for one apple or a clicked native rack. It reports failed/unknown
+prechecks, never claims whole-item eligibility and cannot start drying. Disable
+the display with `foodWorks.EnableFruitDryingPreview`. Production mutation remains
+blocked on the documented API, authority and runtime gates.
 No current package, deployment or Workshop publication is claimed. Offline checks
 pass; SP and dedicated multiplayer remain NOT TESTED, with G7 and stable G8 blocked.

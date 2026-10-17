@@ -36,11 +36,13 @@ def main():
     # Validate exact require-path case without relying on Windows' filesystem case folding.
     for module in ["API", "ApplianceTransactions", "PreservationProcesses", "Load"]:
         assert f"{module}.lua" in {p.name for p in (LUA / "shared/foodWorks").iterdir()}
-    assert "FoodInspection.lua" in {p.name for p in (LUA / "client/foodWorks").iterdir()}
+    for module in ["FoodInspection", "FruitDryingPreview"]:
+        assert module + ".lua" in {p.name for p in (LUA / "client/foodWorks").iterdir()}
 
     cases = [
         ("test_api.lua", []),
         ("test_food_inspection.lua", [LUA / "client/foodWorks/FoodInspection.lua"]),
+        ("test_fruit_drying_preview.lua", [LUA / "client/foodWorks/FruitDryingPreview.lua"]),
         ("test_appliance_transactions.lua", [LUA / "shared/foodWorks/ApplianceTransactions.lua"]),
         ("test_preservation_processes.lua", [LUA / "shared/foodWorks/PreservationProcesses.lua"]),
         ("test_load_graph.lua", [LUA / f"{realm}/foodWorks/Load.lua" for realm in ["shared", "server", "client"]]),
@@ -48,6 +50,7 @@ def main():
     for name, arguments in cases:
         lua = LuaRuntime(unpack_returned_tuples=True)
         lua.globals().arg = lua.table_from({i: p.as_posix() for i, p in enumerate(arguments, 1)})
+        lua.globals().TRANSLATIONS = lua.table_from(json.loads(text(LUA / "shared/Translate/EN/UI.json")))
         lua.execute('package.path = ... .. ";" .. package.path', LUA.as_posix() + "/shared/?.lua")
         lua.execute(text(ROOT / "tests" / name), name=name)
         print("PASS " + name, flush=True)

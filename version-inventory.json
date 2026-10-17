@@ -8,8 +8,9 @@
     {"path": "docs/MOD_OVERVIEW.json", "pattern": "\"version\": \"(?P<version>[^\\\"]+)\""},
     {"path": "README.md", "pattern": "^- Status: version `(?P<version>[^`]+)`"},
     {"path": "docs/MASTER_ROADMAP.md", "pattern": "^Canonical version: (?P<version>\\S+)\\.$"},
+    {"path": "docs/FRUIT_DRYING_PREVIEW_EVIDENCE.json", "pattern": "\"project_version\": \"(?P<version>[^\\\"]+)\""},
+    {"path": "docs/FRUIT_DRYING_PREVIEW.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
     {"path": "docs/TESTING.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
-    {"path": "docs/IDENTITY_MIGRATION.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
     {"path": "docs/VERSIONING.md", "pattern": "^Current development version: (?P<version>\\S+)\\.$"},
     {"path": "WORKSHOP_DESCRIPTION.txt", "pattern": "^\\[b\\]Mod Version: (?P<version>[^\\[]+)\\[/b\\]$"},
     {"path": "workshop.txt", "pattern": "^description=\\[b\\]Mod Version: (?P<version>[^\\[]+)\\[/b\\]$"},
@@ -39,6 +40,6 @@
     {"reference": "SHA256SUMS.txt and .steamcmd-last-upload.sha256", "reason": "Preserved historical package/upload hashes do not imply a current build or publication."},
     {"reference": "docs/B42_API_RESEARCH_HANDOFF.md, docs/API_AUDIT_BASELINE.md, docs/PRESERVATION_RUNTIME_AUDIT.md", "reason": "Unchanged historical research/API evidence retains original names, game builds and limitations; no current-runtime proof."},
     {"reference": "WORKSHOP_CHANGE_NOTE.txt after Historical release notes; versioned sections of docs/ARCHITECTURE.md, docs/ROADMAP.md and docs/TESTING.md; CHANGELOG.md prior entries", "reason": "Previous implementation and host-test records remain tied to their original versions."},
-    {"reference": "docs/FRUIT_DRYING_DESIGN.md, docs/FRUIT_DRYING_API_AUDIT.md and docs/FRUIT_DRYING_EVIDENCE.json", "reason": "Build-specific October 17 audit bound to source baseline 0.7.0 / commit 93400d5; future implementation targets are planning values. Retain actual audit version/build/fingerprints rather than relabeling as new runtime proof."}
+    {"reference": "docs/IDENTITY_MIGRATION.md, docs/FRUIT_DRYING_DESIGN.md, docs/FRUIT_DRYING_API_AUDIT.md and docs/FRUIT_DRYING_EVIDENCE.json", "reason": "Build-specific October 17 audit bound to source baseline 0.7.0 / commit 93400d5; future implementation targets are planning values. Retain actual audit version/build/fingerprints rather than relabeling as new runtime proof."}
   ]
 }

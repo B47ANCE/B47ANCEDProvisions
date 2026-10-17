@@ -1,0 +1,205 @@
+{
+  "schema": 1,
+  "project_version": "0.8.0-dev.1",
+  "audit_date": "2026-10-17",
+  "game_version": "42.21",
+  "steam_build": "25485521",
+  "source_base_commit": "7b5b676b133fc3ad98f3d8172c46bd708e00f87f",
+  "source_files": [
+    {
+      "path": "media/lua/client/ISUI/ISWorldObjectContextMenu.lua",
+      "sha256": "980e67622e34422983cd33d64ea4f6dbff5cdf151a6dd9aef6acb669261fb47f",
+      "lines": [
+        122,
+        129
+      ]
+    },
+    {
+      "path": "media/lua/client/Entity/ISUI/Components/Crafting/ISCraftLogicPanel.lua",
+      "sha256": "fff1dab5ed9dfc0aef655a783ff10136361734237f89714a64a033ab829de46d",
+      "lines": [
+        300,
+        313
+      ]
+    },
+    {
+      "path": "media/lua/client/Entity/ISUI/CraftRecipe/ISWidgetInput.lua",
+      "sha256": "864586a8748272315be8b2fb934b3466d631895e626f53e94b13eabda5318d02",
+      "lines": [
+        530,
+        536
+      ]
+    },
+    {
+      "path": "media/lua/client/ISUI/ISModalRichText.lua",
+      "sha256": "ef25cda5a02a298019f8b0a13ed13c0d989e13b4e5c12469a441da0e88c80e4c",
+      "lines": [
+        43,
+        86
+      ]
+    },
+    {
+      "path": "media/lua/client/ISUI/AdminPanel/ISItemsListViewer.lua",
+      "sha256": "f316be786db5541e02b50e25032c9ab740ceab3522d04670986ca565d469ba6d",
+      "lines": [
+        140,
+        149
+      ]
+    },
+    {
+      "path": "media/lua/shared/Translate/EN/UI.json",
+      "sha256": "1c28635da4551016132710c9b907ae330db6ad6e8aa69c79e9dda78f59e8a838",
+      "lines": [
+        1,
+        4
+      ]
+    }
+  ],
+  "native_classes": [
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/GameEntity.class",
+      "sha256": "fb46c896c05e72b5f951943b1adfac580a57ae709a6f496b77aa954b6a1886ee",
+      "methods": [
+        {
+          "name": "getEntityScript",
+          "descriptor": "()Lzombie/scripting/entity/GameEntityScript;",
+          "access_flags": 1
+        },
+        {
+          "name": "getComponent",
+          "descriptor": "(Lzombie/entity/ComponentType;)Lzombie/entity/Component;",
+          "access_flags": 17
+        }
+      ],
+      "limit": "Native declarations only; Lua invocation/exposure and returned values NOT TESTED. Missing bindings produce UNKNOWN in the preview."
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/scripting/objects/BaseScriptObject.class",
+      "sha256": "65d5f2bae0552d7a4ceaf24fb1124a57b93ae33b98d5afa8e0f5766d9bcbf666",
+      "methods": [
+        {
+          "name": "getScriptObjectFullType",
+          "descriptor": "()Ljava/lang/String;",
+          "access_flags": 17
+        }
+      ],
+      "limit": "Native declarations only; Lua invocation/exposure and returned values NOT TESTED. Missing bindings produce UNKNOWN in the preview."
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/scripting/objects/Item.class",
+      "sha256": "9e6a2f7fe48cc66843fea06b4821063d7cc6a73eaba0de8ee51d0a15c373202e",
+      "methods": [
+        {
+          "name": "getActualWeight",
+          "descriptor": "()F",
+          "access_flags": 1
+        }
+      ],
+      "limit": "Native declarations only; Lua invocation/exposure and returned values NOT TESTED. Missing bindings produce UNKNOWN in the preview."
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/inventory/InventoryItem.class",
+      "sha256": "48f01be16d1ef1b76e37638fac6e25ca4eb285ad38ab2f462caa5597318c7f9d",
+      "methods": [
+        {
+          "name": "hasModData",
+          "descriptor": "()Z",
+          "access_flags": 1
+        },
+        {
+          "name": "getFullType",
+          "descriptor": "()Ljava/lang/String;",
+          "access_flags": 1
+        },
+        {
+          "name": "getActualWeight",
+          "descriptor": "()F",
+          "access_flags": 1
+        },
+        {
+          "name": "getDisplayName",
+          "descriptor": "()Ljava/lang/String;",
+          "access_flags": 1
+        },
+        {
+          "name": "getScriptItem",
+          "descriptor": "()Lzombie/scripting/objects/Item;",
+          "access_flags": 1
+        },
+        {
+          "name": "getContainer",
+          "descriptor": "()Lzombie/inventory/ItemContainer;",
+          "access_flags": 1
+        }
+      ],
+      "limit": "Native declarations only; Lua invocation/exposure and returned values NOT TESTED. Missing bindings produce UNKNOWN in the preview."
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/inventory/types/Food.class",
+      "sha256": "14a5b02878a5608e3a28d3e91110961b3576694badf127dc7fe2749b8393d8b1",
+      "methods": [
+        {
+          "name": "isPoison",
+          "descriptor": "()Z",
+          "access_flags": 1
+        },
+        {
+          "name": "getPoisonPower",
+          "descriptor": "()I",
+          "access_flags": 1
+        },
+        {
+          "name": "getCarbohydrates",
+          "descriptor": "()F",
+          "access_flags": 1
+        },
+        {
+          "name": "getLipids",
+          "descriptor": "()F",
+          "access_flags": 1
+        },
+        {
+          "name": "getProteins",
+          "descriptor": "()F",
+          "access_flags": 1
+        },
+        {
+          "name": "getCalories",
+          "descriptor": "()F",
+          "access_flags": 1
+        },
+        {
+          "name": "isFrozen",
+          "descriptor": "()Z",
+          "access_flags": 1
+        },
+        {
+          "name": "isFreezing",
+          "descriptor": "()Z",
+          "access_flags": 1
+        },
+        {
+          "name": "isThawing",
+          "descriptor": "()Z",
+          "access_flags": 1
+        },
+        {
+          "name": "isTainted",
+          "descriptor": "()Z",
+          "access_flags": 1
+        }
+      ],
+      "limit": "Native declarations only; Lua invocation/exposure and returned values NOT TESTED. Missing bindings produce UNKNOWN in the preview."
+    }
+  ],
+  "prototype_source": {
+    "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/FruitDryingPreview.lua",
+    "sha256": "b7ce3331f222cb31217b52764b75c362d464c0c5e5ee973c24b7af3b2068e776"
+  },
+  "runtime_status": "NOT_TESTED"
+}

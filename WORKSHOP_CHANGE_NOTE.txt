@@ -1,3 +1,11 @@
+[b]Version 0.8.0-dev.1[/b]
+
+[h2]Read-only apple-drying preview[/h2]
+
+Adds a localized rack and apple inspection prototype. It does not dry food, move items, start jobs or register a recipe.
+
+MP testing build - dedicated multiplayer NOT TESTED.
+
 [b]Version 0.7.0[/b]
 
 [h2]B47ANCE’d Provisions identity rename[/h2]

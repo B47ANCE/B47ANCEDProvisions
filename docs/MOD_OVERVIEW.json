@@ -2,10 +2,14 @@
   "schema": 1,
   "id": "food",
   "name": "B47ANCE’d Provisions",
-  "version": "0.7.0",
-  "source_digest": "183a92fa3c609265c62d1eea0bcb2114dec44fdd783e2c28f7baf3c9d6a3e4ed",
+  "version": "0.8.0-dev.1",
+  "source_digest": "b6e8a3691e0e5adcb04756f525355e519cb4f5daf981fc350745595603820b31",
   "reviewed": true,
   "features": [
+    {
+      "status": "Source",
+      "text": "Client-only apple/rack drying prechecks with localized failed/unknown states, bounded user-triggered scans and sandbox display toggle. Never starts drying or proves whole-item eligibility; native SP/dedicated not tested."
+    },
     {
       "status": "Foundation",
       "text": "Read-only vanilla food/freshness/nutrition/preservation inspection, ingredient registry and optional inventory report."
@@ -23,14 +27,18 @@
       "text": "Server hook/identity proof, food-state conservation, sandbox duration/snapshot binding, durable completion and unloaded/save/restart/join validation."
     }
   ],
-  "limits": "SP and dedicated NOT TESTED; G7 and stable G8 BLOCKED. Legacy foodWorks API/sandbox/save keys retained. Appliance coordinator still resolves legacy powerWorks; renamed-provider integration not audited here. Generic catch-up/receipt serialization limitations are documented. No current fruit-drying recipe/item/station registration.",
+  "limits": "Preview is local presentation only; native getter dispatch, rack variants and UI/controller behavior NOT TESTED. Whole-item integrity and server access remain UNKNOWN. Production G7 and stable G8 BLOCKED. Legacy foodWorks API/sandbox/save keys retained; no drying recipe/output/job registered. Existing coordinator legacy-provider compatibility remains unverified.",
   "evidence": [
     "README.md",
     "docs/ARCHITECTURE.md",
     "docs/FRUIT_DRYING_DESIGN.md",
     "docs/FRUIT_DRYING_API_AUDIT.md",
     "docs/FRUIT_DRYING_EVIDENCE.json",
-    "docs/TESTING.md"
+    "docs/TESTING.md",
+    "docs/FRUIT_DRYING_PREVIEW.md",
+    "docs/FRUIT_DRYING_PREVIEW_EVIDENCE.json",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/FruitDryingPreview.lua",
+    "tests/test_fruit_drying_preview.lua"
   ],
   "relations": [
     {

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.0-dev.1]
+
+- Add a client-only apple/rack drying preview with localized checks and an independent sandbox display toggle.
+- Report failed and unknown checks without claiming whole-item eligibility or permitting processing. No recipe, inventory mutation, jobs or networking.
+- MINOR development checkpoint for a new inspection capability; gameplay production and SP/dedicated runtime remain unverified.
+
 ## [0.7.0]
 
 - Documentation-only follow-up: design whole-apple drying at a native small-plant

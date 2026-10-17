@@ -41,6 +41,11 @@ save/reload, late-join, and dedicated validation.
 
 ## Proof order
 
+The read-only [0.8.0-dev.1 preview](FRUIT_DRYING_PREVIEW.md) is source-implemented
+and offline-tested. Live getter/identity/UI behavior and whole-item integrity are
+still unproved. The next affected slice is native validation and server hook
+proof; do not promote preview matches to permission to register or run drying.
+
 The first candidate is [apple drying](FRUIT_DRYING_DESIGN.md). Installed source
 supports researching native DryingCraftLogic ownership; do not layer the generic
 preservation timer over the same job. [Audit blockers B01-B06](FRUIT_DRYING_API_AUDIT.md)
