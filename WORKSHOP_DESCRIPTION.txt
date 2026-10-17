@@ -1,0 +1,51 @@
+[h1]B47ANCE’d Provisions[/h1]
+
+Cooking, food preparation, ingredients, freshness, and food-system infrastructure for theWorks ecosystem.
+
+B47ANCE’d Provisions provides normalized food identity and properties that future recipes, preservation systems, and compatible mods can share without replacing vanilla behavior prematurely.
+
+[b]Mod Version: 0.7.0[/b]
+
+[b]Development Status[/b]
+
+MP testing build - dedicated multiplayer NOT TESTED
+
+This is an API foundation under active development, not yet a complete food gameplay release.
+
+[h2]Current Features[/h2]
+[list]
+[*]Vanilla and third-party food adapter registry
+[*]Normalized ingredient, food-property, freshness, and identity inspection
+[*]Read-only packaging, taint, freezing/thawing, aging, rotten-replacement, and compost-state inspection
+[*]Optional inventory action showing normalized food, preservation, effect, and nutrition state without changing the item
+[*]Recoverable appliance-process transaction contract for exact power and water reservations
+[*]Persistent named-preservation jobs with protected inputs, cadence, spoilage, cancellation, and recovery
+[*]Stable identities for cross-mod processing and recipes
+[*]Evidence-audited foundations for quality, preservation, and contamination semantics
+[*]Provider isolation and nil-safe extension points
+[*]Default-on sandbox control for the food inspection action
+[/list]
+
+[h2]Ecosystem Integration[/h2]
+[list]
+[*]Owns cooking, food preparation, spoilage, and food-system expansion
+[*]Planned integrations consume farmWorks crops, animalWorks products, waterWorks fluids, powerWorks energy, and weatherWorks environment state
+[*]Supports optional uiWorks presentation when available
+[*]Has no required mod dependencies in the current foundation
+[/list]
+
+[h2]Upcoming Features[/h2]
+[list]
+[*]Practical preparation and survival recipes
+[*]Preservation, storage, spoilage, nutrition, and food safety
+[*]Cross-Works processing and kitchen infrastructure
+[/list]
+
+[b]Credits[/b]
+Project Director & Designer: B47ANCE
+Development, systems architecture, implementation, testing & documentation: Codex
+
+Workshop ID: 3788591331
+Mod ID: B47ANCEDProvisions
+
+[url=https://github.com/B47ANCE/B47ANCEDProvisions]Source code and development history[/url]

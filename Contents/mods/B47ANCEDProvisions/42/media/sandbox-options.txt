@@ -1,0 +1,3 @@
+VERSION = 1,
+
+option foodWorks.EnableFoodInspection { type = boolean, default = true, page = foodWorks, translation = foodWorks_EnableFoodInspection, }

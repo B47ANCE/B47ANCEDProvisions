@@ -1,0 +1,4 @@
+69100b806770a29177e64ab1a649e7d3b1f8967061deec33daa07836a3ba5bd2  dist/foodWorks-0.0.0-repository-scaffold.zip
+0702443cf5ef8e94605c7325d413b2001c510f141a569dd157e493d3c0749922  dist/foodWorks-0.1.0-workshop-ready.zip
+cbbb95ac42bc68c1997c8b36e536fb49a5930604d2a0509240aca89c8ca25a8b  dist/foodWorks-0.3.0-workshop-ready.zip
+40c607ca8d50bbb2194f162f749e65845729b1827a551087f505e8e5fe41d869  dist/foodWorks-0.4.0-workshop-ready.zip

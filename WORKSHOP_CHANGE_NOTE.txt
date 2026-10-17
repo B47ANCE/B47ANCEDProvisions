@@ -1,0 +1,43 @@
+[b]Version 0.7.0[/b]
+
+[h2]B47ANCE’d Provisions identity rename[/h2]
+
+• Renamed foodWorks to B47ANCE’d Provisions; Mod ID is now B47ANCEDProvisions.
+• Preserved Workshop item 3788591331 and existing Lua API, sandbox identifiers, and persistence keys.
+• No gameplay changes or production processes added. Existing-save Mod ID transition remains untested.
+• MP testing build - dedicated multiplayer NOT TESTED.
+
+[b]Historical release notes[/b]
+
+[b]Version 0.6.0[/b]
+
+[h2]Named preservation framework[/h2]
+
+• Added bounded persistent preservation jobs with exact protected inputs and station capabilities.
+• Added eligibility, cadence observations, elapsed progress, spoilage, cancellation, ready state, and replay-safe completion.
+• Failed reservation release or ambiguous output completion enters explicit inspection state.
+• No external recipe, station identity, timing, output, text, or balance was imported.
+
+[b]Version 0.5.0[/b]
+
+[h2]Appliance process transactions[/h2]
+
+• Added exact power and water reservation coordination around owner-defined process commits.
+• Added stable appliance/resource identity checks and replay-safe operation history.
+• Declared no-output rejection rolls both resources back; ambiguous output or finalization remains quarantined.
+• No third-party recipes, appliance assets, interactions, or balance values were copied or registered.
+
+[b]Version 0.4.0[/b]
+
+[h2]Added Features[/h2]
+
+• Added protected ingredient snapshots for registration, lookup, and food-inspection results.
+• Prevented API consumers from mutating canonical ingredient tags, processes, categories, or provider identity through returned tables.
+• Snapshotted provider definitions so external table mutation cannot replace registered callbacks or priorities.
+• Prevented inspection metadata and consumer edits from mutating provider-owned result tables.
+• Added focused regression coverage for registry ownership isolation.
+
+[h2]Roadmap[/h2]
+
+• Add an authoritative, rollback-safe preservation transaction only after in-game and multiplayer item replacement proof.
+• Add preparation, preservation, spoilage, nutrition, storage, safety, and cross-Works integrations.
