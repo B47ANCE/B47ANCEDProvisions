@@ -1,11 +1,18 @@
 # Project versioning
 
-Current development version: 0.8.0-dev.1.
+Current development version: 0.8.0-dev.2.
 
-The October 17 design/API audit remains bound to its historical 0.7.0 baseline.
+The current 0.8.0-dev.2 checkpoint is a compatible gameplay addition within the
+0.8.0 MINOR line: server-owned in-place apple drying, three sandbox controls and
+new independently versioned v1 job/index keys. Existing Lua/API/sandbox/save
+identifiers remain intact. The same Apple becomes the saved dried result; no new
+food type or native recipe replaces the prior design candidate. Native SP and
+dedicated evidence remain NOT TESTED; no stable release is approved.
+
+Historical baseline: the October 17 design/API audit remains bound to its historical 0.7.0 baseline.
 The user then requested the read-only prototype: a compatible new inspection
-capability, classified MINOR and now recorded as 0.8.0-dev.1 throughout current
-mirrors. Production drying and 0.8.0 distribution remain subject to the documented
+capability classified MINOR at 0.8.0-dev.1. Its preview evidence remains historical,
+not a current version mirror or new gameplay proof. Production drying and 0.8.0 distribution remain subject to the documented
 gates. This checkpoint adds presentation only, with no shared state, new gameplay
 settings, persistence schema change or active recipe. The original identity/audit
 records retain their actual versions instead of being relabeled as current proof.

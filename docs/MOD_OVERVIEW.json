@@ -2,10 +2,14 @@
   "schema": 1,
   "id": "food",
   "name": "B47ANCE’d Provisions",
-  "version": "0.8.0-dev.1",
-  "source_digest": "d12b1410448c3481522542a14f8783b6e487801ae1b371b30b5be5313e90c2ee",
+  "version": "0.8.0-dev.2",
+  "source_digest": "a768259fe9ff90a387a22d4d5e8c0ff00ac72ad4a5b190c8f9fc9cf7cb79c3a6",
   "reviewed": true,
   "features": [
+    {
+      "status": "Source",
+      "text": "Server-owned in-place apple drying in native racks: same ID/nutrients, carried age, private server ledger and copied item snapshots, saved settings, exact actor/item/access checks, carried-batch recovery and full-item resource sync. Offline only."
+    },
     {
       "status": "Source",
       "text": "Client-only apple/rack drying prechecks with localized failed/unknown states, bounded user-triggered scans and sandbox display toggle. Never starts drying or proves whole-item eligibility; native SP/dedicated not tested."
@@ -20,14 +24,14 @@
     },
     {
       "status": "Planned",
-      "text": "First candidate: one whole Apple at native small-plant drying racks, producing proposed dried-apple slices. Design and Build 42.21 API audit exist; production integration is not implemented."
+      "text": "Distinct dried-food item/native recipe and broader preservation processes remain planned. The first implemented alternative retains Base.Apple identity and uses its own server timer without a native craft."
     },
     {
       "status": "Blocked",
-      "text": "Native server simulation and per-item test traced; safe food conversion is blocked by output synchronization before void OnCreate, unestablished pre-output veto/mapping and supported duration binding. Dedicated save/restart/join validation remains pending."
+      "text": "Native Lua dispatch, save/load/auto-rot under interrupted conversion, transfer crash ordering, station destruction, late join/rejoin, dedicated contention/restart and stable-release validation remain untested. Original native-recipe route is still blocked."
     }
   ],
-  "limits": "Preview is local presentation only; native getter dispatch, rack variants and UI/controller behavior NOT TESTED. Whole-item integrity and server access remain UNKNOWN. Production G7 and stable G8 BLOCKED. Legacy foodWorks API/sandbox/save keys retained; no drying recipe/output/job registered. Existing coordinator legacy-provider compatibility remains unverified.",
+  "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Dried result keeps Base.Apple identity and vanilla appearance. Loaded sampled time only; unloaded/long gaps pause. Native transfer crash atomicity is not claimed. No package/deploy/publication. Legacy identifiers retained.",
   "evidence": [
     "README.md",
     "docs/ARCHITECTURE.md",
@@ -41,7 +45,13 @@
     "tests/test_fruit_drying_preview.lua",
     "docs/FRUIT_DRYING_NATIVE_HOOKS.md",
     "docs/FRUIT_DRYING_HOOK_EVIDENCE.json",
-    "scripts/check_native_drying_hooks.py"
+    "scripts/check_native_drying_hooks.py",
+    "docs/APPLE_DRYING.md",
+    "docs/APPLE_DRYING_EVIDENCE.json",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/AppleDrying.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/AppleDryingServer.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/AppleDryingClient.lua",
+    "tests/test_apple_drying.lua"
   ],
   "relations": [
     {

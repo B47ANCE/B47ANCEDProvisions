@@ -1,11 +1,14 @@
 # Apple-drying inspection prototype
 
-Project Version: 0.8.0-dev.1
+Historical prototype version: 0.8.0-dev.1
 
 This is a client-only inspection capability built from the 0.7.0 fruit-drying
 design. It never permits or starts processing. A new inspection capability is a
 compatible MINOR addition, so the declared implementation checkpoint is
 0.8.0-dev.1; this is not a stable release or a completed drying process.
+
+The preview itself remains read-only. Later in-place drying is documented
+separately in APPLE_DRYING.md; this historical evidence does not validate it.
 
 ## Use
 

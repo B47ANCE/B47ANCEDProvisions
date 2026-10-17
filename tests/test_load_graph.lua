@@ -5,6 +5,8 @@ package.preload["foodWorks/ApplianceTransactions"]=function()required.transactio
 package.preload["foodWorks/PreservationProcesses"]=function()required.preservation=(required.preservation or 0)+1;return{}end
 package.preload["foodWorks/FoodInspection"]=function()required.inspection=(required.inspection or 0)+1;return{}end
 package.preload["foodWorks/FruitDryingPreview"]=function()required.preview=(required.preview or 0)+1;return{}end
+package.preload["foodWorks/AppleDryingServer"]=function()required.dryingServer=(required.dryingServer or 0)+1;return{}end
+package.preload["foodWorks/AppleDryingClient"]=function()required.dryingClient=(required.dryingClient or 0)+1;return{}end
 
 assert(dofile(arg[1])==api,"shared loader must return the canonical API")
 assert(dofile(arg[2])==api,"server loader must return the canonical API")
@@ -14,6 +16,7 @@ assert(required.transactions==1,"shared loader must install appliance transactio
 assert(required.preservation==1,"shared loader must install preservation processes exactly once")
 assert(required.inspection==1,"client loader must install food inspection exactly once")
 assert(required.preview==1,"client loader must install drying preview exactly once")
+assert(required.dryingServer==1 and required.dryingClient==1,"realm loaders must install the drying feature")
 
 package.preload["foodWorks/API"]=nil
 package.preload["foodWorks/ApplianceTransactions"]=nil

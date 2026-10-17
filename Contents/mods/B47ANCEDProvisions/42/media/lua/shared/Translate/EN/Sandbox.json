@@ -3,5 +3,11 @@
   "Sandbox_foodWorks_EnableFoodInspection": "Enable food-state inspection",
   "Sandbox_foodWorks_EnableFoodInspection_tooltip": "Adds a read-only inventory action showing vanilla food, freshness, preservation, and nutrition state. It never changes the food item.",
   "Sandbox_foodWorks_EnableFruitDryingPreview": "Enable apple-drying inspection prototype",
-  "Sandbox_foodWorks_EnableFruitDryingPreview_tooltip": "Shows local rack and apple prechecks. It cannot start drying, move items or prove server eligibility."
+  "Sandbox_foodWorks_EnableFruitDryingPreview_tooltip": "Shows local rack and apple prechecks. It cannot start drying, move items or prove server eligibility.",
+  "Sandbox_foodWorks_EnableFruitDrying": "Enable apple drying",
+  "Sandbox_foodWorks_EnableFruitDrying_tooltip": "Allows new server-owned apple-drying batches at native small-plant racks. Existing batches retain their saved settings and remain available when disabled.",
+  "Sandbox_foodWorks_FruitDryingHours": "Apple drying hours",
+  "Sandbox_foodWorks_FruitDryingHours_tooltip": "Loaded, observed game hours required for new batches. Integer 6–168, step 1; default 48. Unloaded racks and long observation gaps pause drying. No electricity, water or weather simulation is used.",
+  "Sandbox_foodWorks_FruitDryingShelfLifeMultiplier": "Dried apple shelf-life multiplier",
+  "Sandbox_foodWorks_FruitDryingShelfLifeMultiplier_tooltip": "Integer 1–12, step 1; default 6. New batches scale both freshness thresholds and carried age together. Drying never resets age or adds calories. Existing batches keep their saved multiplier."
 }

@@ -1,8 +1,12 @@
 # B47ANCE’d Provisions Master Roadmap
 
-Canonical version: 0.8.0-dev.1.
+Canonical version: 0.8.0-dev.2.
 
 ## Implemented
+
+- 0.8.0-dev.2: server-owned in-place apple drying at native small-plant racks,
+  preserving item ID/nutrition, with configurable observed hours/shelf life and
+  saved recovery state. Offline only; see [current scope](APPLE_DRYING.md).
 
 - Client-only apple/rack drying inspection prototype in 0.8.0-dev.1: localized
   prechecks, conservative unknown states, sandbox display toggle and no processing.
@@ -18,14 +22,17 @@ Canonical version: 0.8.0-dev.1.
 
 ## Still to add
 
-> First-process design: [apple drying](FRUIT_DRYING_DESIGN.md) selects a native
+> Historical first-process design: [apple drying](FRUIT_DRYING_DESIGN.md) selects a native
 > small-plant rack, one Apple input and proposed dried-apple output/balance.
 > This is a reviewed-source design candidate, not a registered production recipe.
 > The [Build 42.21 API audit](FRUIT_DRYING_API_AUDIT.md) leaves production mutation
 > blocked on authority, food-state, configuration and persistence proof.
 
-- Native runtime validation of the read-only preview, whole-item eligibility proof,
-  required server-owned hooks and one complete first-party preservation process.
+- Native validation of the preview and in-place process: getter/setter dispatch,
+  resource UI/transfer behavior, age conservation, cancellation, unload/reload,
+  save/restart, late join/rejoin and dedicated contention/failure scenarios.
+- A distinct dried-food full type/native recipe would need a separately verified
+  replacement transaction; current dried results intentionally retain Base.Apple.
 - One first-party functional appliance/content vertical slice using the existing
   water/power/process transaction contracts.
 - Player-facing timed action, inventory/output presentation, and optional uiWorks

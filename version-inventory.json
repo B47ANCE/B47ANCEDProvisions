@@ -8,8 +8,8 @@
     {"path": "docs/MOD_OVERVIEW.json", "pattern": "\"version\": \"(?P<version>[^\\\"]+)\""},
     {"path": "README.md", "pattern": "^- Status: version `(?P<version>[^`]+)`"},
     {"path": "docs/MASTER_ROADMAP.md", "pattern": "^Canonical version: (?P<version>\\S+)\\.$"},
-    {"path": "docs/FRUIT_DRYING_PREVIEW_EVIDENCE.json", "pattern": "\"project_version\": \"(?P<version>[^\\\"]+)\""},
-    {"path": "docs/FRUIT_DRYING_PREVIEW.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
+    {"path": "docs/APPLE_DRYING.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
+    {"path": "docs/APPLE_DRYING_EVIDENCE.json", "pattern": "\"project_version\": \"(?P<version>[^\\\"]+)\""},
     {"path": "docs/TESTING.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
     {"path": "docs/VERSIONING.md", "pattern": "^Current development version: (?P<version>\\S+)\\.$"},
     {"path": "WORKSHOP_DESCRIPTION.txt", "pattern": "^\\[b\\]Mod Version: (?P<version>[^\\[]+)\\[/b\\]$"},
@@ -32,6 +32,7 @@
   "other_versions": [
     {"category": "pz", "reference": "Contents/mods/B47ANCEDProvisions/42/mod.info:versionMin", "reason": "Minimum game build is independent of project version; installed runtime was not revalidated."},
     {"category": "compatibility", "reference": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/ApplianceTransactions.lua", "reason": "Existing v1 persistence keys stay unchanged for compatibility."},
+    {"category": "compatibility", "reference": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/AppleDrying.lua:KEY, INDEX and job v; AppleDryingServer.lua:ledger v", "reason": "New v1 private-ledger/item-snapshot formats are independent of Project Version. No older drying gameplay save format exists or is migrated."},
     {"category": "inventory-schema", "reference": "version-inventory.json:schema", "reason": "Version-inventory format only."},
     {"category": "compatibility", "reference": "workshop.txt:version and Contents/mods/B47ANCEDProvisions/42/media/sandbox-options.txt:VERSION", "reason": "Vanilla metadata formats, not project versions."}
   ],
@@ -41,6 +42,7 @@
     {"reference": "docs/B42_API_RESEARCH_HANDOFF.md, docs/API_AUDIT_BASELINE.md, docs/PRESERVATION_RUNTIME_AUDIT.md", "reason": "Unchanged historical research/API evidence retains original names, game builds and limitations; no current-runtime proof."},
     {"reference": "WORKSHOP_CHANGE_NOTE.txt after Historical release notes; versioned sections of docs/ARCHITECTURE.md, docs/ROADMAP.md and docs/TESTING.md; CHANGELOG.md prior entries", "reason": "Previous implementation and host-test records remain tied to their original versions."},
     {"reference": "docs/IDENTITY_MIGRATION.md, docs/FRUIT_DRYING_DESIGN.md, docs/FRUIT_DRYING_API_AUDIT.md and docs/FRUIT_DRYING_EVIDENCE.json", "reason": "Build-specific October 17 audit bound to source baseline 0.7.0 / commit 93400d5; future implementation targets are planning values. Retain actual audit version/build/fingerprints rather than relabeling as new runtime proof."},
+    {"reference": "docs/FRUIT_DRYING_PREVIEW.md and docs/FRUIT_DRYING_PREVIEW_EVIDENCE.json", "reason": "Historical 0.8.0-dev.1 read-only prototype evidence; reused only for unchanged preview module, not new drying gameplay."},
     {"reference": "docs/FRUIT_DRYING_NATIVE_HOOKS.md and docs/FRUIT_DRYING_HOOK_EVIDENCE.json", "reason": "Native-hook audit baseline 0.8.0-dev.1 / merged 77771cb; fingerprints and static findings retain their actual baseline. Proposed 0.8.0-dev.2 is an unapplied future gameplay target, not current implementation."}
   ]
 }

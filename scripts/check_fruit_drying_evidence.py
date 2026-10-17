@@ -20,13 +20,15 @@ def safe_path(root, name):
     return result
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--game-root", type=Path, required=True)
     parser.add_argument("--steam-build", required=True)
-    parser.add_argument("--preview", action="store_true", help="Recheck the current read-only prototype evidence")
-    args = parser.parse_args()
-    name = "FRUIT_DRYING_PREVIEW_EVIDENCE.json" if args.preview else "FRUIT_DRYING_EVIDENCE.json"
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--preview", action="store_true", help="Recheck the historical read-only prototype evidence")
+    group.add_argument("--process", action="store_true", help="Recheck current in-place drying source/native evidence")
+    args = parser.parse_args(argv)
+    name = "APPLE_DRYING_EVIDENCE.json" if args.process else "FRUIT_DRYING_PREVIEW_EVIDENCE.json" if args.preview else "FRUIT_DRYING_EVIDENCE.json"
     report = json.loads((ROOT / "docs" / name).read_text(encoding="utf-8"))
     if args.steam_build != report["steam_build"]:
         raise ValueError("STALE_BUILD: repeat the audit for this installed Steam build")
@@ -35,7 +37,11 @@ def main():
         root = ROOT if evidence.get("scope") == "project" else args.game_root
         data = safe_path(root, evidence["path"]).read_bytes()
         if hashlib.sha256(data).hexdigest() != evidence["sha256"]:
-            raise ValueError("STALE_SOURCE: " + evidence.get("id", "source") + " " + evidence["path"])
+            # Only project-owned text may differ by Git's Windows checkout convention.
+            canonical = data.replace(b"\r\n", b"\n")
+            candidates = (canonical, canonical.replace(b"\n", b"\r\n")) if evidence.get("scope") == "project" else ()
+            if not any(hashlib.sha256(value).hexdigest() == evidence["sha256"] for value in candidates):
+                raise ValueError("STALE_SOURCE: " + evidence.get("id", "source") + " " + evidence["path"])
         length = len(data.decode("utf-8-sig").splitlines())
         ranges = evidence["lines"]
         if ranges and isinstance(ranges[0], int):

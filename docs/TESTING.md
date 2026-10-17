@@ -1,8 +1,58 @@
 # B47ANCE’d Provisions Testing
 
-Project Version: 0.8.0-dev.1
+Project Version: 0.8.0-dev.2
 
-## Native-hook follow-up — October 17, 2026
+## In-place apple-drying checkpoint — October 17, 2026
+
+0.8.0-dev.2 adds the server-owned alternative documented in APPLE_DRYING.md.
+Earlier sections below retain their historical versions and evidence scopes.
+No native game or server was launched.
+
+Executed with bundled Python 3.12, isolated Lupa 2.8 / Lua 5.1 and development-only
+jawa 2.2.0 (neither dependency is required by the mod runtime):
+
+```powershell
+$provisionsPython = 'C:\Users\willi\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+# Put the existing isolated development dependency directory on PYTHONPATH.
+& $provisionsPython scripts/check_versions.py --root .
+& $provisionsPython scripts/run_checks.py
+& $provisionsPython scripts/check_apple_drying_evidence.py --game-root 'E:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid' --steam-build 25485521
+& $provisionsPython scripts/check_native_drying_hooks.py --game-root 'E:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid' --steam-build 25485521
+& $provisionsPython scripts/check_fruit_drying_evidence.py --game-root 'E:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid' --steam-build 25485521
+& $provisionsPython scripts/check_fruit_drying_evidence.py --preview --game-root 'E:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid' --steam-build 25485521
+git diff --check
+```
+
+- [TESTED: offline Lua 5.1] Seven suites PASS, including same-item completion,
+  carried age/nutrient conservation, exact actor/ID/access checks, bad/partial/
+  poisoned/custom inputs, long gaps, native work pauses, settings snapshots,
+  cancellation, copied metadata rejection, interrupted conversion/reload,
+  transfer rejection recovery, repeated/concurrent collection and request bounds.
+  Forged public job tables cannot authorize collection/resume or alter private settings;
+  observed age regression fails, and carried partial conversions can return to a rack.
+  Client tests cover intent-only MP actions, SP dispatch, controller menu test mode,
+  localization and realm/load guards. Deliberately injected native failures are
+  logged by the tested error paths; those messages are expected fixture output.
+- [TESTED: offline] Version mirrors, syntax, actual loader graph, case-sensitive
+  module names, source fingerprints and native static persistence/full-item sync
+  paths PASS. The original native-recipe blocker checker still passes its original
+  negative findings; the new process does not use those recipe callbacks.
+- [RUNTIME GATE] No actual getter/setter invocation, native serialization round trip,
+  real rack UI, split-screen/controller behavior, native auto-rot under interrupted
+  conversion, world/player transfer crash ordering, station destruction, late join,
+  rejoin, two-player contention or dedicated restart has been tested.
+
+Before stable release, use disposable saves to exercise both rack variants;
+default/boundary settings; fresh/near-stale/rotten/partial/frozen inputs; cancellation
+and native resource removal; unload/reload and index recovery; save/restart while
+drying and converting; output aging after collection; two players collecting the
+same ID; forged actor/item/location/balance requests; server/client rejoin. Verify
+actual item counts, IDs, calories, macros, age, thresholds and replicated state.
+Preserve backups and test downgrade only on disposable fixtures.
+
+G7 BLOCKED / NOT TESTED; stable G8 BLOCKED. No package/deploy/Workshop upload.
+
+## Historical native-hook follow-up — October 17, 2026
 
 Audit baseline: merged `77771cbf27c0b0ea1b5812c23798c53e8f37b1a3` / 0.8.0-dev.1.
 Documentation and offline tooling only; no new version iteration or gameplay.

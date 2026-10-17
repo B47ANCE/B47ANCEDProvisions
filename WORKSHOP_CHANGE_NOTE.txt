@@ -1,3 +1,13 @@
+[b]Version 0.8.0-dev.2[/b]
+
+[h2]Server-owned in-place apple drying[/h2]
+
+Dry one whole fresh apple in a native small-plant rack, check progress, cancel or collect. The same Base.Apple item becomes marked dried apple slices: unchanged calories/macros/hunger, carried age and scaled freshness thresholds, quarter weight and no thirst benefit.
+
+Server sandbox defaults are 48 observed loaded game hours and 6x shelf life. Unloaded racks pause progress. Exact item/actor/access validation, a private server ledger, separate item snapshots, carried-batch recovery and post-conversion resource synchronization are implemented.
+
+MP testing build - dedicated multiplayer NOT TESTED. Native SP NOT TESTED; G7 and stable G8 BLOCKED. Base.Apple identity is retained; no distinct dried-food type or native recipe. Offline testing only; no publication is implied.
+
 [b]Version 0.8.0-dev.1[/b]
 
 [h2]Read-only apple-drying preview[/h2]

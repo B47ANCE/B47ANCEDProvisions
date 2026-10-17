@@ -13,7 +13,9 @@ Provider boundaries:
 - weatherWorks owns normalized climate observations.
 - uiWorks owns presentation components; foodWorks supplies food-domain data.
 
-The first runtime component must be a read-only `FoodAdapter`, followed by an ingredient registry. Persistent preservation processes require duplication, save/load, refrigeration, and multiplayer proof before content expansion.
+Read-only food adapters and the ingredient registry remain existing foundations.
+The current first content process is a separate server-owned in-place apple
+transformation; native game validation remains a release gate.
 
 ## Identity compatibility
 
@@ -21,7 +23,27 @@ Version 0.7.0 uses Mod ID `B47ANCEDProvisions`; the legacy `foodWorks` API,
 module paths, sandbox option and persistence keys remain stable. No gameplay,
 state ownership, server authority, networking or sandbox behavior changes.
 
-## Implemented foundation
+## In-place preservation in 0.8.0-dev.2
+
+`AppleDrying.lua` is a pure inspection/state model; `AppleDryingServer.lua` alone
+owns shared state and food writes. `AppleDryingClient.lua` supplies ordinary
+context actions and intent/results. Native rack resources hold the same Apple
+through start, drying and completion; no native craft or generic preservation job
+is started. Item ID, nutrition and hunger remain unchanged. Server-owned sandbox
+duration and shelf-life settings are snapshotted onto the item.
+
+A bounded server-only ledger owns scalar batch/commit state and rack discovery.
+Separate item snapshots are presentation/recovery hints and never trusted inputs. An idempotent conversion plan avoids replacement-spawn replay.
+Native full-item resource synchronization happens after conversion. Collection
+uses the native transfer route with exact identity and no poll fallback. This
+does not claim crash-atomic world/player saves; dedicated restart/race tests are
+still mandatory. See [current process](APPLE_DRYING.md) for trust boundaries,
+observed-time semantics, configuration, persistence and compatibility limits.
+
+## Historical foundation checkpoints
+
+The versioned statements below retain their historical scope. The original
+native-recipe candidate remains unimplemented; it is not the current process.
 
 Version 0.8.0-dev.1 adds client-only `FruitDryingPreview`, loaded once through the
 existing client API. Reports use native getter observations and localized statuses;

@@ -1,5 +1,5 @@
 foodWorks=rawget(_G,"foodWorks") or {}
-foodWorks.VERSION="0.8.0-dev.1"
+foodWorks.VERSION="0.8.0-dev.2"
 foodWorks.FoodProviders=foodWorks.FoodProviders or {}
 foodWorks.Ingredients=foodWorks.Ingredients or {}
 

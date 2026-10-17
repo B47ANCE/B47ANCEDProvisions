@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.0-dev.2]
+
+- Develop server-owned, in-place apple drying at native small-plant racks, preserving item identity and nutrients instead of replacing food.
+- Add server sandbox duration/shelf-life controls, a private server ledger with separate item snapshots, and localized start/status/cancel/return/collect actions. MINOR feature checkpoint; Lua-only and legacy namespaces retained.
+- Native SP and dedicated multiplayer NOT TESTED; G7 and stable G8 remain BLOCKED. No package, deployment or publication.
+
 ## [0.8.0-dev.1]
 
 - Documentation/tooling follow-up: trace native server drying, distinguish live per-item tests from an inert recipe test, and record pre-OnCreate output synchronization plus duration-binding blockers. Runtime/version unchanged; working apple drying remains blocked.
