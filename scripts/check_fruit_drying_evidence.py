@@ -53,7 +53,11 @@ def main():
         source = report["prototype_source"]
         data = safe_path(ROOT, source["path"]).read_bytes()
         if hashlib.sha256(data).hexdigest() != source["sha256"]:
-            raise ValueError("STALE_SOURCE: prototype module")
+            # Git may check this project-owned Lua text out as CRLF on Windows.
+            # Preserve the recorded LF fingerprint; game/native evidence stays exact.
+            if hashlib.sha256(data.replace(b"\r\n", b"\n")).hexdigest() != source["sha256"]:
+                raise ValueError("STALE_SOURCE: prototype module")
+            print("NOTE: prototype matches recorded LF text after CRLF normalization")
         count += 1
     print(f"PASS {count} source/class fingerprints and source line ranges")
     print("SOURCE_HASH_MATCH only; online references not fingerprinted; native metadata does not prove Lua authority.")

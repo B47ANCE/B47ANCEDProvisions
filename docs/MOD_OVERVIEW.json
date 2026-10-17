@@ -3,7 +3,7 @@
   "id": "food",
   "name": "B47ANCE’d Provisions",
   "version": "0.8.0-dev.1",
-  "source_digest": "b6e8a3691e0e5adcb04756f525355e519cb4f5daf981fc350745595603820b31",
+  "source_digest": "d12b1410448c3481522542a14f8783b6e487801ae1b371b30b5be5313e90c2ee",
   "reviewed": true,
   "features": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "status": "Blocked",
-      "text": "Server hook/identity proof, food-state conservation, sandbox duration/snapshot binding, durable completion and unloaded/save/restart/join validation."
+      "text": "Native server simulation and per-item test traced; safe food conversion is blocked by output synchronization before void OnCreate, unestablished pre-output veto/mapping and supported duration binding. Dedicated save/restart/join validation remains pending."
     }
   ],
   "limits": "Preview is local presentation only; native getter dispatch, rack variants and UI/controller behavior NOT TESTED. Whole-item integrity and server access remain UNKNOWN. Production G7 and stable G8 BLOCKED. Legacy foodWorks API/sandbox/save keys retained; no drying recipe/output/job registered. Existing coordinator legacy-provider compatibility remains unverified.",
@@ -38,7 +38,10 @@
     "docs/FRUIT_DRYING_PREVIEW.md",
     "docs/FRUIT_DRYING_PREVIEW_EVIDENCE.json",
     "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/FruitDryingPreview.lua",
-    "tests/test_fruit_drying_preview.lua"
+    "tests/test_fruit_drying_preview.lua",
+    "docs/FRUIT_DRYING_NATIVE_HOOKS.md",
+    "docs/FRUIT_DRYING_HOOK_EVIDENCE.json",
+    "scripts/check_native_drying_hooks.py"
   ],
   "relations": [
     {

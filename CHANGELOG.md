@@ -2,6 +2,9 @@
 
 ## [0.8.0-dev.1]
 
+- Documentation/tooling follow-up: trace native server drying, distinguish live per-item tests from an inert recipe test, and record pre-OnCreate output synchronization plus duration-binding blockers. Runtime/version unchanged; working apple drying remains blocked.
+- Keep the recorded project preview fingerprint usable after a Windows CRLF checkout; installed game/native evidence still requires exact bytes.
+
 - Add a client-only apple/rack drying preview with localized checks and an independent sandbox display toggle.
 - Report failed and unknown checks without claiming whole-item eligibility or permitting processing. No recipe, inventory mutation, jobs or networking.
 - MINOR development checkpoint for a new inspection capability; gameplay production and SP/dedicated runtime remain unverified.

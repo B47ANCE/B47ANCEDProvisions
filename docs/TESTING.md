@@ -2,6 +2,34 @@
 
 Project Version: 0.8.0-dev.1
 
+## Native-hook follow-up — October 17, 2026
+
+Audit baseline: merged `77771cbf27c0b0ea1b5812c23798c53e8f37b1a3` / 0.8.0-dev.1.
+Documentation and offline tooling only; no new version iteration or gameplay.
+See [decision](FRUIT_DRYING_NATIVE_HOOKS.md) and [evidence](FRUIT_DRYING_HOOK_EVIDENCE.json).
+
+Additional exact command (Python with isolated development-only jawa 2.2.0):
+
+```powershell
+python scripts/check_native_drying_hooks.py --game-root 'E:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid' --steam-build 25485521
+```
+
+- [TESTED: offline static] Seven packaged class fingerprints match; loose classes
+  match where present. Expected native callback/output/destruction call order,
+  per-item OnTest path, inert recipe test, native job ModData serialization and
+  absence of a declared setTime match. This confirms limitations, not gameplay.
+- [TESTED: offline Lua 5.1] The six existing suites and load/syntax checks PASS;
+  no production runtime file changes. Version consistency remains PASS at 0.8.0-dev.1.
+- [TESTED: offline] The 18 design and 12 preview fingerprints still match. The
+  fresh Windows checkout converts the project preview text to CRLF; its checker
+  accepts an LF-normalized match to the original recorded hash. Installed game
+  files/classes remain byte-exact. A content edit still fails the project hash.
+- [RUNTIME GATE] Live Lua hooks, duration binding, pre-output validation/food aging,
+  resource synchronization, cancellation, save/restart and dedicated contention
+  remain NOT TESTED or unresolved. Production blocked; G7/stable G8 BLOCKED.
+
+No native game/server execution, package, deployment or publication.
+
 ## Read-only preview checkpoint — October 17, 2026
 
 Version 0.8.0-dev.1 adds a client-only inspection capability. Gameplay and all

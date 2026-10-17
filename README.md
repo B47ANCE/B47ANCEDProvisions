@@ -62,5 +62,9 @@ context actions for one apple or a clicked native rack. It reports failed/unknow
 prechecks, never claims whole-item eligibility and cannot start drying. Disable
 the display with `foodWorks.EnableFruitDryingPreview`. Production mutation remains
 blocked on the documented API, authority and runtime gates.
+The [native-hook follow-up](docs/FRUIT_DRYING_NATIVE_HOOKS.md) confirms a live
+per-item test but finds post-output synchronization before the void OnCreate
+callback and no declared recipe-time setter. Safe conversion/configuration remain
+blocked; no working apple-drying process is registered.
 No current package, deployment or Workshop publication is claimed. Offline checks
 pass; SP and dedicated multiplayer remain NOT TESTED, with G7 and stable G8 blocked.
