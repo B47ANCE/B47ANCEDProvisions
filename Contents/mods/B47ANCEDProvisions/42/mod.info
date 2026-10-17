@@ -1,0 +1,9 @@
+name=B47ANCE’d Provisions
+id=B47ANCEDProvisions
+author=B47ANCE
+description=Vanilla-first food framework foundation with normalized food, freshness, nutrition, freezing, packaging, contamination, and third-party ingredient adapters.
+poster=thumbnail.png
+icon=icon.png
+tags=Build 42;Framework;Food
+versionMin=42.20.3
+modversion=0.7.0
