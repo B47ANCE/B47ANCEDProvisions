@@ -1,6 +1,19 @@
 # Changelog
 
+## [0.8.0-dev.1]
+
+- Add a client-only apple/rack drying preview with localized checks and an independent sandbox display toggle.
+- Report failed and unknown checks without claiming whole-item eligibility or permitting processing. No recipe, inventory mutation, jobs or networking.
+- MINOR development checkpoint for a new inspection capability; gameplay production and SP/dedicated runtime remain unverified.
+
 ## [0.7.0]
+
+- Documentation-only follow-up: design whole-apple drying at a native small-plant
+  rack, audit installed Build 42.21 / Steam build 25485521 APIs, and record portable
+  evidence fingerprints, implementation blockers and a dedicated test plan.
+- Adopt the reviewed project feature overview; production fruit drying remains
+  blocked/unregistered. Canonical version and runtime bytes remain unchanged;
+  proposed future MINOR implementation target is 0.8.0-dev.1.
 
 - Rename foodWorks to B47ANCE’d Provisions with Mod ID `B47ANCEDProvisions`.
 - Preserve Workshop ID `3788591331`, Lua API/module paths, sandbox identifiers,

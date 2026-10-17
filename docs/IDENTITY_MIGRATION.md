@@ -1,6 +1,6 @@
 # B47ANCE’d Provisions identity migration
 
-Project Version: 0.7.0
+Historical rename baseline: 0.7.0
 
 User-authorized local rename on October 16, 2026:
 

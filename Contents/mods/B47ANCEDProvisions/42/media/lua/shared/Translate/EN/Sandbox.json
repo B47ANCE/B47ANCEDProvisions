@@ -1,5 +1,7 @@
 {
   "Sandbox_foodWorks": "B47ANCE’d Provisions",
   "Sandbox_foodWorks_EnableFoodInspection": "Enable food-state inspection",
-  "Sandbox_foodWorks_EnableFoodInspection_tooltip": "Adds a read-only inventory action showing vanilla food, freshness, preservation, and nutrition state. It never changes the food item."
+  "Sandbox_foodWorks_EnableFoodInspection_tooltip": "Adds a read-only inventory action showing vanilla food, freshness, preservation, and nutrition state. It never changes the food item.",
+  "Sandbox_foodWorks_EnableFruitDryingPreview": "Enable apple-drying inspection prototype",
+  "Sandbox_foodWorks_EnableFruitDryingPreview_tooltip": "Shows local rack and apple prechecks. It cannot start drying, move items or prove server eligibility."
 }

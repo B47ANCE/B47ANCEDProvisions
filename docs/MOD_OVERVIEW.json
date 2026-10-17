@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "id": "food",
+  "name": "B47ANCE’d Provisions",
+  "version": "0.8.0-dev.1",
+  "source_digest": "b6e8a3691e0e5adcb04756f525355e519cb4f5daf981fc350745595603820b31",
+  "reviewed": true,
+  "features": [
+    {
+      "status": "Source",
+      "text": "Client-only apple/rack drying prechecks with localized failed/unknown states, bounded user-triggered scans and sandbox display toggle. Never starts drying or proves whole-item eligibility; native SP/dedicated not tested."
+    },
+    {
+      "status": "Foundation",
+      "text": "Read-only vanilla food/freshness/nutrition/preservation inspection, ingredient registry and optional inventory report."
+    },
+    {
+      "status": "Foundation",
+      "text": "Engine-independent preservation state machine and optional appliance water/power reservation coordinator; no native production process registered."
+    },
+    {
+      "status": "Planned",
+      "text": "First candidate: one whole Apple at native small-plant drying racks, producing proposed dried-apple slices. Design and Build 42.21 API audit exist; production integration is not implemented."
+    },
+    {
+      "status": "Blocked",
+      "text": "Server hook/identity proof, food-state conservation, sandbox duration/snapshot binding, durable completion and unloaded/save/restart/join validation."
+    }
+  ],
+  "limits": "Preview is local presentation only; native getter dispatch, rack variants and UI/controller behavior NOT TESTED. Whole-item integrity and server access remain UNKNOWN. Production G7 and stable G8 BLOCKED. Legacy foodWorks API/sandbox/save keys retained; no drying recipe/output/job registered. Existing coordinator legacy-provider compatibility remains unverified.",
+  "evidence": [
+    "README.md",
+    "docs/ARCHITECTURE.md",
+    "docs/FRUIT_DRYING_DESIGN.md",
+    "docs/FRUIT_DRYING_API_AUDIT.md",
+    "docs/FRUIT_DRYING_EVIDENCE.json",
+    "docs/TESTING.md",
+    "docs/FRUIT_DRYING_PREVIEW.md",
+    "docs/FRUIT_DRYING_PREVIEW_EVIDENCE.json",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/FruitDryingPreview.lua",
+    "tests/test_fruit_drying_preview.lua"
+  ],
+  "relations": [
+    {
+      "target": "power",
+      "kind": "Planned",
+      "text": "Existing appliance reservation contract; legacy global and paired-build compatibility unverified. Fruit drying has no power dependency."
+    },
+    {
+      "target": "water",
+      "kind": "Planned",
+      "text": "Existing appliance fluid reservation contract; no production process. Fruit drying has no water dependency."
+    }
+  ]
+}

@@ -1,6 +1,92 @@
 # B47ANCE’d Provisions Testing
 
-Project Version: 0.7.0
+Project Version: 0.8.0-dev.1
+
+## Read-only preview checkpoint — October 17, 2026
+
+Version 0.8.0-dev.1 adds a client-only inspection capability. Gameplay and all
+production drying gates remain unchanged. This section records current checks;
+the original 0.7.0 design/rename results below retain their original scope.
+
+Executed with bundled Python 3.12 and isolated Lupa 2.8 / Lua 5.1 tooling:
+
+```powershell
+$provisionsPython = 'C:\Users\willi\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+# Use the developer-local isolated Lupa directory on PYTHONPATH, as in the prior audit.
+& $provisionsPython scripts/check_versions.py --root .
+& $provisionsPython scripts/run_checks.py
+& $provisionsPython scripts/check_fruit_drying_evidence.py --game-root 'E:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid' --steam-build 25485521
+& $provisionsPython scripts/check_fruit_drying_evidence.py --preview --game-root 'E:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid' --steam-build 25485521
+git diff --check
+```
+
+- [TESTED: offline Lua 5.1] Six suites PASS: the five existing suites plus the
+  conservative preview, menu, localization, bounded scan, stale activation,
+  client/server loading and speed-safe window regression suite. Real production
+  load graph, syntax and retained-key checks PASS.
+- [TESTED: offline] Canonical/current version consistency PASS; historical identity
+  and API audits remain at 0.7.0. Old 18 evidence fingerprints still match;
+  preview-specific source/native/module fingerprints match separately.
+- [VERIFIED: source] The new module has only getter/UI/event calls. It exits on a
+  server, uses no inventory/gameplay mutators, does not read/allocate getModData,
+  and contains no job/recipe/network operations. Existing shared gameplay modules
+  are unchanged except the canonical API version constant.
+- [TESTED: offline] EN UI keys and sandbox toggle names/tooltips are present;
+  unknown/throwing getters are not treated as clean flags. No other locale is
+  claimed translated; vanilla EN fallback requires native confirmation.
+- [RUNTIME GATE] SP/dedicated UI appearance, actual getter dispatch, rack variants,
+  split-screen, font scale, Escape/controller focus/scrolling and unchanged speed
+  remain NOT TESTED. This is local presentation only; the broader project's G7
+  and stable G8 remain BLOCKED / NOT TESTED for production drying.
+
+No packaging, deployment, Workshop upload, game/server launch or new CI workflow.
+See [prototype](FRUIT_DRYING_PREVIEW.md) for user flow, sandbox behavior and limits.
+
+## Historical 0.7.0 fruit-drying design/API audit — October 17, 2026
+
+Documentation/tooling-only checkpoint from main commit
+`93400d5cd607925f132aaf591fbfd32cd3f048ec`; canonical VERSION and all runtime
+files remain unchanged. A separate clean worktree on `docs/fruit-drying-api-audit`
+preserves the original merged feature checkout. Startup freshness at this new
+branch's baseline: PASS, origin/main identical, ahead/behind 0/0, clean.
+
+Installed source: Build 42.21 / Steam build 25485521. See
+[audit](FRUIT_DRYING_API_AUDIT.md), [design](FRUIT_DRYING_DESIGN.md) and
+[fingerprints](FRUIT_DRYING_EVIDENCE.json). The evidence is static/local-source,
+not a pristine-Steam certificate, Lua invocation test, SP run or dedicated run.
+
+Commands executed using the bundled Python 3.12 interpreter below. Lupa 2.8
+was installed in an isolated audit-tool directory outside this repository because
+the refreshed bundle lacked it; it is a development test dependency, never a mod
+runtime dependency. Put that developer-local directory on PYTHONPATH to reproduce.
+
+```powershell
+$provisionsPython = 'C:\Users\willi\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+& $provisionsPython scripts/check_versions.py --root .
+& $provisionsPython scripts/run_checks.py
+& $provisionsPython scripts/probe_preservation_audit.py
+& $provisionsPython scripts/check_fruit_drying_evidence.py --game-root 'E:\Program Files (x86)\Steam\steamapps\common\ProjectZomboid' --steam-build 25485521
+git diff --check
+```
+
+- [TESTED: offline] Version consistency PASS at 0.7.0; no current package exists.
+- [TESTED: offline Lua 5.1] Five existing suites, real production loaders, syntax,
+  identity and retained-key checks PASS. No new native behavior is tested by them.
+- [TESTED: offline Lua 5.1] Audit probes reproduce a function retained in a receipt,
+  a 240-hour gap credited as 168 hours with last marker 240, and observations
+  saturated at 64. The next-hour advance credits 1 hour; lost catch-up is not retained.
+  These are recorded limitations, not requirements to preserve bugs forever.
+- [TESTED: offline] All 18 local source/class fingerprints and line ranges match.
+- [VERIFIED: source review] The overview separates foundation, planned and blocked
+  work and binds the reviewed description to 0.7.0 plus the current source digest.
+- [RUNTIME GATE] Native recipe discovery/hooks, whole-item checks, age/nutrient
+  mapping, settings snapshots, cancellation, loaded/unloaded processing and
+  save/restart/join behavior remain UNKNOWN / NOT TESTED. G7 BLOCKED; stable G8 BLOCKED.
+
+No production registration/mutation, package, deployment, publication or game/server
+launch. Existing API/key contracts and historical evidence are preserved. No new
+CI workflow or hosted check is added. Source audit completion does not declare a
+project G6 PASS. Proposed later implementation target 0.8.0-dev.1 is planning only.
 
 ## Rename validation
 

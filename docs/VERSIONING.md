@@ -1,6 +1,14 @@
 # Project versioning
 
-Current development version: 0.7.0.
+Current development version: 0.8.0-dev.1.
+
+The October 17 design/API audit remains bound to its historical 0.7.0 baseline.
+The user then requested the read-only prototype: a compatible new inspection
+capability, classified MINOR and now recorded as 0.8.0-dev.1 throughout current
+mirrors. Production drying and 0.8.0 distribution remain subject to the documented
+gates. This checkpoint adds presentation only, with no shared state, new gameplay
+settings, persistence schema change or active recipe. The original identity/audit
+records retain their actual versions instead of being relabeled as current proof.
 
 Root `VERSION` is the sole authority. `version-inventory.json` declares exact
 current mirrors; it is not another authority. See [VERSION_POLICY.md](VERSION_POLICY.md).
