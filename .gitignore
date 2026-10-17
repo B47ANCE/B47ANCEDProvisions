@@ -1,0 +1,19 @@
+dist/*
+!dist/.gitkeep
+
+# Shared machine-owned junctions, local state and credentials are never source.
+/.agents
+/.codex
+/.steamcmd-*
+/.env
+/.env.*
+!/.env.example
+*.local.json
+local.settings.json
+__pycache__/
+*.py[cod]
+/.pytest_cache/
+*.log
+/server-console.txt
+/console.txt
+/diagnostics/
