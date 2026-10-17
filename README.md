@@ -23,8 +23,11 @@ must match the exact appliance and supply stable appliance/water identities.
 Definitions freeze exact protected inputs, station capability, eligibility,
 duration, cadence, and environmental observation. Reservation, cancellation,
 spoilage, ready state, replay-safe completion, and uncertain-output quarantine
-are host-tested. A first-party station, recipe, outputs, and balance remain
-unselected rather than borrowing them from research mods.
+are host-tested. The [first-process design](docs/FRUIT_DRYING_DESIGN.md) selects
+apple drying at a native small-plant rack as the candidate; no production item,
+recipe or station integration is registered. The [API audit](docs/FRUIT_DRYING_API_AUDIT.md)
+records installed Build 42.21 / Steam build 25485521 evidence and the authority,
+food-state, configuration and persistence blockers before implementation.
 
 The normalized view now includes packaging, taint, freeze/thaw progress,
 last-aging time, rotten replacement, and compost/rotting timers. See
@@ -53,6 +56,8 @@ Canonical project version: root `VERSION`; mirrors: `version-inventory.json`.
 See [versioning](docs/VERSIONING.md), [identity migration](docs/IDENTITY_MIGRATION.md),
 and [testing](docs/TESTING.md) for commands and evidence boundaries. Historical
 ZIPs, staging backups, upload hashes and original research remain historical.
-The 0.7.0 rename is maintained on `chore/provisions-0.7.0-rename` for PR review.
+The 0.7.0 rename was merged through PR #1. The fruit-drying design/API audit is a
+documentation-only checkpoint on that version; proposed future gameplay target
+is 0.8.0-dev.1, subject to the documented implementation gates.
 No current package, deployment or Workshop publication is claimed. Offline checks
 pass; SP and dedicated multiplayer remain NOT TESTED, with G7 and stable G8 blocked.

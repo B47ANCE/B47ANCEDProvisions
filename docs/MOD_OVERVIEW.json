@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "id": "food",
+  "name": "B47ANCE’d Provisions",
+  "version": "0.7.0",
+  "source_digest": "183a92fa3c609265c62d1eea0bcb2114dec44fdd783e2c28f7baf3c9d6a3e4ed",
+  "reviewed": true,
+  "features": [
+    {
+      "status": "Foundation",
+      "text": "Read-only vanilla food/freshness/nutrition/preservation inspection, ingredient registry and optional inventory report."
+    },
+    {
+      "status": "Foundation",
+      "text": "Engine-independent preservation state machine and optional appliance water/power reservation coordinator; no native production process registered."
+    },
+    {
+      "status": "Planned",
+      "text": "First candidate: one whole Apple at native small-plant drying racks, producing proposed dried-apple slices. Design and Build 42.21 API audit exist; production integration is not implemented."
+    },
+    {
+      "status": "Blocked",
+      "text": "Server hook/identity proof, food-state conservation, sandbox duration/snapshot binding, durable completion and unloaded/save/restart/join validation."
+    }
+  ],
+  "limits": "SP and dedicated NOT TESTED; G7 and stable G8 BLOCKED. Legacy foodWorks API/sandbox/save keys retained. Appliance coordinator still resolves legacy powerWorks; renamed-provider integration not audited here. Generic catch-up/receipt serialization limitations are documented. No current fruit-drying recipe/item/station registration.",
+  "evidence": [
+    "README.md",
+    "docs/ARCHITECTURE.md",
+    "docs/FRUIT_DRYING_DESIGN.md",
+    "docs/FRUIT_DRYING_API_AUDIT.md",
+    "docs/FRUIT_DRYING_EVIDENCE.json",
+    "docs/TESTING.md"
+  ],
+  "relations": [
+    {
+      "target": "power",
+      "kind": "Planned",
+      "text": "Existing appliance reservation contract; legacy global and paired-build compatibility unverified. Fruit drying has no power dependency."
+    },
+    {
+      "target": "water",
+      "kind": "Planned",
+      "text": "Existing appliance fluid reservation contract; no production process. Fruit drying has no water dependency."
+    }
+  ]
+}

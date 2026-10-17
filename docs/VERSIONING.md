@@ -2,6 +2,12 @@
 
 Current development version: 0.7.0.
 
+The October 17 fruit-drying design/API audit is a documentation-only checkpoint on
+this existing baseline. It adds no gameplay or integration contract and therefore
+does not change runtime version mirrors. Proposed implementation is a MINOR feature
+targeting 0.8.0-dev.1, then 0.8.0 distribution subject to gates; those versions are
+planning values, not current mirrors. See FRUIT_DRYING_DESIGN.md for the decision.
+
 Root `VERSION` is the sole authority. `version-inventory.json` declares exact
 current mirrors; it is not another authority. See [VERSION_POLICY.md](VERSION_POLICY.md).
 

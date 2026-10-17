@@ -23,6 +23,13 @@ state ownership, server authority, networking or sandbox behavior changes.
 
 ## Implemented foundation
 
+The [fruit-drying design](FRUIT_DRYING_DESIGN.md) proposes native rack crafting
+as the single owner of a future apple-drying job. This is not implemented and
+does not change the generic framework. Avoid a second custom timer or output
+creator for a native craft. [Audit evidence](FRUIT_DRYING_API_AUDIT.md) separates
+observed client/shared calls from unproven server authorization, save/reload and
+food-state mapping. Existing Lua/save identifiers remain unchanged.
+
 `foodWorks/API.lua` implements ordered food providers and a normalized ingredient
 registry. Its vanilla provider reads `Food` age thresholds, rotten/cooked/burnt/
 frozen state, heat, cooking progress, hunger/thirst effects, and macronutrients.

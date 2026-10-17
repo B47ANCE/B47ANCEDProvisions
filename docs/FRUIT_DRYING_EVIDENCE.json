@@ -1,0 +1,309 @@
+{
+  "schema": 1,
+  "project_version": "0.7.0",
+  "source_commit": "93400d5cd607925f132aaf591fbfd32cd3f048ec",
+  "audit_date": "2026-10-17",
+  "game_version": "42.21",
+  "steam_app": "108600",
+  "steam_build": "25485521",
+  "provenance": "Installed Steam manifest build field plus packaged Core version constructor. Hashes are not a Steam-integrity certificate.",
+  "source_files": [
+    {
+      "id": "E01",
+      "scope": "game",
+      "path": "media/scripts/generated/entities/agricultural/workstations/entity_Herb_Drying_Rack.txt",
+      "sha256": "fa09925b7f5ce66bf22a12bb085a17003590fbd209f608de9e2722aa19853287",
+      "lines": [
+        [
+          1,
+          28
+        ],
+        [
+          536,
+          561
+        ]
+      ],
+      "statement": "Native small-plant entities, resources and drying logic.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E02",
+      "scope": "game",
+      "path": "media/scripts/generated/entities/agricultural/workstations/entity_Drying_Rack.txt",
+      "sha256": "c72bf2117202a6466de5dcb0d1dfdc4adf21676d815e046f897413b8c2193d5a",
+      "lines": [
+        [
+          1,
+          28
+        ]
+      ],
+      "statement": "Native large-plant drying entity.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E03",
+      "scope": "game",
+      "path": "media/scripts/generated/entities/agricultural/workstations/entity_Herb_Drying_Rack_craftRecipe.txt",
+      "sha256": "148bcb2f591a5b74851870260eb01ca82d8ac730e2db43147d91b5cdbb0fbb9e",
+      "lines": [
+        [
+          1,
+          20
+        ]
+      ],
+      "statement": "Native herb drying recipe and time data; elapsed units not proven.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E04",
+      "scope": "game",
+      "path": "media/lua/client/Entity/ISUI/Components/Crafting/ISWidgetCraftLogicControl.lua",
+      "sha256": "867b103a5b1fdf37d774e20db56a2ed9cf00604ec6e2fee9b516bd6a510f273b",
+      "lines": [
+        [
+          273,
+          308
+        ]
+      ],
+      "statement": "Client canStart/start/stop calls on CraftLogic.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E05",
+      "scope": "game",
+      "path": "media/lua/shared/Entity/TimedActions/ISGenericCraftStart.lua",
+      "sha256": "e2161fccf1b377b3dc65cd9c47c1f68596aab1eaa68fd9820fc4cfbebf3bb216",
+      "lines": [
+        [
+          1,
+          73
+        ]
+      ],
+      "statement": "Callback executes in perform; complete is commented out.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E06",
+      "scope": "game",
+      "path": "media/lua/client/Entity/ISEntityUI.lua",
+      "sha256": "e92cf841bd234c6213b7cbe9a5d583e63c61b9a80f059b8c12c5405437262016",
+      "lines": [
+        [
+          50,
+          96
+        ]
+      ],
+      "statement": "Client helper queues transfer/start actions.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E07",
+      "scope": "game",
+      "path": "media/lua/shared/Entity/TimedActions/ISItemSlotAddAction.lua",
+      "sha256": "ee9c6b44e08c173b068b915dbc587360e2da704ec951caccff169489283d6f38",
+      "lines": [
+        [
+          5,
+          7
+        ],
+        [
+          70,
+          80
+        ],
+        [
+          93,
+          119
+        ]
+      ],
+      "statement": "Resource offer and basic item checks, without authority guarantee.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E08",
+      "scope": "game",
+      "path": "media/lua/shared/Entity/TimedActions/ISItemSlotRemoveAction.lua",
+      "sha256": "c6d9a899fd2c7ef8064a725c4e9226ba5d6ad231f5438adf2caa1fc85781dd81",
+      "lines": [
+        [
+          70,
+          84
+        ],
+        [
+          97,
+          110
+        ]
+      ],
+      "statement": "Server ID removal, sync and added-item synchronization.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E09",
+      "scope": "game",
+      "path": "media/scripts/generated/items/food.txt",
+      "sha256": "408f2091bca9b1059ff8a8fb067076dcda7412903c84007656334ba6ac662e03",
+      "lines": [
+        [
+          8658,
+          8677
+        ],
+        [
+          8721,
+          8738
+        ]
+      ],
+      "statement": "Distinct Apple and DriedApricots data.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E10",
+      "scope": "game",
+      "path": "media/lua/server/Traps/STrapGlobalObject.lua",
+      "sha256": "8658508304ea8bdefe2567f0a3886c6d6cdd712dde5dfca95d5d11c55ed20789",
+      "lines": [
+        [
+          330,
+          363
+        ]
+      ],
+      "statement": "Item creation, food-value setters and server inventory synchronization.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E11",
+      "scope": "game",
+      "path": "media/lua/server/Vehicles/ProfessionVehicles.lua",
+      "sha256": "dd8f54aff597b75ff3662c74d9cac4f019030c9cf5e37b44982eeb1bdeeb8be6",
+      "lines": [
+        [
+          17,
+          22
+        ],
+        [
+          343,
+          347
+        ]
+      ],
+      "statement": "Server global-data initialization and event.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E12",
+      "scope": "game",
+      "path": "media/lua/server/Map/SGlobalObjectSystem.lua",
+      "sha256": "0f29131a414c391c60513e4bad4202b0b07295265f1609cb8c8adb7401d16b8b",
+      "lines": [
+        [
+          1,
+          35
+        ]
+      ],
+      "statement": "Named system persistence and initial-client-state hook.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E13",
+      "scope": "game",
+      "path": "media/lua/server/Farming/SFarmingSystem.lua",
+      "sha256": "28576002bbab0e0561c713bc6b8e2d829d6cd7b917f5b8a702cbfcef46b39914",
+      "lines": [
+        [
+          253,
+          261
+        ]
+      ],
+      "statement": "Server world-age-hour read.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "E14",
+      "scope": "game",
+      "path": "media/lua/server/ClientCommands.lua",
+      "sha256": "c9de3d3024a46e2b3ab1670c11f98885647bfb6d73114ff7896bf41e263923fd",
+      "lines": [
+        [
+          1296,
+          1307
+        ]
+      ],
+      "statement": "Dispatcher invokes handler with player and args.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P01",
+      "scope": "project",
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/PreservationProcesses.lua",
+      "sha256": "bdf94f10624cba077d74f804669d925e66401acde964119f3a6456fa31fc9dfe",
+      "lines": [
+        [
+          1,
+          92
+        ]
+      ],
+      "statement": "Engine-independent store/provider framework; no native owner.",
+      "runtime_status": "NOT_TESTED"
+    }
+  ],
+  "native_classes": [
+    {
+      "id": "N01",
+      "scope": "packaged_class",
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/crafting/DryingCraftLogic.class",
+      "sha256": "b71ea59ca7d7bbdcfe06ff7b2b3f55733fb1bac9ec6d8b2f2c01e7298742fd0e",
+      "facts": [
+        "private getDryingFactor()F",
+        "public onUpdate(CraftRecipeData)V",
+        "protected save(ByteBuffer)V",
+        "protected load(ByteBuffer,int)V"
+      ],
+      "lua_exposure": "NOT_PROVEN_BY_METADATA",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "N02",
+      "scope": "packaged_class",
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/crafting/CraftLogic.class",
+      "sha256": "3d8ffd3163cbb9597f01b6d81cb610d6155a7b583c7ef161e2f11af1667ec68d",
+      "facts": [
+        "public start(IsoPlayer)V",
+        "public stop(IsoPlayer)V",
+        "public stop(IsoPlayer,boolean)V",
+        "public sendStartRequest(IsoPlayer)V",
+        "protected receiveStartRequest(ByteBufferReader,IConnection)V",
+        "public sendCraftLogicSync()V",
+        "protected save(ByteBuffer)V",
+        "protected load(ByteBuffer,int)V"
+      ],
+      "lua_exposure": "NOT_PROVEN_BY_METADATA",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "N03",
+      "scope": "packaged_class",
+      "path": "projectzomboid.jar",
+      "member": "zombie/core/Core.class",
+      "sha256": "8f5c69740c8bf2181123a831ab68d1dfb047453687cca6dc62c77816d76ab360",
+      "facts": [
+        "Static initializer constructs GameVersion(42,21,empty suffix); game code was not executed."
+      ],
+      "lua_exposure": "NOT_PROVEN_BY_METADATA",
+      "runtime_status": "NOT_TESTED"
+    }
+  ],
+  "official_docs": [
+    {
+      "url": "https://projectzomboid.com/modding/zombie/entity/components/crafting/DryingCraftLogic.html",
+      "use": "Private factor and protected save/load corroboration only."
+    },
+    {
+      "url": "https://projectzomboid.com/modding/zombie/scripting/entity/components/crafting/CraftRecipe.html",
+      "use": "Time getters/Lua-call metadata; callback ownership unproven."
+    },
+    {
+      "url": "https://projectzomboid.com/modding/zombie/inventory/types/Food.html",
+      "use": "Separate hunger-read/write names, without assumed equivalence."
+    }
+  ],
+  "runtime_status": "NOT_TESTED"
+}

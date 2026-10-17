@@ -41,8 +41,17 @@ save/reload, late-join, and dedicated validation.
 
 ## Proof order
 
+The first candidate is [apple drying](FRUIT_DRYING_DESIGN.md). Installed source
+supports researching native DryingCraftLogic ownership; do not layer the generic
+preservation timer over the same job. [Audit blockers B01-B06](FRUIT_DRYING_API_AUDIT.md)
+must be resolved before production registration or mutation.
+
 1. Verify one preservation station and one appliance identity in Build 42.
 2. Implement read-only eligibility/planning without mutation.
 3. Prove reservation, cancellation, completion, rollback, and uncertain outcome.
 4. Validate aging/spoilage and unloaded elapsed time.
 5. Validate nested inventories, save/load, hosted, late join, and dedicated play.
+
+For the initial apple slice, nested inventories are deliberately rejected. Their
+later acceptance remains a separate audited extension; rejecting them is not proof
+that their processing works. Source-only station/eligibility inspection comes first.
