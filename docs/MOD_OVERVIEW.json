@@ -3,9 +3,13 @@
   "id": "food",
   "name": "B47ANCE’d Provisions",
   "version": "0.8.0-dev.2",
-  "source_digest": "a768259fe9ff90a387a22d4d5e8c0ff00ac72ad4a5b190c8f9fc9cf7cb79c3a6",
+  "source_digest": "84607ec7e51dd4f2c76f26c65087d545fd27fb14f6c21f17cf3ba86327f866f8",
   "reviewed": true,
   "features": [
+    {
+      "status": "Foundation",
+      "text": "Original dried-apple inventory art: transparent raster master and 64x64 export, retained prompt/provenance. Authoring asset only; per-item runtime texture hookup pending."
+    },
     {
       "status": "Source",
       "text": "Server-owned in-place apple drying in native racks: same ID/nutrients, carried age, private server ledger and copied item snapshots, saved settings, exact actor/item/access checks, carried-batch recovery and full-item resource sync. Offline only."
@@ -33,6 +37,8 @@
   ],
   "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Dried result keeps Base.Apple identity and vanilla appearance. Loaded sampled time only; unloaded/long gaps pause. Native transfer crash atomicity is not claimed. No package/deploy/publication. Legacy identifiers retained.",
   "evidence": [
+    "assets/dried-apple/README.md",
+    "assets/dried-apple/provenance.json",
     "README.md",
     "docs/ARCHITECTURE.md",
     "docs/FRUIT_DRYING_DESIGN.md",

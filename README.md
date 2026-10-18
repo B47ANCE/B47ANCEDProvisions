@@ -30,6 +30,10 @@ avoids the native recipe's post-output callback and a second consume/create
 transaction. Vanilla/other mods can still recognize the base type as Apple; see
 [behavior, configuration and limits](docs/APPLE_DRYING.md).
 
+Original [dried-apple inventory art](assets/dried-apple/README.md) is available as
+a transparent master and 64×64 PNG export. Runtime texture hookup is pending;
+the prototype still displays the vanilla apple icon.
+
 `foodWorks.EnableFruitDrying`, `foodWorks.FruitDryingHours` (integer 6–168) and
 `foodWorks.FruitDryingShelfLifeMultiplier` (integer 1–12) are server-authoritative
 sandbox settings. Existing jobs keep their accepted settings. No power, water,

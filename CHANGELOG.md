@@ -2,6 +2,7 @@
 
 ## [0.8.0-dev.2]
 
+- Asset-only follow-up: add original dried-apple inventory artwork, transparent raster master, 64×64 export and provenance. Runtime hookup remains pending; no gameplay or compatibility change and no new version checkpoint.
 - Develop server-owned, in-place apple drying at native small-plant racks, preserving item identity and nutrients instead of replacing food.
 - Add server sandbox duration/shelf-life controls, a private server ledger with separate item snapshots, and localized start/status/cancel/return/collect actions. MINOR feature checkpoint; Lua-only and legacy namespaces retained.
 - Native SP and dedicated multiplayer NOT TESTED; G7 and stable G8 remain BLOCKED. No package, deployment or publication.
