@@ -4,6 +4,7 @@ import bmesh
 import hashlib
 import json
 from pathlib import Path
+from mathutils.bvhtree import BVHTree
 
 root = Path(__file__).resolve().parent
 assert bpy.app.background and not bpy.data.filepath, 'Use a disposable factory scene'
@@ -26,6 +27,7 @@ bm.from_mesh(model.data)
 assert all(e.is_manifold for e in bm.edges)
 unseen = set(bm.verts)
 volumes = []
+shell_trees = []
 while unseen:
     visited = {unseen.pop()}
     queue = list(visited)
@@ -42,7 +44,10 @@ while unseen:
     signed = sum(f.verts[0].co.dot(f.verts[1].co.cross(f.verts[2].co)) / 6 for f in shell_faces)
     assert signed > 0
     volumes.append(signed)
+    shell_trees.append(BVHTree.FromPolygons([v.co for v in bm.verts],
+        [[v.index for v in f.verts] for f in shell_faces], all_triangles=True))
 assert len(volumes) == 3
+assert all(not a.overlap(b) for i, a in enumerate(shell_trees) for b in shell_trees[i+1:]), 'Intersecting slice surfaces'
 bm.free()
 source_dimensions = sorted(model.dimensions)
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -57,5 +62,6 @@ images = [i for i in bpy.data.images if i.source == 'FILE' and i.name.startswith
 assert images and tuple(images[0].size) == (256, 256), 'Missing texture after import'
 assert all(0 <= uv.uv.x <= 1 and 0 <= uv.uv.y <= 1 for uv in mesh.uv_layers.active.data)
 print('PASS master hashes, packed opaque atlas, three outward closed shells, floor origin, no rig/animation')
+print('PASS independent BVH check: slice surfaces do not intersect')
 print('PASS independent FBX reimport: one mesh, 1500 triangles, UVs, single material/texture, dimensions within 1 micrometre')
 print('Native PZ SP/dedicated model display/scale/attachment NOT TESTED; no deployment')

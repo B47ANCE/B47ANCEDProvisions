@@ -17,12 +17,15 @@ card displaying the icon. No third-party art license is asserted here.
 - `model-definition.example.txt`: unloaded candidate B42 ground-model definition.
 
 The pile has 756 vertices / 1,500 triangles in three closed shells, approximately
-8.91 × 7.02 × 1.49 cm. Tapered ends, shallow curls, dry tan flesh and red-brown peel
-are modeled/textured. Mesh rotation and scale are identity; origin is centered on
+8.73 × 7.15 × 2.27 cm. Broader varied slices, tapered ends, curled/thicker edges,
+lighter tan flesh, red-brown peel and irregular drying creases are modeled/textured.
+Mesh rotation and scale are identity; origin is centered on
 the footprint at the lowest vertex. Every face is triangulated and nondegenerate;
 UVs remain within [0,1]. The FBX contains no studio objects, rig or animation.
 No automatic LOD or hand attachment is supplied; this slice is a static ground
-asset. Overlapping slices are a visual pile, not a collision/physics mesh.
+asset. The slices overlap in projection, with their shells separated to prevent
+peel/flesh poking through neighboring surfaces. This is a visual pile, not a
+collision/physics mesh.
 
 ## Installed evidence and limits
 
@@ -40,8 +43,10 @@ Our FBX is exported forward -Z / up Y, unit scale 1, with space transform baked.
 [TESTED offline, Blender 4.5.3] Reimport preserves the dimensions within 1 micrometre,
 1,500 triangles, UVs, material and texture. Master inspection confirms three
 outward-wound manifold shells, positive volume, no degenerate triangles, floor
-origin, packed opaque atlas and matching artifact hashes. The preview was visually
-inspected after refining the tips and lighting. Blender rendering is not PZ proof.
+origin, packed opaque atlas and matching artifact hashes. Independent BVH checks
+confirm no intersections between slice surfaces. The preview was visually
+inspected after refining the silhouette, creases, peel and stacking. Blender
+rendering is not PZ proof.
 
 [RUNTIME GATE] PZ loading, scale/orientation on ground/table, shadows, hand alignment,
 item-specific model selection, join/rejoin and save/reload remain NOT TESTED.
@@ -60,6 +65,7 @@ Use a local Blender executable in a separate background factory process:
 & $blender --background --factory-startup --python-exit-code 1 --python assets/dried-apple/model/build_model.py
 & $blender --background --factory-startup --python-exit-code 1 --python assets/dried-apple/model/validate_model.py
 python scripts/check_versions.py --root .
+python scripts/run_checks.py
 ```
 
 Scripts refuse to run against an existing user scene. Rebuilding intentionally

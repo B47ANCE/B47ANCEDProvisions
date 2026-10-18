@@ -1,5 +1,7 @@
 # B47ANCE’d Provisions
 
+![B47ANCE’d Provisions project thumbnail](preview.png)
+
 B47ANCE’d Provisions (formerly foodWorks) provides food inspection, preservation
 and food-system foundations for theWorks ecosystem, using vanilla Build 42 food,
 inventory and entity-resource systems.

@@ -2,6 +2,8 @@
 
 ## [0.8.0-dev.2]
 
+- Adopt the user's supplied project thumbnail unchanged in the current preview/thumbnail slots and README; preserve the separate mod icon and historical packages.
+- Refine the Blender model with broader varied slices, curled/thicker edges, brighter flesh, red peel and irregular creases; prevent slice-surface intersections and refresh the mesh/texture/preview evidence. Art-only follow-up in the existing checkpoint; runtime hookup remains pending.
 - Asset-only follow-up: author a three-slice dried-apple model locally in Blender, with original albedo, editable source, FBX, preview and offline round-trip validation. No Meshy; native model hookup/display remains pending.
 - Asset-only follow-up: add original dried-apple inventory artwork, transparent raster master, 64×64 export and provenance. Runtime hookup remains pending; no gameplay or compatibility change and no new version checkpoint.
 - Develop server-owned, in-place apple drying at native small-plant racks, preserving item identity and nutrients instead of replacing food.

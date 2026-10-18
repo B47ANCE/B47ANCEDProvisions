@@ -6,6 +6,7 @@ import json
 import math
 from pathlib import Path
 from mathutils import Vector
+from mathutils.bvhtree import BVHTree
 
 ROOT = Path(__file__).resolve().parent
 if not bpy.app.background or bpy.data.filepath:
@@ -37,15 +38,18 @@ for y in range(size):
         u = x / (size - 1)
         grain = math.sin(x * 12.9898 + y * 78.233) * 43758.5453
         grain = (grain - math.floor(grain)) - 0.5
-        wrinkles = math.sin(u * 116 + math.sin(v * 35) * 1.7)
-        fibres = math.sin(v * 91 + math.sin(u * 29) * 3.1)
+        # Sparse, irregular drying creases; avoid uniform woodgrain-like bands.
+        crease_phase = u * 83 + math.sin(v * 17 + u * 11) * 2.1
+        crease = max(0, math.sin(crease_phase)) ** 16
+        flecks = max(0, grain - 0.33) * 0.14
+        mottling = math.sin(u * 19 + v * 9) * math.cos(v * 23 - u * 7)
         if v < 0.76:
-            tone = 0.045 * grain + 0.018 * wrinkles + 0.017 * fibres
-            edge = 0.08 * (abs(v - 0.38) / 0.38) ** 3
-            rgb = (0.63 + tone - edge, 0.39 + tone - edge, 0.17 + tone * 0.7 - edge * 0.7)
+            tone = 0.027 * grain + 0.025 * mottling - 0.033 * crease - flecks
+            edge = 0.10 * (abs(v - 0.38) / 0.38) ** 3
+            rgb = (0.73 + tone - edge, 0.49 + tone - edge, 0.25 + tone * 0.7 - edge * 0.7)
         else:
-            tone = 0.035 * grain + 0.018 * fibres
-            rgb = (0.22 + tone, 0.035 + tone * 0.6, 0.018 + tone * 0.4)
+            tone = 0.025 * grain + 0.016 * mottling - 0.025 * crease
+            rgb = (0.31 + tone, 0.033 + tone * 0.6, 0.020 + tone * 0.4)
         pixels.extend((*[max(0, min(1, c)) for c in rgb], 1.0))
 image.pixels.foreach_set(pixels)
 image.filepath_raw = str(ROOT / 'DriedApple_Albedo.png')
@@ -61,6 +65,7 @@ texture.image = image
 material.node_tree.links.new(texture.outputs['Color'], principled.inputs['Base Color'])
 
 vertices, faces, texcoords = [], [], []
+slice_ranges = []
 segments, radial_steps = 20, 5
 for slice_index, (angle, dx, dy, dz) in enumerate([
     (-0.30, -0.006, -0.018, 0.0038),
@@ -68,6 +73,7 @@ for slice_index, (angle, dx, dy, dz) in enumerate([
     (0.85, -0.010, 0.011, 0.0086),
 ]):
     start = len(vertices)
+    face_start = len(faces)
     stride = radial_steps + 1
     layer_size = (segments + 1) * stride
     def idx(side, i, j):
@@ -78,15 +84,18 @@ for slice_index, (angle, dx, dy, dz) in enumerate([
             for j in range(radial_steps + 1):
                 q = [0, 0.23, 0.47, 0.71, 0.92, 1][j]
                 taper = math.sin(math.pi * i / segments) ** 0.65
-                breadth = 0.0008 + 0.0202 * taper
+                breadth = 0.0011 + 0.0240 * taper
                 radius = 0.038 - breadth * (1 - q)
-                px = radius * math.cos(theta)
-                py = radius * math.sin(theta) * 0.83
+                length_factor = (1.00, 0.92, 1.06)[slice_index]
+                width_factor = (0.88, 0.96, 0.84)[slice_index]
+                px = radius * math.cos(theta) * length_factor
+                py = radius * math.sin(theta) * width_factor
                 # Slight irregularity and end curl give real depth to the dry edge.
                 py += 0.00065 * math.sin(theta * 9 + q * 3 + slice_index)
-                curl = 0.0026 * math.cos(theta * 2) + 0.0012 * math.sin(theta * 7 + q * 3)
-                curl += 0.0035 * (q - 0.45) ** 2
-                thickness = 0.0020 + 0.0003 * math.sin(theta * 5 + q)
+                curl = 0.0024 * math.cos(theta * 2) + 0.0006 * math.sin(theta * 5 + slice_index)
+                curl += 0.0011 * math.sin(theta * 9 + q * 4 + slice_index) * taper
+                curl += 0.0075 * (q - 0.45) ** 2
+                thickness = 0.0024 + 0.0004 * math.sin(theta * 5 + q + slice_index)
                 pz = dz + curl + (0.5 if side == 0 else -0.5) * thickness
                 vertices.append((dx + math.cos(angle) * px - math.sin(angle) * py,
                                  dy + math.sin(angle) * px + math.cos(angle) * py, pz))
@@ -113,6 +122,26 @@ for slice_index, (angle, dx, dy, dz) in enumerate([
         for j in range(radial_steps):
             add_face([idx(0, i, j), idx(0, i, j + 1), idx(1, i, j + 1), idx(1, i, j)],
                      [(0.05, 0.1), (0.20, 0.1), (0.20, 0.2), (0.05, 0.2)])
+    slice_ranges.append((start, len(vertices), face_start, len(faces)))
+
+# Settle each upper slice just clear of the prior shells. This avoids red peel
+# poking through a neighboring flesh surface while keeping the pile compact.
+prior_trees = []
+slice_lifts = []
+for start, end, first_face, last_face in slice_ranges:
+    lift = 0
+    for attempt in range(101):
+        tree = BVHTree.FromPolygons(vertices, faces[first_face:last_face], all_triangles=False)
+        if not any(tree.overlap(prior) for prior in prior_trees):
+            break
+        for index in range(start, end):
+            x, y, z = vertices[index]
+            vertices[index] = (x, y, z + 0.00015)
+        lift += 0.00015
+    else:
+        raise RuntimeError('Unable to separate the slice shells')
+    prior_trees.append(tree)
+    slice_lifts.append(lift)
 
 # Put the origin at the centered footprint, with the lowest vertex on the floor.
 lo = [min(p[i] for p in vertices) for i in range(3)]
@@ -137,7 +166,7 @@ obj = bpy.data.objects.new('B47ANCEDProvisions_DriedAppleSlices', mesh)
 collection.objects.link(obj)
 obj.data.materials.append(material)
 for poly in mesh.polygons:
-    poly.use_smooth = True
+    poly.use_smooth = abs(poly.normal.z) > 0.45
 bpy.context.view_layer.objects.active = obj
 obj.select_set(True)
 
@@ -206,6 +235,7 @@ report = {
     'blender': bpy.app.version_string, 'preview_view_transform': scene.view_settings.view_transform,
     'authoring': 'Codex original procedural mesh and albedo; no external generation or borrowed mesh',
     'vertices': len(mesh.vertices), 'triangles': len(mesh.polygons), 'closed_shells': 3,
+    'shell_surface_intersections': 0, 'slice_separation_lifts_m': slice_lifts,
     'dimensions_metres': [hi[i] - lo[i] for i in range(3)], 'origin': 'footprint center, lowest vertex at Z=0',
     'transforms': 'identity rotation/scale, geometry authored in metres', 'materials': 1,
     'albedo': '256x256 RGBA, opaque, single UV atlas', 'uv_bounds': [0, 1],

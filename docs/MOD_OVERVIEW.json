@@ -3,12 +3,12 @@
   "id": "food",
   "name": "B47ANCE’d Provisions",
   "version": "0.8.0-dev.2",
-  "source_digest": "0dfe66ed4d45f60b85ccfc6fb86024bbd9e10d17ee45bc8aa05dbb7bae1d3548",
+  "source_digest": "f8741cbdb1ba198db4f8805b3443790f354c8a3a4ad7a0701aef86f34245491a",
   "reviewed": true,
   "features": [
     {
       "status": "Foundation",
-      "text": "Original dried-apple art: transparent inventory master/64x64 export plus locally authored three-slice Blender model, single albedo atlas, FBX and preview. Offline topology/round-trip checked; per-item runtime icon/model hookup pending."
+      "text": "Original dried-apple art: transparent inventory master/64x64 export plus locally authored three-slice Blender model with varied shapes, curled edges, irregular creases, single albedo atlas, FBX and preview. Offline topology, separated surfaces and round-trip checked; per-item runtime icon/model hookup pending."
     },
     {
       "status": "Source",
@@ -37,6 +37,7 @@
   ],
   "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Dried result keeps Base.Apple identity and vanilla appearance. Loaded sampled time only; unloaded/long gaps pause. Native transfer crash atomicity is not claimed. No package/deploy/publication. Legacy identifiers retained.",
   "evidence": [
+    "assets/branding/README.md",
     "assets/dried-apple/README.md",
     "assets/dried-apple/provenance.json",
     "assets/dried-apple/model/README.md",

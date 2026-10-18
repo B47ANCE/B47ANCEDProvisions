@@ -5,10 +5,16 @@
   "vertices": 756,
   "triangles": 1500,
   "closed_shells": 3,
+  "shell_surface_intersections": 0,
+  "slice_separation_lifts_m": [
+    0,
+    0.0031499999999999996,
+    0.007949999999999999
+  ],
   "dimensions_metres": [
-    0.08914883794583797,
-    0.07023590469658166,
-    0.01493447090761393
+    0.08733684630349106,
+    0.07153300760237369,
+    0.022684971376895305
   ],
   "origin": "footprint center, lowest vertex at Z=0",
   "transforms": "identity rotation/scale, geometry authored in metres",
@@ -20,7 +26,7 @@
   ],
   "manifold_edges": true,
   "degenerate_faces": 0,
-  "signed_volume_m3": 6.178652378213351e-06,
+  "signed_volume_m3": 8.949621901667606e-06,
   "fbx": {
     "axis_forward": "-Z",
     "axis_up": "Y",
@@ -30,10 +36,10 @@
   },
   "runtime": "Native SP/dedicated NOT TESTED; model not registered or deployed",
   "files": {
-    "build_model.py": "e9f5cf4c7f8f5e88922d4a5905c3c5e4f5aaf654354568d3cfb4e08a3a36e864",
-    "dried-apple-slices.blend": "99f00a615e425ec15e0ffb8c62faaa54f6c970a67348ed246ec8ed5c49e65914",
-    "B47ANCEDProvisions_DriedAppleSlices.fbx": "a1d71c845acc3f8c5527c9f8592053ce520d3c41efb31a490d0c197d37b76fd9",
-    "DriedApple_Albedo.png": "57c87d1ec581976616627c76962791c5c4ef29e789d6cd583a0767aede84fb75",
-    "dried-apple-model-preview.png": "89d53c0afe3025d9493cdc297d74b1083b6c15f77855db84d2e5f5ff219be9a6"
+    "build_model.py": "535bb77bb574a8143e0ad811a6ce6e116c430af80ca4cb4294159cd04e25bb65",
+    "dried-apple-slices.blend": "7f496c79749f05c93adafac96de3fa78fe9555d2472b58b1341622df6cb4fec3",
+    "B47ANCEDProvisions_DriedAppleSlices.fbx": "ef14e79e8633a322608aafdf8eebe9f491f1d3159d1f5001d7fe8562e6c0f79c",
+    "DriedApple_Albedo.png": "29e80b61c83140d2099043088a316feb4eed5c1bba43c8bd10246d1830b647e9",
+    "dried-apple-model-preview.png": "abfc61e7a73760776c31666bdec9a0f4efd0440b5e1c882add5030f5b760537c"
   }
 }
