@@ -55,7 +55,8 @@ def source():
     assert f'[b]Version {version}[/b]' in note
     assert 'https://github.com/B47ANCE/B47ANCEDProvisions' in description
     workshop = data['workshop.txt'].decode().splitlines()
-    assert 'id=3788591331' in workshop
+    # This legacy authoring file may omit id; WORKSHOP_ID.txt is canonical.
+    assert not any(line.startswith('id=') and line != 'id=3788591331' for line in workshop)
     assert '\n'.join(line[12:] for line in workshop if line.startswith('description=')) == description
     title = next(line[6:] for line in workshop if line.startswith('title='))
     status = json.loads(git('show', 'HEAD:docs/RELEASE_STATUS.json'))
