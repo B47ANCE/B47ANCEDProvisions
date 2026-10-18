@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "project_version": "0.8.0-dev.4",
+  "source_baseline": "2991fde8c462ac4aa70cc7fdf377800b3d74e290",
+  "audit_date": "2026-10-17",
+  "game_version": "42.21",
+  "steam_build": "25485521",
+  "runtime_status": "NOT_TESTED",
+  "g7": "BLOCKED / NOT TESTED",
+  "stable_g8": "BLOCKED",
+  "blocked_families": [
+    "other_sweet_preserves",
+    "pickling",
+    "curing",
+    "fermentation"
+  ],
+  "project_files": [
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/FruitDryingProfiles.lua",
+      "sha256": "cb89794f6ce65dadd6c8fa890bc1fce3204bc10323289845353eaff8c81e1ca9"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/AppleDrying.lua",
+      "sha256": "6f212a9fc3f55820a1eedc556ae8f7c79f5e8d0df050a914afed9ee351a38b6e"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/AppleDryingServer.lua",
+      "sha256": "6bd6cac0bd08df20ccedd8fb43ca5d714747bf352dfa409adeb5454a1d19486b"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/AppleDryingClient.lua",
+      "sha256": "889ffa5fbfd37a9ef821cc5378bfa5f86c1a7b9d517ba4a520bfd855f012af63"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/UI.json",
+      "sha256": "85fa972f37e2168f7fff2b58ce8f4180ccef7c1d87a12c539f6b152c9004d546"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/Sandbox.json",
+      "sha256": "e03836df5247d19673da0f11e66cc5bcf3273e411ca8607bb882b642aaa9e337"
+    },
+    {
+      "path": "tests/test_apple_drying.lua",
+      "sha256": "641be1e6a713a17fc43671caa7c63a400d1f14fb3e36fbc09319454220c9cdc4"
+    },
+    {
+      "path": "docs/PRESERVATION_CATALOG.csv",
+      "sha256": "50360279a7b9d1140868d05b9bb1972a9b2198fbc76c75d692fb0fc1d536ea54"
+    },
+    {
+      "path": "scripts/check_preservation_expansion.py",
+      "sha256": "2f30e356b33fe49a9b7849b3d6fb466ee0278db532303b9c06162d899c4bc947"
+    }
+  ],
+  "game_files": [
+    {
+      "path": "media/scripts/generated/items/food.txt",
+      "sha256": "408f2091bca9b1059ff8a8fb067076dcda7412903c84007656334ba6ac662e03"
+    },
+    {
+      "path": "media/lua/shared/Entity/TimedActions/ISHandcraftAction.lua",
+      "sha256": "ec72bdf147613fef617fbf57c88776fee5a58c05bb8dc80cb05075c90b753e2e"
+    },
+    {
+      "path": "media/scripts/generated/recipes/recipes_jarring.txt",
+      "sha256": "d31ef1a572bd256ce216cdd38fd817011fc2297e2daef260d047ebf85480e543"
+    },
+    {
+      "path": "media/scripts/generated/entities/agricultural/workstations/entity_Herb_Drying_Rack_craftRecipe.txt",
+      "sha256": "148bcb2f591a5b74851870260eb01ca82d8ac730e2db43147d91b5cdbb0fbb9e"
+    },
+    {
+      "path": "media/scripts/generated/entities/agricultural/workstations/entity_Drying_Rack_craftRecipe.txt",
+      "sha256": "d44e308fa42a1313f64e24215b9f02110a902038dee08b24b130132fe86b9961"
+    },
+    {
+      "path": "media/lua/shared/Foraging/Categories/Berries.lua",
+      "sha256": "d1f4efcc3806dd2ab45b9c77b0bf51a4444e2d3fe6ec58bfc2a62a71fe9482cb"
+    },
+    {
+      "path": "media/lua/shared/Foraging/Categories/Mushrooms.lua",
+      "sha256": "12e7cd333e73860dc6544ef222176cb79e1cfed8fd99dc4b1aa2c3f81db316ed"
+    }
+  ],
+  "native_classes": [
+    {
+      "member": "zombie/entity/components/crafting/recipe/CraftRecipeData.class",
+      "sha256": "2a1ee224278519c0728f97ea0681182166f8e76b641e07e59d70e1b8c7bab52e",
+      "lua_exposure": "NOT_PROVEN_BY_CLASS_INSPECTION"
+    },
+    {
+      "member": "zombie/inventory/types/Food.class",
+      "sha256": "14a5b02878a5608e3a28d3e91110961b3576694badf127dc7fe2749b8393d8b1",
+      "lua_exposure": "NOT_PROVEN_BY_CLASS_INSPECTION"
+    },
+    {
+      "member": "zombie/entity/components/crafting/recipe/HandcraftLogic.class",
+      "sha256": "8862ede4287ac9563932b90e65d2ffa37ca00c67aebdd2c57ef588db40a6dede",
+      "lua_exposure": "NOT_PROVEN_BY_CLASS_INSPECTION"
+    }
+  ],
+  "applicability": "Prior native callback limits remain hash-checked static facts. Jam/jelly now bypass those callbacks with the separately audited native timed-action route; no runtime proof."
+}

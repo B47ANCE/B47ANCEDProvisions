@@ -1,66 +1,105 @@
 # B47ANCE’d Provisions
 
-B47ANCE’d Provisions (formerly foodWorks) is the planned food-production, cooking, preservation, spoilage, storage, nutrition, and food-safety framework for the theWorks ecosystem. It extends Build 42 food and crafting systems instead of replacing them.
+![B47ANCE’d Provisions project thumbnail](preview.png)
 
-- Status: version `0.8.0-dev.1` adds a read-only rack/apple drying preview to the food inspection and preservation foundations. No production process is registered; this is not yet a gameplay release.
-- Mod ID: `B47ANCEDProvisions`
-- Author: B47ANCE
+B47ANCE’d Provisions (formerly foodWorks) provides food inspection, preservation
+and food-system foundations for theWorks ecosystem, using vanilla Build 42 food,
+inventory and entity-resource systems.
+
+- Status: version `0.8.0-dev.4` implements drying for 22 vanilla fruit types plus seven apple-assisted jam/jelly choices. Offline tests pass; native SP and dedicated multiplayer NOT TESTED. G7/stable G8 BLOCKED. Development build.
+- Mod ID: `B47ANCEDProvisions`; Workshop item: `3788591331`.
+- Author: B47ANCE; hard mod dependencies: none.
 - Source: [B47ANCE/B47ANCEDProvisions](https://github.com/B47ANCE/B47ANCEDProvisions) (public).
-- Hard dependencies: none beyond Project Zomboid.
-- Planned integrations: farmWorks, animalWorks, waterWorks, powerWorks, weatherWorks, and uiWorks.
-- Non-goals: replacing vanilla `Food`, replacing Build 42 crafting, or duplicating provider-owned crops, animals, fluids, power, or weather.
 
-The detailed research program is preserved in [docs/B42_API_RESEARCH_HANDOFF.md](docs/B42_API_RESEARCH_HANDOFF.md). The current API reads vanilla-owned age, freshness, cooking, freezing, heat, hunger/thirst, and nutrition state and allows third-party ingredient classification without mutating food items. Steam thumbnail and in-game icon metadata use the staged existing project assets.
-Approved feature research is allocated in [docs/ROADMAP.md](docs/ROADMAP.md).
+## Fruit drying
 
-`ApplianceTransactions` lets first-party process definitions reserve exact
-power and water, perform one owner-defined outcome, then commit both resources.
-A declared rejection rolls both reservations back; an ambiguous process or
-post-outcome resource commit remains quarantined on the appliance. Definitions
-must match the exact appliance and supply stable appliance/water identities.
+Carry a whole fresh supported fruit in your main inventory, stand beside an empty native
+small-plant drying rack, and choose **Dry [fruit]**. One start action is offered per
+supported type found in the bounded scan. Check progress, cancel to recover the actual aged fruit, or collect
+the dried result. The server validates the actor, exact item, rack, access and
+settings, using a private ledger rather than trusting public item metadata. Defaults: 48 observed loaded game hours and a sixfold shelf-life factor.
+Unloaded racks and long observation gaps pause progress; food still ages. Carried
+unfinished batches can return to an empty rack without receiving credit for carried time.
 
-`PreservationProcesses` owns bounded persistent jobs over registered definitions.
-Definitions freeze exact protected inputs, station capability, eligibility,
-duration, cadence, and environmental observation. Reservation, cancellation,
-spoilage, ready state, replay-safe completion, and uncertain-output quarantine
-are host-tested. The [first-process design](docs/FRUIT_DRYING_DESIGN.md) selects
-apple drying at a native small-plant rack as the candidate; no production item,
-recipe or station integration is registered. The [API audit](docs/FRUIT_DRYING_API_AUDIT.md)
-records installed Build 42.21 / Steam build 25485521 evidence and the authority,
-food-state, configuration and persistence blockers before implementation.
+Completion changes the **same item**, preserving its ID, calories, macronutrients
+and hunger. Weight becomes one quarter; thirst benefit becomes zero. Age and both
+freshness thresholds scale together, so old food is not refreshed. Poisoned,
+tainted, frozen, cooked, partly eaten, modified or unsupported inputs are rejected.
 
-The normalized view now includes packaging, taint, freeze/thaw progress,
-last-aging time, rotten replacement, and compost/rotting timers. See
-[docs/PRESERVATION_RUNTIME_AUDIT.md](docs/PRESERVATION_RUNTIME_AUDIT.md) for the
-verified persistence and authority boundary that still blocks mutation.
+Each output retains its original vanilla type and appearance, with a localized
+dried name (for example `Base.Apple` named **Dried apple slices** or `Base.Grapes`
+named **Raisins**). No new item type or native recipe is registered. This
+avoids the native recipe's post-output callback and a second consume/create
+transaction. Vanilla/other mods still recognize each original base type; see
+[behavior, configuration and limits](docs/APPLE_DRYING.md).
 
-Right-click one food item and choose **Inspect Food State** to view that
-normalized state without changing the item. The option is enabled by default and
-can be disabled with `foodWorks.EnableFoodInspection`.
+Supported types and the [149-item preservation catalog](docs/PRESERVATION_CATALOG.csv)
+are documented in the [expansion plan and evidence](docs/PRESERVATION_EXPANSION.md).
+Jams and jellies now have a separate [server-owned process](docs/SWEET_PRESERVES.md).
+Marmalade, fruit butter, pickling, salting/smoking and fermentation remain planned.
 
-## Identity and compatibility
+## Jams and jellies
 
-The project and mod folder are `B47ANCEDProvisions`. Workshop item `3788591331`
-is unchanged. Replace the enabled Mod ID `foodWorks` with `B47ANCEDProvisions`
-in launcher/server configuration when deploying this rename; do not enable both
-identities. No installed copy or server configuration was changed here.
+Carry a fresh Apple, Blackberry, Blueberry, Cherry, Grapes, Peach or Strawberry,
+an additional apple, eight whole SugarCubes items, an empty jar and pristine lid.
+Keep an empty pot and kitchen knife; jelly also needs a strainer and cheesecloth.
+Stand directly beside a powered, switched-on stove heated to at least 100 C, then
+right-click it to make jam or jelly. Microwaves are excluded. Apple jam/jelly uses
+two apples. All ingredients/tools come from vanilla; no extra mod is required.
 
-The public `foodWorks` Lua global, `require "foodWorks/..."` module paths,
-`foodWorks.EnableFoodInspection` sandbox option and translation identifiers,
-and `foodWorks.*.v1` persistence keys intentionally remain compatible. A Mod ID
-change does not establish save compatibility: existing-save load and dedicated
-join/rejoin still require native testing.
+Jam keeps all fruit/sugar food values. Jelly defaults to 70% of fruit plus all sugar;
+the remaining fruit values return as edible pulp. Sealed jars must be opened from
+the inventory menu. Opening returns a lid; eating/using the opened preserve uses
+vanilla food behavior and returns an empty jar when finished. Carried relative age
+survives both processing and opening. Vanilla jam icons/models are reused.
 
-Authoritative source: `Contents/mods/B47ANCEDProvisions`; no parallel `src/` tree.
-Canonical project version: root `VERSION`; mirrors: `version-inventory.json`.
-See [versioning](docs/VERSIONING.md), [identity migration](docs/IDENTITY_MIGRATION.md),
-and [testing](docs/TESTING.md) for commands and evidence boundaries. Historical
-ZIPs, staging backups, upload hashes and original research remain historical.
-The 0.7.0 rename was merged through PR #1; its design audit remains historical.
-The [0.8.0-dev.1 inspection prototype](docs/FRUIT_DRYING_PREVIEW.md) adds localized
-context actions for one apple or a clicked native rack. It reports failed/unknown
-prechecks, never claims whole-item eligibility and cannot start drying. Disable
-the display with `foodWorks.EnableFruitDryingPreview`. Production mutation remains
-blocked on the documented API, authority and runtime gates.
-No current package, deployment or Workshop publication is claimed. Offline checks
-pass; SP and dedicated multiplayer remain NOT TESTED, with G7 and stable G8 blocked.
+The server validates ingredients, stove access/heat, timing and settings, and
+initializes detached outputs before debit/publication. Four sandbox controls cover
+availability, action time, sealed shelf life and jelly yield. Existing drying is
+unchanged. See [recipes, settings, authority and failure limits](docs/SWEET_PRESERVES.md).
+
+Original [dried-apple inventory art](assets/dried-apple/README.md) is available as
+a transparent master and 64×64 PNG export. Runtime texture hookup is pending;
+the prototype still displays the vanilla apple icon. A matching
+[original Blender model](assets/dried-apple/model/README.md) includes a textured
+FBX and editable source; in-game model selection/display remains pending.
+
+`foodWorks.EnableFruitDrying`, `foodWorks.FruitDryingHours` (integer 6–168) and
+`foodWorks.FruitDryingShelfLifeMultiplier` (integer 1–12) are server-authoritative
+sandbox settings. Existing jobs keep their accepted settings. No power, water,
+weather, fuel or uiWorks dependency is added.
+
+## Existing foundations
+
+- Right-click one food to **Inspect Food State**, controlled by
+  `foodWorks.EnableFoodInspection`.
+- The independent read-only apple/rack preview remains available through
+  `foodWorks.EnableFruitDryingPreview`; its unknown states do not authorize gameplay.
+- Food adapters and ingredient classification expose normalized vanilla state.
+- `ApplianceTransactions` and `PreservationProcesses` remain engine-independent
+  foundations. The in-place process does not use their timers or change their contracts.
+- Planned integrations: farmWorks, animalWorks, waterWorks, powerWorks,
+  weatherWorks and uiWorks. No extra mod is required for this drying slice.
+
+The [original design](docs/FRUIT_DRYING_DESIGN.md), [native-hook audit](docs/FRUIT_DRYING_NATIVE_HOOKS.md)
+and [current source evidence](docs/APPLE_DRYING_EVIDENCE.json) distinguish historical
+proposals from the implemented Lua alternative. The broader research is retained
+in [B42 API research](docs/B42_API_RESEARCH_HANDOFF.md) and [roadmap](docs/MASTER_ROADMAP.md).
+
+## Identity, source and validation
+
+Use Mod ID `B47ANCEDProvisions`, replacing the old enabled `foodWorks` identity;
+do not enable both. Workshop identity is unchanged. Legacy `foodWorks` Lua/API,
+module paths, sandbox identifiers and existing save keys remain compatible. The
+new job/index keys have their own v1 schema. Existing-save/native join compatibility
+and downgrade behavior still require testing; preserve backups.
+
+Authoritative source: `Contents/mods/B47ANCEDProvisions`; canonical version: root
+`VERSION`, with mirrors in `version-inventory.json`. See [architecture](docs/ARCHITECTURE.md),
+[versioning](docs/VERSIONING.md), [testing](docs/TESTING.md) and [rename](docs/IDENTITY_MIGRATION.md).
+Current checks cover offline Lua 5.1, source fingerprints and static native
+persistence/sync paths. They do not prove game behavior or native crash ordering.
+G7 BLOCKED / NOT TESTED; stable G8 BLOCKED.
+
+No current package, deployment, game/server launch or Workshop publication is
+claimed. Historical archives/evidence retain their original versions.

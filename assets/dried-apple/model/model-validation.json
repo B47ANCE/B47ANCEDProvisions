@@ -1,0 +1,45 @@
+{
+  "blender": "4.5.3 LTS",
+  "preview_view_transform": "AgX",
+  "authoring": "Codex original procedural mesh and albedo; no external generation or borrowed mesh",
+  "vertices": 756,
+  "triangles": 1500,
+  "closed_shells": 3,
+  "shell_surface_intersections": 0,
+  "slice_separation_lifts_m": [
+    0,
+    0.0031499999999999996,
+    0.007949999999999999
+  ],
+  "dimensions_metres": [
+    0.08733684630349106,
+    0.07153300760237369,
+    0.022684971376895305
+  ],
+  "origin": "footprint center, lowest vertex at Z=0",
+  "transforms": "identity rotation/scale, geometry authored in metres",
+  "materials": 1,
+  "albedo": "256x256 RGBA, opaque, single UV atlas",
+  "uv_bounds": [
+    0,
+    1
+  ],
+  "manifold_edges": true,
+  "degenerate_faces": 0,
+  "signed_volume_m3": 8.949621901667606e-06,
+  "fbx": {
+    "axis_forward": "-Z",
+    "axis_up": "Y",
+    "global_scale": 1,
+    "bake_space_transform": true,
+    "animation": false
+  },
+  "runtime": "Native SP/dedicated NOT TESTED; model not registered or deployed",
+  "files": {
+    "build_model.py": "535bb77bb574a8143e0ad811a6ce6e116c430af80ca4cb4294159cd04e25bb65",
+    "dried-apple-slices.blend": "7f496c79749f05c93adafac96de3fa78fe9555d2472b58b1341622df6cb4fec3",
+    "B47ANCEDProvisions_DriedAppleSlices.fbx": "ef14e79e8633a322608aafdf8eebe9f491f1d3159d1f5001d7fe8562e6c0f79c",
+    "DriedApple_Albedo.png": "29e80b61c83140d2099043088a316feb4eed5c1bba43c8bd10246d1830b647e9",
+    "dried-apple-model-preview.png": "abfc61e7a73760776c31666bdec9a0f4efd0440b5e1c882add5030f5b760537c"
+  }
+}

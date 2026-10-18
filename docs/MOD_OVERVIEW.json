@@ -2,10 +2,22 @@
   "schema": 1,
   "id": "food",
   "name": "B47ANCE’d Provisions",
-  "version": "0.8.0-dev.1",
-  "source_digest": "b6e8a3691e0e5adcb04756f525355e519cb4f5daf981fc350745595603820b31",
+  "version": "0.8.0-dev.4",
+  "source_digest": "eac9c578344416012f569603b161fd5eeb06b675e5e71a49b3c567a5e1517b60",
   "reviewed": true,
   "features": [
+    {
+      "status": "Source",
+      "text": "Seven apple-assisted vanilla fruit jam/jelly choices using authenticated server intent grants plus native timed actions, heated powered stoves, exact inventory debit and initialized full-item delivery. Sealed/opened jars, sugar-inclusive nutrition, carried age, configurable jelly/pulp split and lid/empty-jar lifecycle; offline tested only."
+    },
+    {
+      "status": "Foundation",
+      "text": "Original dried-apple art: transparent inventory master/64x64 export plus locally authored three-slice Blender model with varied shapes, curled edges, irregular creases, single albedo atlas, FBX and preview. Offline topology, separated surfaces and round-trip checked; per-item runtime icon/model hookup pending."
+    },
+    {
+      "status": "Source",
+      "text": "Server-owned in-place drying for 22 exact vanilla fruit types: same ID/type/nutrients and carried age, private type-bound ledger, settings snapshots, resume/cancel/collect and native resource synchronization. Legacy Apple v1 jobs retained; offline only."
+    },
     {
       "status": "Source",
       "text": "Client-only apple/rack drying prechecks with localized failed/unknown states, bounded user-triggered scans and sandbox display toggle. Never starts drying or proves whole-item eligibility; native SP/dedicated not tested."
@@ -20,15 +32,20 @@
     },
     {
       "status": "Planned",
-      "text": "First candidate: one whole Apple at native small-plant drying racks, producing proposed dried-apple slices. Design and Build 42.21 API audit exist; production integration is not implemented."
+      "text": "149 vanilla ingredient identities catalogued. Drying supports 22; jam/jelly supports seven apple-assisted choices. Marmalade, fruit butter, pickling, curing, fermentation and further drying remain planned/blocked."
     },
     {
       "status": "Blocked",
-      "text": "Server hook/identity proof, food-state conservation, sandbox duration/snapshot binding, durable completion and unloaded/save/restart/join validation."
+      "text": "Other preservation families retain ingredient/heat/holder blockers. Native SP/dedicated action dispatch, food use, saves, drops, reconnect, restart and concurrency require runtime evidence. Native post-publication callback/first-food inheritance remains unsuitable."
     }
   ],
-  "limits": "Preview is local presentation only; native getter dispatch, rack variants and UI/controller behavior NOT TESTED. Whole-item integrity and server access remain UNKNOWN. Production G7 and stable G8 BLOCKED. Legacy foodWorks API/sandbox/save keys retained; no drying recipe/output/job registered. Existing coordinator legacy-provider compatibility remains unverified.",
+  "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Jam/jelly uses seven whole/default fruit identities, apple pectin, SugarCubes, empty jar/pristine lid and a hot powered non-microwave stove. Drying retains original Base visuals. Native delivery/crash save ordering is not atomic; output delivery failure never retries. No package/deploy/publication. Legacy identifiers retained.",
   "evidence": [
+    "assets/branding/README.md",
+    "assets/dried-apple/README.md",
+    "assets/dried-apple/provenance.json",
+    "assets/dried-apple/model/README.md",
+    "assets/dried-apple/model/model-validation.json",
     "README.md",
     "docs/ARCHITECTURE.md",
     "docs/FRUIT_DRYING_DESIGN.md",
@@ -38,7 +55,30 @@
     "docs/FRUIT_DRYING_PREVIEW.md",
     "docs/FRUIT_DRYING_PREVIEW_EVIDENCE.json",
     "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/FruitDryingPreview.lua",
-    "tests/test_fruit_drying_preview.lua"
+    "tests/test_fruit_drying_preview.lua",
+    "docs/FRUIT_DRYING_NATIVE_HOOKS.md",
+    "docs/FRUIT_DRYING_HOOK_EVIDENCE.json",
+    "scripts/check_native_drying_hooks.py",
+    "docs/APPLE_DRYING.md",
+    "docs/APPLE_DRYING_EVIDENCE.json",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/AppleDrying.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/AppleDryingServer.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/AppleDryingClient.lua",
+    "tests/test_apple_drying.lua",
+    "docs/PRESERVATION_EXPANSION.md",
+    "docs/PRESERVATION_EXPANSION_EVIDENCE.json",
+    "docs/PRESERVATION_CATALOG.csv",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/FruitDryingProfiles.lua",
+    "scripts/check_preservation_expansion.py",
+    "docs/SWEET_PRESERVES.md",
+    "docs/SWEET_PRESERVES_EVIDENCE.json",
+    "tests/test_sweet_preserves.lua",
+    "scripts/check_sweet_preserves.py",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/SweetPreserves.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/SweetPreservesAction.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/SweetPreservesClient.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/scripts/foodWorks_SweetPreserves.txt",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/SweetPreservesServer.lua"
   ],
   "relations": [
     {

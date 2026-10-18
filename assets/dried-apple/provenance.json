@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "created": "2026-10-17",
+  "tool": "OpenAI built-in image_gen",
+  "input_images": [],
+  "runtime_hooked_up": false,
+  "notes": "Master retains 26 border pixels at alpha 1/255; export border is fully transparent. Native SP/dedicated NOT TESTED.",
+  "files": [
+    {
+      "path": "dried-apple-master.png",
+      "width": 1254,
+      "height": 1254,
+      "format": "Format32bppArgb",
+      "transparent_pixels": 882283,
+      "opaque_pixels": 354,
+      "partial_alpha_pixels": 689879,
+      "nontransparent_border_pixels": 26,
+      "maximum_border_alpha": 1,
+      "sha256": "9d97250d7353ae1987e5a7fa2e4c611ee78e51939a892d2733b41bcd53ec9f72"
+    },
+    {
+      "path": "Item_B47ANCEDProvisions_DriedAppleSlices.png",
+      "width": 64,
+      "height": 64,
+      "format": "Format32bppArgb",
+      "transparent_pixels": 2219,
+      "opaque_pixels": 172,
+      "partial_alpha_pixels": 1705,
+      "nontransparent_border_pixels": 0,
+      "maximum_border_alpha": 0,
+      "sha256": "b66f7c8a31abee4b26834a01de47cad3ab198f34db08e7ccfbbe03f0189e0aa7"
+    }
+  ]
+}

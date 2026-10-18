@@ -1,11 +1,31 @@
 # Project versioning
 
-Current development version: 0.8.0-dev.1.
+Current development version: 0.8.0-dev.4.
 
-The October 17 design/API audit remains bound to its historical 0.7.0 baseline.
+The current 0.8.0-dev.4 checkpoint adds compatible jam/jelly gameplay, four
+sandbox controls and five new native food types. Native timed actions own server
+construction/timing/completion. Results use native food persistence, without a new
+custom ledger or schema. Existing drying contracts remain unchanged. Removing or
+downgrading the mod with new items present is unsupported; no stable release is
+approved. See SWEET_PRESERVES.md for the authority and validation limits.
+
+The preceding 0.8.0-dev.3 checkpoint is a compatible extension to 22 vanilla fruits.
+It retains the three sandbox settings and legacy module/network/save keys. New
+jobs optionally bind a whitelisted full type; a missing type still means Apple.
+No downgrade migration for non-Apple jobs is claimed. The broader adopted catalog
+marks unimplemented methods BLOCKED rather than presenting them as production.
+
+The initial 0.8.0-dev.2 checkpoint was a compatible gameplay addition within the
+0.8.0 MINOR line: server-owned in-place apple drying, three sandbox controls and
+new independently versioned v1 job/index keys. Existing Lua/API/sandbox/save
+identifiers remain intact. The same Apple becomes the saved dried result; no new
+food type or native recipe replaces the prior design candidate. Native SP and
+dedicated evidence remain NOT TESTED; no stable release is approved.
+
+Historical baseline: the October 17 design/API audit remains bound to its historical 0.7.0 baseline.
 The user then requested the read-only prototype: a compatible new inspection
-capability, classified MINOR and now recorded as 0.8.0-dev.1 throughout current
-mirrors. Production drying and 0.8.0 distribution remain subject to the documented
+capability classified MINOR at 0.8.0-dev.1. Its preview evidence remains historical,
+not a current version mirror or new gameplay proof. Production drying and 0.8.0 distribution remain subject to the documented
 gates. This checkpoint adds presentation only, with no shared state, new gameplay
 settings, persistence schema change or active recipe. The original identity/audit
 records retain their actual versions instead of being relabeled as current proof.

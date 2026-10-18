@@ -13,7 +13,45 @@ Provider boundaries:
 - weatherWorks owns normalized climate observations.
 - uiWorks owns presentation components; foodWorks supplies food-domain data.
 
-The first runtime component must be a read-only `FoodAdapter`, followed by an ingredient registry. Persistent preservation processes require duplication, save/load, refrigeration, and multiplayer proof before content expansion.
+Read-only food adapters and the ingredient registry remain existing foundations.
+The current first content process is a separate server-owned in-place fruit
+transformation; native game validation remains a release gate.
+
+## Sweet preserves in 0.8.0-dev.4
+
+`SweetPreserves` supplies bounded ingredient selection, state checks and pure food
+accounting. `SweetPreservesAction` is a new shared vanilla timed-action subclass;
+its server-start proof is absent from constructor/network arguments. A small
+server module authorizes exact intent from the authenticated client-command event
+player and grants one claiming server action permission to commit it. Grants are
+transient, bounded, revocable and expiring. Only the
+server/SP completion mutates inventory. Native action timing, food instances,
+empty containers, stoves, removal synchronization and add-or-drop delivery are
+reused. Outputs are initialized before any debit/publication. No global override,
+recipe callback mutation or custom persistent ledger is
+added. `SweetPreservesClient` only offers state-aware context actions and queues
+intent. New food script types distinguish sealed, opened and spent pulp states.
+
+See [SWEET_PRESERVES.md](SWEET_PRESERVES.md) for exact ingredients, settings, replay
+and interruption checks, native save/delivery failure boundaries and runtime gates.
+This resolves the limited jam/jelly slice without asserting support for other
+preservation families or changing the existing drying transaction.
+
+## Fruit expansion in 0.8.0-dev.3
+
+`FruitDryingProfiles.lua` defines 22 exact vanilla identities, localized input and
+result labels. The existing AppleDrying modules retain their public names and
+server-owned lifecycle. A non-Apple job adds an optional `fullType` to its private
+v1 record; absent type still means Apple. Both ID and full type must match the
+physical item. Native registered defaults are compared using that same type,
+never an Apple baseline for another fruit. Old Apple v1 jobs remain valid.
+
+The 149-item catalog records intended methods and their separate implementation
+status. Jam/jelly/marmalade, pickling, curing and fermentation are not registered.
+Their multi-input nutrition and heated/sealed-holder contracts remain blocked;
+post-create correction is not a pre-output authority model. See
+[expansion limits and evidence](PRESERVATION_EXPANSION.md). No client authority,
+custom Java or duplicated vanilla jarring/drying is substituted.
 
 ## Identity compatibility
 
@@ -21,7 +59,27 @@ Version 0.7.0 uses Mod ID `B47ANCEDProvisions`; the legacy `foodWorks` API,
 module paths, sandbox option and persistence keys remain stable. No gameplay,
 state ownership, server authority, networking or sandbox behavior changes.
 
-## Implemented foundation
+## Original in-place preservation in 0.8.0-dev.2
+
+`AppleDrying.lua` is a pure inspection/state model; `AppleDryingServer.lua` alone
+owns shared state and food writes. `AppleDryingClient.lua` supplies ordinary
+context actions and intent/results. Native rack resources hold the same Apple
+through start, drying and completion; no native craft or generic preservation job
+is started. Item ID, nutrition and hunger remain unchanged. Server-owned sandbox
+duration and shelf-life settings are snapshotted onto the item.
+
+A bounded server-only ledger owns scalar batch/commit state and rack discovery.
+Separate item snapshots are presentation/recovery hints and never trusted inputs. An idempotent conversion plan avoids replacement-spawn replay.
+Native full-item resource synchronization happens after conversion. Collection
+uses the native transfer route with exact identity and no poll fallback. This
+does not claim crash-atomic world/player saves; dedicated restart/race tests are
+still mandatory. See [current process](APPLE_DRYING.md) for trust boundaries,
+observed-time semantics, configuration, persistence and compatibility limits.
+
+## Historical foundation checkpoints
+
+The versioned statements below retain their historical scope. The original
+native-recipe candidate remains unimplemented; it is not the current process.
 
 Version 0.8.0-dev.1 adds client-only `FruitDryingPreview`, loaded once through the
 existing client API. Reports use native getter observations and localized statuses;

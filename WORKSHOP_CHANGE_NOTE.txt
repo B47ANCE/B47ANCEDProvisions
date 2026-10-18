@@ -1,3 +1,33 @@
+[b]Version 0.8.0-dev.4[/b]
+
+[h2]Jams and strained jellies[/h2]
+
+Seven vanilla fruit choices with an additional apple for pectin, whole SugarCubes, an empty jar/pristine lid and tools. Use a hot powered stove through vanilla server timed actions. Jelly returns edible pulp; sugar remains in the jar. Sealed jars must be opened before eating; lids and empty jars return through the opening/native food lifecycle. Nutrition and relative age are retained.
+
+Four server sandbox controls: availability, action time, sealed shelf life and jelly fruit yield. Vanilla inventory synchronization, stove heat and jam visuals are reused. Existing fruit drying is unchanged. Offline tests pass; native food/action integration remains untested.
+
+MP testing build - dedicated multiplayer NOT TESTED. Native SP NOT TESTED; G7 and stable G8 BLOCKED. No package/deployment/publication implied.
+
+[b]Version 0.8.0-dev.3[/b]
+
+[h2]Vanilla fruit-drying expansion[/h2]
+
+Extends server-owned in-place drying to 22 vanilla fruit types. Every batch retains its exact original type/ID and nutrients, carries age and uses saved server settings. Existing Apple v1 batches remain supported; non-Apple jobs require this version. Original fruit visuals remain.
+
+Adopts the 149-item vanilla preservation catalog. Jam, jelly, marmalade, fruit butter, pickling, curing and fermentation are not implemented: safe multi-input nutrition and heated/sealed-holder contracts remain blocked.
+
+MP testing build - dedicated multiplayer NOT TESTED. Native SP NOT TESTED; G7 and stable G8 BLOCKED. Offline tests only; no publication is implied.
+
+[b]Version 0.8.0-dev.2[/b]
+
+[h2]Server-owned in-place apple drying[/h2]
+
+Dry one whole fresh apple in a native small-plant rack, check progress, cancel or collect. The same Base.Apple item becomes marked dried apple slices: unchanged calories/macros/hunger, carried age and scaled freshness thresholds, quarter weight and no thirst benefit.
+
+Server sandbox defaults are 48 observed loaded game hours and 6x shelf life. Unloaded racks pause progress. Exact item/actor/access validation, a private server ledger, separate item snapshots, carried-batch recovery and post-conversion resource synchronization are implemented.
+
+MP testing build - dedicated multiplayer NOT TESTED. Native SP NOT TESTED; G7 and stable G8 BLOCKED. Base.Apple identity is retained; no distinct dried-food type or native recipe. Offline testing only; no publication is implied.
+
 [b]Version 0.8.0-dev.1[/b]
 
 [h2]Read-only apple-drying preview[/h2]

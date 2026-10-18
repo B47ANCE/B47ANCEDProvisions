@@ -1,6 +1,31 @@
 # Changelog
 
+## [0.8.0-dev.4]
+
+- Compatible MINOR-line checkpoint: add server-owned jam and strained jelly processing using vanilla timed actions, heat, jars, tools and full-item inventory synchronization. New output types; existing drying and save contracts retained.
+- Preserve ingredient nutrition and relative age, return edible strained pulp, require hot-stove access, and distinguish sealed from opened jars. Server sandbox settings control availability, processing time, shelf life and jelly yield.
+- Eight offline Lua suites pass; installed-source checks are static only. Native SP/dedicated NOT TESTED. G7 and stable G8 BLOCKED. No package, deployment or publication.
+
+## [0.8.0-dev.3]
+
+- Compatible MINOR-line checkpoint: extend server-owned in-place drying to audited whole vanilla fruits, retaining legacy apple batches and settings. Native SP/dedicated NOT TESTED.
+- Adopt the vanilla-only preservation catalog. Multi-ingredient sweet preserves, pickling, curing and fermentation remain blocked pending safe ingredient accounting and heat/holder authority. No recipes are advertised as implemented for those methods.
+- G7 BLOCKED / NOT TESTED; stable G8 BLOCKED. No package, deployment or publication.
+
+## [0.8.0-dev.2]
+
+- Adopt the user's supplied project thumbnail unchanged in the current preview/thumbnail slots and README; preserve the separate mod icon and historical packages.
+- Refine the Blender model with broader varied slices, curled/thicker edges, brighter flesh, red peel and irregular creases; prevent slice-surface intersections and refresh the mesh/texture/preview evidence. Art-only follow-up in the existing checkpoint; runtime hookup remains pending.
+- Asset-only follow-up: author a three-slice dried-apple model locally in Blender, with original albedo, editable source, FBX, preview and offline round-trip validation. No Meshy; native model hookup/display remains pending.
+- Asset-only follow-up: add original dried-apple inventory artwork, transparent raster master, 64×64 export and provenance. Runtime hookup remains pending; no gameplay or compatibility change and no new version checkpoint.
+- Develop server-owned, in-place apple drying at native small-plant racks, preserving item identity and nutrients instead of replacing food.
+- Add server sandbox duration/shelf-life controls, a private server ledger with separate item snapshots, and localized start/status/cancel/return/collect actions. MINOR feature checkpoint; Lua-only and legacy namespaces retained.
+- Native SP and dedicated multiplayer NOT TESTED; G7 and stable G8 remain BLOCKED. No package, deployment or publication.
+
 ## [0.8.0-dev.1]
+
+- Documentation/tooling follow-up: trace native server drying, distinguish live per-item tests from an inert recipe test, and record pre-OnCreate output synchronization plus duration-binding blockers. Runtime/version unchanged; working apple drying remains blocked.
+- Keep the recorded project preview fingerprint usable after a Windows CRLF checkout; installed game/native evidence still requires exact bytes.
 
 - Add a client-only apple/rack drying preview with localized checks and an independent sandbox display toggle.
 - Report failed and unknown checks without claiming whole-item eligibility or permitting processing. No recipe, inventory mutation, jobs or networking.

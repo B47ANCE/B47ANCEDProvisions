@@ -2,3 +2,10 @@ VERSION = 1,
 
 option foodWorks.EnableFoodInspection { type = boolean, default = true, page = foodWorks, translation = foodWorks_EnableFoodInspection, }
 option foodWorks.EnableFruitDryingPreview { type = boolean, default = true, page = foodWorks, translation = foodWorks_EnableFruitDryingPreview, }
+option foodWorks.EnableFruitDrying { type = boolean, default = true, page = foodWorks, translation = foodWorks_EnableFruitDrying, }
+option foodWorks.FruitDryingHours { type = integer, min = 6, max = 168, default = 48, page = foodWorks, translation = foodWorks_FruitDryingHours, }
+option foodWorks.FruitDryingShelfLifeMultiplier { type = integer, min = 1, max = 12, default = 6, page = foodWorks, translation = foodWorks_FruitDryingShelfLifeMultiplier, }
+option foodWorks.EnableSweetPreserves { type = boolean, default = true, page = foodWorks, translation = foodWorks_EnableSweetPreserves, }
+option foodWorks.SweetPreservesShelfLifeDays { type = integer, min = 7, max = 180, default = 30, page = foodWorks, translation = foodWorks_SweetPreservesShelfLifeDays, }
+option foodWorks.SweetPreservesTimeMultiplier { type = integer, min = 1, max = 5, default = 1, page = foodWorks, translation = foodWorks_SweetPreservesTimeMultiplier, }
+option foodWorks.JellyJuiceYieldPercent { type = integer, min = 25, max = 90, default = 70, page = foodWorks, translation = foodWorks_JellyJuiceYieldPercent, }

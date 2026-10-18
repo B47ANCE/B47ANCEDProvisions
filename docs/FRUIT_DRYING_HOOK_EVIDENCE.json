@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "audit_baseline_version": "0.8.0-dev.1",
+  "source_commit": "77771cbf27c0b0ea1b5812c23798c53e8f37b1a3",
+  "audit_date": "2026-10-17",
+  "game_version": "42.21",
+  "steam_build": "25485521",
+  "steam_app": "108600",
+  "provenance": "Read-only packaged-class inspection; matching loose classes where present. No game execution or pristine-install certificate.",
+  "native_classes": [
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/crafting/CraftLogicSystem.class",
+      "sha256": "f78fa70cbd7de8dde5a52a3d33e4f2ff07e99adc29fe65883633fba88195ac99",
+      "loose_present": false,
+      "loose_matches": null,
+      "status": "VERIFIED_NATIVE_INSPECTION_ONLY",
+      "lua_exposure": "NOT_PROVEN_BY_THIS_AUDIT",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/crafting/CraftLogic.class",
+      "sha256": "3d8ffd3163cbb9597f01b6d81cb610d6155a7b583c7ef161e2f11af1667ec68d",
+      "loose_present": false,
+      "loose_matches": null,
+      "status": "VERIFIED_NATIVE_INSPECTION_ONLY",
+      "lua_exposure": "NOT_PROVEN_BY_THIS_AUDIT",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/crafting/DryingCraftLogic.class",
+      "sha256": "b71ea59ca7d7bbdcfe06ff7b2b3f55733fb1bac9ec6d8b2f2c01e7298742fd0e",
+      "loose_present": false,
+      "loose_matches": null,
+      "status": "VERIFIED_NATIVE_INSPECTION_ONLY",
+      "lua_exposure": "NOT_PROVEN_BY_THIS_AUDIT",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/crafting/recipe/CraftRecipeData.class",
+      "sha256": "2a1ee224278519c0728f97ea0681182166f8e76b641e07e59d70e1b8c7bab52e",
+      "loose_present": false,
+      "loose_matches": null,
+      "status": "VERIFIED_NATIVE_INSPECTION_ONLY",
+      "lua_exposure": "NOT_PROVEN_BY_THIS_AUDIT",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/crafting/recipe/CraftRecipeManager.class",
+      "sha256": "44f552f77dfd1fbb3cd53512932df673fa5fd466da2b82621da19d034d20b7a9",
+      "loose_present": false,
+      "loose_matches": null,
+      "status": "VERIFIED_NATIVE_INSPECTION_ONLY",
+      "lua_exposure": "NOT_PROVEN_BY_THIS_AUDIT",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/scripting/entity/components/crafting/CraftRecipe.class",
+      "sha256": "a5c076d53e68f5cdfcc5bc17239aee1fb2072766471c29070ca84b30bd63c5de",
+      "loose_present": false,
+      "loose_matches": null,
+      "status": "VERIFIED_NATIVE_INSPECTION_ONLY",
+      "lua_exposure": "NOT_PROVEN_BY_THIS_AUDIT",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/resources/ResourceItem.class",
+      "sha256": "a18d81854c1fe2729afcf239d86e30bfd5ce426f994a92521954cabf3e20c77a",
+      "loose_present": false,
+      "loose_matches": null,
+      "status": "VERIFIED_NATIVE_INSPECTION_ONLY",
+      "lua_exposure": "NOT_PROVEN_BY_THIS_AUDIT",
+      "runtime_status": "NOT_TESTED"
+    }
+  ],
+  "findings_document": "docs/FRUIT_DRYING_NATIVE_HOOKS.md",
+  "checker": "scripts/check_native_drying_hooks.py",
+  "status": "PRODUCTION_BLOCKED",
+  "runtime_status": "NOT_TESTED"
+}

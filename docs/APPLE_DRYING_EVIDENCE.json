@@ -1,0 +1,382 @@
+{
+  "schema": 1,
+  "project_version": "0.8.0-dev.4",
+  "source_baseline": "2991fde8c462ac4aa70cc7fdf377800b3d74e290",
+  "audit_date": "2026-10-17",
+  "game_version": "42.21",
+  "steam_build": "25485521",
+  "steam_app": "108600",
+  "provenance": "Read-only installed Lua/data and packaged-class inspection. No raw implementation copied; no native execution or Steam-integrity certificate.",
+  "source_files": [
+    {
+      "id": "A01",
+      "scope": "game",
+      "path": "media/lua/shared/Entity/TimedActions/ISItemSlotAddAction.lua",
+      "sha256": "ee9c6b44e08c173b068b915dbc587360e2da704ec951caccff169489283d6f38",
+      "lines": [
+        [
+          70,
+          81
+        ]
+      ],
+      "statement": "Native resource offer from a shared timed-action completion; not independent security proof.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A02",
+      "scope": "game",
+      "path": "media/lua/shared/Entity/TimedActions/ISItemSlotRemoveAction.lua",
+      "sha256": "c6d9a899fd2c7ef8064a725c4e9226ba5d6ad231f5438adf2caa1fc85781dd81",
+      "lines": [
+        [
+          70,
+          83
+        ]
+      ],
+      "statement": "Observed server exact-ID removal/resource sync/existing-item AddItem and added-item synchronization; custom path omits poll fallback.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A03",
+      "scope": "game",
+      "path": "media/lua/server/Traps/STrapGlobalObject.lua",
+      "sha256": "8658508304ea8bdefe2567f0a3886c6d6cdd712dde5dfca95d5d11c55ed20789",
+      "lines": [
+        [
+          330,
+          363
+        ]
+      ],
+      "statement": "Server instanceItem comparison/factory lead and weight setters; process never adds its comparison object.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A04",
+      "scope": "game",
+      "path": "media/lua/server/ClientCommands.lua",
+      "sha256": "c9de3d3024a46e2b3ab1670c11f98885647bfb6d73114ff7896bf41e263923fd",
+      "lines": [
+        [
+          1296,
+          1307
+        ],
+        [
+          215,
+          233
+        ]
+      ],
+      "statement": "Engine-supplied actor dispatcher and observed server item-stat synchronization.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A05",
+      "scope": "game",
+      "path": "media/lua/shared/TimedActions/Fishing/TimedActions/ISChangeFishingRodEquip.lua",
+      "sha256": "e28abb9d96421f0e2d2bbb0266aca975e59ed97862d8f4b5e486e60370d67bd1",
+      "lines": [
+        [
+          50,
+          58
+        ]
+      ],
+      "statement": "syncItemModData(character,item) is a global server/shared completion call, not an item method.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A06",
+      "scope": "game",
+      "path": "media/lua/server/Farming/SPlantGlobalObject.lua",
+      "sha256": "0db75ed607f5c2bc82ebeaf7b52d5965241077e184e52f1a6cf88762c916b2f7",
+      "lines": [
+        [
+          48,
+          55
+        ],
+        [
+          80,
+          89
+        ]
+      ],
+      "statement": "Server object ModData and transmitModData call forms.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A07",
+      "scope": "game",
+      "path": "media/lua/server/Vehicles/ProfessionVehicles.lua",
+      "sha256": "dd8f54aff597b75ff3662c74d9cac4f019030c9cf5e37b44982eeb1bdeeb8be6",
+      "lines": [
+        [
+          17,
+          22
+        ],
+        [
+          343,
+          347
+        ]
+      ],
+      "statement": "Server ModData.getOrCreate and global data initialization event.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A08",
+      "scope": "game",
+      "path": "media/lua/server/Farming/SFarmingSystem.lua",
+      "sha256": "28576002bbab0e0561c713bc6b8e2d829d6cd7b917f5b8a702cbfcef46b39914",
+      "lines": [
+        [
+          253,
+          261
+        ],
+        [
+          576,
+          586
+        ]
+      ],
+      "statement": "World-age-hour read and EveryTenMinutes registration on server.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A09",
+      "scope": "game",
+      "path": "media/lua/server/BuildingObjects/ISDoubleDoor.lua",
+      "sha256": "fe845d78ba6330f3c2cc4230e963ed1e2cbdcad6bdad82ca52169d82b6bbef39",
+      "lines": [
+        [
+          144,
+          147
+        ]
+      ],
+      "statement": "Adjacent square barrier check isSomethingTo; own process conservatively checks both directions.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A10",
+      "scope": "game",
+      "path": "media/lua/server/Foraging/forageServer.lua",
+      "sha256": "f4e6dd2f419dee8692defcf96207b71dc67f73f8af805d71c394c486e1d489ce",
+      "lines": [
+        [
+          210,
+          225
+        ]
+      ],
+      "statement": "Server getTimestampMs call supports transient RPC work bounds.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A11",
+      "scope": "game",
+      "path": "media/lua/client/ISUI/ISInventoryPaneContextMenu.lua",
+      "sha256": "4cbbc52cbab591cee0c7d1c5927125bf59c70c588936b04d3ce0fe75648a96cc",
+      "lines": [
+        [
+          2206,
+          2211
+        ],
+        [
+          2720,
+          2750
+        ]
+      ],
+      "statement": "Client player-bound sendClientCommand and item custom-name calls.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A12",
+      "scope": "game",
+      "path": "media/lua/client/ISUI/AdminPanel/ISItemEditPanel.lua",
+      "sha256": "33f0f13929c43be755588ac7ea89eb728a1c64be0b499dda774b9499dbe74050",
+      "lines": [
+        [
+          64,
+          89
+        ]
+      ],
+      "statement": "Observed age, freshness threshold and nutrition getter/setter names; editor is not gameplay authorization.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "A13",
+      "scope": "game",
+      "path": "media/scripts/generated/items/food.txt",
+      "sha256": "408f2091bca9b1059ff8a8fb067076dcda7412903c84007656334ba6ac662e03",
+      "lines": [
+        [
+          8658,
+          8677
+        ]
+      ],
+      "statement": "Installed Apple authored properties; runtime comparison follows current registered definition.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P01",
+      "scope": "project",
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/AppleDrying.lua",
+      "sha256": "6f212a9fc3f55820a1eedc556ae8f7c79f5e8d0df050a914afed9ee351a38b6e",
+      "lines": [
+        1,
+        143
+      ],
+      "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P02",
+      "scope": "project",
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/AppleDryingServer.lua",
+      "sha256": "6bd6cac0bd08df20ccedd8fb43ca5d714747bf352dfa409adeb5454a1d19486b",
+      "lines": [
+        1,
+        390
+      ],
+      "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P03",
+      "scope": "project",
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/AppleDryingClient.lua",
+      "sha256": "889ffa5fbfd37a9ef821cc5378bfa5f86c1a7b9d517ba4a520bfd855f012af63",
+      "lines": [
+        1,
+        135
+      ],
+      "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P04",
+      "scope": "project",
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/Load.lua",
+      "sha256": "a41544de6c87a3f3a62280f8f7615547c1cf2202e3e5482af0d6041a2d3fd57a",
+      "lines": [
+        1,
+        3
+      ],
+      "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P05",
+      "scope": "project",
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/Load.lua",
+      "sha256": "ee3303e252d885fc7bc0c4cbdf6a4c77305e05a4c9f5a686ae831e2f52e548f5",
+      "lines": [
+        1,
+        5
+      ],
+      "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P06",
+      "scope": "project",
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/sandbox-options.txt",
+      "sha256": "7528772f69833737ffc4d3cfbd18f15bca592e0c782706335c8755459e398434",
+      "lines": [
+        1,
+        7
+      ],
+      "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P07",
+      "scope": "project",
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/UI.json",
+      "sha256": "85fa972f37e2168f7fff2b58ce8f4180ccef7c1d87a12c539f6b152c9004d546",
+      "lines": [
+        1,
+        109
+      ],
+      "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P08",
+      "scope": "project",
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/Sandbox.json",
+      "sha256": "e03836df5247d19673da0f11e66cc5bcf3273e411ca8607bb882b642aaa9e337",
+      "lines": [
+        1,
+        13
+      ],
+      "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "id": "P09",
+      "scope": "project",
+      "path": "tests/test_apple_drying.lua",
+      "sha256": "641be1e6a713a17fc43671caa7c63a400d1f14fb3e36fbc09319454220c9cdc4",
+      "lines": [
+        1,
+        361
+      ],
+      "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
+      "runtime_status": "NOT_TESTED"
+    }
+  ],
+  "native_classes": [
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/inventory/types/Food.class",
+      "sha256": "14a5b02878a5608e3a28d3e91110961b3576694badf127dc7fe2749b8393d8b1",
+      "loose_present": false,
+      "loose_matches": null,
+      "lua_exposure": "Guarded; native declarations alone remain INFERRED",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/inventory/InventoryItem.class",
+      "sha256": "48f01be16d1ef1b76e37638fac6e25ca4eb285ad38ab2f462caa5597318c7f9d",
+      "loose_present": false,
+      "loose_matches": null,
+      "lua_exposure": "Guarded; native declarations alone remain INFERRED",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/resources/Resource.class",
+      "sha256": "2cfda98a7d9e854b3fcc519c3bf6e45e52d765d6c32965476cc3b399e76eb539",
+      "loose_present": false,
+      "loose_matches": null,
+      "lua_exposure": "Guarded; native declarations alone remain INFERRED",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/resources/ResourceItem.class",
+      "sha256": "a18d81854c1fe2729afcf239d86e30bfd5ce426f994a92521954cabf3e20c77a",
+      "loose_present": false,
+      "loose_matches": null,
+      "lua_exposure": "Guarded; native declarations alone remain INFERRED",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/entity/components/crafting/CraftLogic.class",
+      "sha256": "3d8ffd3163cbb9597f01b6d81cb610d6155a7b583c7ef161e2f11af1667ec68d",
+      "loose_present": false,
+      "loose_matches": null,
+      "lua_exposure": "Guarded; native declarations alone remain INFERRED",
+      "runtime_status": "NOT_TESTED"
+    },
+    {
+      "path": "projectzomboid.jar",
+      "member": "zombie/Lua/LuaManager$GlobalObject.class",
+      "sha256": "80ecbd3bd702db2f992db6cba7cb09c32d775fa6f2a3297e0460874ff5ba20c7",
+      "loose_present": false,
+      "loose_matches": null,
+      "lua_exposure": "Guarded; native declarations alone remain INFERRED",
+      "runtime_status": "NOT_TESTED"
+    }
+  ],
+  "runtime_status": "NOT_TESTED",
+  "g7": "BLOCKED / NOT TESTED",
+  "stable_g8": "BLOCKED",
+  "applicability": "Current fruit extension source/test fingerprints. Existing native persistence facts reused only after matching installed hashes. Native SP/dedicated NOT TESTED."
+}
