@@ -2,10 +2,14 @@
   "schema": 1,
   "id": "food",
   "name": "B47ANCE’d Provisions",
-  "version": "0.8.0-dev.4",
-  "source_digest": "eac9c578344416012f569603b161fd5eeb06b675e5e71a49b3c567a5e1517b60",
+  "version": "0.8.0-dev.5",
+  "source_digest": "cabce6c81bf45a9c6077dca22150e230dc77ad1de4b5ed208cbdcba9136b6649",
   "reviewed": true,
   "features": [
+    {
+      "status": "Source",
+      "text": "Approved transparent subject-only 64x64 mod icon; project thumbnail bytes unchanged. Committed-source Workshop test packaging and guarded existing-item SteamCMD upload, with canonical text and source/package provenance. Native display/runtime not tested."
+    },
     {
       "status": "Source",
       "text": "Seven apple-assisted vanilla fruit jam/jelly choices using authenticated server intent grants plus native timed actions, heated powered stoves, exact inventory debit and initialized full-item delivery. Sealed/opened jars, sugar-inclusive nutrition, carried age, configurable jelly/pulp split and lid/empty-jar lifecycle; offline tested only."
@@ -39,7 +43,7 @@
       "text": "Other preservation families retain ingredient/heat/holder blockers. Native SP/dedicated action dispatch, food use, saves, drops, reconnect, restart and concurrency require runtime evidence. Native post-publication callback/first-food inheritance remains unsuitable."
     }
   ],
-  "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Jam/jelly uses seven whole/default fruit identities, apple pectin, SugarCubes, empty jar/pristine lid and a hot powered non-microwave stove. Drying retains original Base visuals. Native delivery/crash save ordering is not atomic; output delivery failure never retries. No package/deploy/publication. Legacy identifiers retained.",
+  "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Jam/jelly uses seven whole/default fruit identities, apple pectin, SugarCubes, empty jar/pristine lid and a hot powered non-microwave stove. Drying retains original Base visuals. Native delivery/crash save ordering is not atomic; output delivery failure never retries. Authorized Workshop MP test distribution after offline/package checks; no local deployment. Upload never establishes runtime proof. Legacy identifiers retained.",
   "evidence": [
     "assets/branding/README.md",
     "assets/dried-apple/README.md",
@@ -78,7 +82,13 @@
     "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/SweetPreservesAction.lua",
     "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/SweetPreservesClient.lua",
     "Contents/mods/B47ANCEDProvisions/42/media/scripts/foodWorks_SweetPreserves.txt",
-    "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/SweetPreservesServer.lua"
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/SweetPreservesServer.lua",
+    "assets/branding/icon-provenance.json",
+    "scripts/check_branding.py",
+    "scripts/workshop_package.py",
+    "Publish-Workshop.ps1",
+    "docs/PUBLISHING.md",
+    "docs/RELEASE_STATUS.json"
   ],
   "relations": [
     {

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "project_version": "0.8.0-dev.4",
+  "project_version": "0.8.0-dev.5",
   "source_baseline": "2991fde8c462ac4aa70cc7fdf377800b3d74e290",
   "audit_date": "2026-10-17",
   "game_version": "42.21",
@@ -378,5 +378,6 @@
   "runtime_status": "NOT_TESTED",
   "g7": "BLOCKED / NOT TESTED",
   "stable_g8": "BLOCKED",
-  "applicability": "Current fruit extension source/test fingerprints. Existing native persistence facts reused only after matching installed hashes. Native SP/dedicated NOT TESTED."
+  "applicability": "Current fruit extension source/test fingerprints. Existing native persistence facts reused only after matching installed hashes. Native SP/dedicated NOT TESTED.",
+  "visual_checkpoint_applicability": "0.8.0-dev.5 changes the icon/version and packaging only. Existing native facts are reused only after installed hashes match; current offline checks are rerun, with SP/dedicated still NOT_TESTED."
 }

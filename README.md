@@ -6,7 +6,7 @@ B47ANCE’d Provisions (formerly foodWorks) provides food inspection, preservati
 and food-system foundations for theWorks ecosystem, using vanilla Build 42 food,
 inventory and entity-resource systems.
 
-- Status: version `0.8.0-dev.4` implements drying for 22 vanilla fruit types plus seven apple-assisted jam/jelly choices. Offline tests pass; native SP and dedicated multiplayer NOT TESTED. G7/stable G8 BLOCKED. Development build.
+- Status: version `0.8.0-dev.5` implements drying for 22 vanilla fruit types plus seven apple-assisted jam/jelly choices. Offline tests pass; native SP and dedicated multiplayer NOT TESTED. G7/stable G8 BLOCKED. Development build.
 - Mod ID: `B47ANCEDProvisions`; Workshop item: `3788591331`.
 - Author: B47ANCE; hard mod dependencies: none.
 - Source: [B47ANCE/B47ANCEDProvisions](https://github.com/B47ANCE/B47ANCEDProvisions) (public).
@@ -68,6 +68,15 @@ FBX and editable source; in-game model selection/display remains pending.
 `foodWorks.FruitDryingShelfLifeMultiplier` (integer 1–12) are server-authoritative
 sandbox settings. Existing jobs keep their accepted settings. No power, water,
 weather, fuel or uiWorks dependency is added.
+
+## Icon and Workshop testing build
+
+The approved subject-only image is exported as the separate 64x64 transparent mod
+icon. Both project thumbnail PNGs retain their original bytes. Gameplay is unchanged
+from 0.8.0-dev.4. The user authorized this 0.8.0-dev.5 visual checkpoint and existing
+Workshop item's MP testing update after offline/package checks; native SP/dedicated
+remain NOT TESTED. See [packaging, provenance and publishing](docs/PUBLISHING.md).
+The uploader preserves the remote thumbnail and visibility by omitting those fields.
 
 ## Existing foundations
 

@@ -1,52 +1,39 @@
 [h1]B47ANCE’d Provisions[/h1]
 
-Cooking, food preparation, ingredients, freshness, and food-system infrastructure for theWorks ecosystem.
+Lua-only fruit preservation using vanilla food, inventory, stove and drying-rack systems.
 
-B47ANCE’d Provisions provides normalized food identity and properties that future recipes, preservation systems, and compatible mods can share without replacing vanilla behavior prematurely.
-
-[b]Mod Version: 0.8.0-dev.4[/b]
-
-[b]Development Status[/b]
+[b]Mod Version: 0.8.0-dev.5[/b]
 
 MP testing build - dedicated multiplayer NOT TESTED
 
-Development build with in-place drying for 22 vanilla fruit types plus apple-assisted jams and strained jellies for seven fruit choices. Offline checks pass; native SP/dedicated behavior remains untested. This is not a stable release.
-
-Jams and jellies use fresh vanilla fruit, an additional apple, whole sugar cubes, an empty jar/lid and tools at a hot powered stove. Jelly returns edible strained pulp. Open sealed jars before eating. Marmalade, fruit butter, pickling, curing and fermentation remain unimplemented.
-
 [h2]Current Features[/h2]
 [list]
-[*]Vanilla and third-party food adapter registry
-[*]Normalized ingredient, food-property, freshness, and identity inspection
-[*]Read-only packaging, taint, freezing/thawing, aging, rotten-replacement, and compost-state inspection
-[*]Optional inventory action showing normalized food, preservation, effect, and nutrition state without changing the item
-[*]Server-owned drying for 22 vanilla fruit types at native small-plant racks; preserves each original item ID/type and nutrients, carries age, reduces weight and removes thirst benefit
-[*]Server-owned jam/jelly actions, sealed/opened jars, edible pulp and carried relative age; vanilla tools, stove heat, inventory synchronization and jam visuals
-[*]Server sandbox preserve availability, processing time, sealed shelf life and jelly yield
-[*]Server sandbox drying hours and shelf-life multiplier; existing batches keep accepted settings; unloaded racks pause progress
-[*]Read-only apple/rack drying prechecks with localized unknown/failed checks; no processing or eligibility authorization
-[*]Recoverable appliance-process transaction contract for exact power and water reservations
-[*]Persistent named-preservation jobs with protected inputs, cadence, spoilage, cancellation, and recovery
-[*]Stable identities for cross-mod processing and recipes
-[*]Evidence-audited foundations for quality, preservation, and contamination semantics
-[*]Provider isolation and nil-safe extension points
-[*]Default-on sandbox control for the food inspection action
+[*]Dry 22 whole vanilla fruit types at native small-plant drying racks. Results retain the original item ID, type, calories and macronutrients, with carried age, quarter weight and no thirst benefit.
+[*]Make jam or strained jelly from Apple, Blackberry, Blueberry, Cherry, Grapes, Peach or Strawberry, plus an additional apple for pectin, eight whole SugarCubes items, an empty jar and pristine lid.
+[*]Use an empty pot and kitchen knife beside a powered, switched-on stove at 100 C or above. Jelly also needs a strainer and cheesecloth. Microwaves are excluded.
+[*]Jelly defaults to 70% of fruit food values plus all sugar; remaining fruit values return as edible pulp. Open sealed jars from inventory before eating. Opening returns a lid; normal food use returns an empty jar when finished.
+[*]Server validation, native timed actions, food aging and inventory synchronization; preserved nutrition and relative age.
+[*]Read-only food-state inspection and the existing ingredient/appliance/preservation API foundations.
+[*]Transparent subject-only mod icon; original project thumbnails retained.
 [/list]
 
-[h2]Ecosystem Integration[/h2]
-[list]
-[*]Owns cooking, food preparation, spoilage, and food-system expansion
-[*]Planned integrations consume farmWorks crops, animalWorks products, waterWorks fluids, powerWorks energy, and weatherWorks environment state
-[*]Supports optional uiWorks presentation when available
-[*]Has no required mod dependencies in the current foundation
-[/list]
+[h2]Compatibility and Requirements[/h2]
 
-[h2]Upcoming Features[/h2]
-[list]
-[*]Practical preparation and survival recipes
-[*]Preservation, storage, spoilage, nutrition, and food safety
-[*]Cross-Works processing and kitchen infrastructure
-[/list]
+Installed-source audit: Project Zomboid Build 42.21, Steam build 25485521. Native SP and dedicated multiplayer NOT TESTED. G7 and stable-release G8 remain BLOCKED. No required mods or custom Java/JAR dependencies. Existing foodWorks Lua/API, sandbox and persistence identifiers remain compatible. Whole/default unmodified ingredients in main inventory are required; poisoned, stale, frozen, partial, filled or unsuitable inputs are rejected. Foraged instances with different nutrition/metadata may be rejected.
+
+[h2]Configuration[/h2]
+
+Server sandbox settings control fruit drying (enabled by default), drying hours (48), dried shelf-life multiplier (6), jams/jellies (enabled), sealed fresh days (30), action time multiplier (1) and jelly fruit yield (70%). Existing batches/jars retain their accepted food settings. Food inspection and the read-only apple/rack preview have separate toggles.
+
+[h2]Source Code and Development[/h2]
+
+[url=https://github.com/B47ANCE/B47ANCEDProvisions]GitHub - Source Code and Issues[/url]
+
+[h2]Known Issues and Testing[/h2]
+
+MP testing build - dedicated multiplayer NOT TESTED. Eight offline Lua suites plus source/API, branding, version and package integrity checks pass. Native action dispatch, heat interruption, drops, eating/evolved recipes/container returns, save/load, rejoin and dedicated restarts still need runtime testing. Unexpected native delivery/sync failures can lose output or leave a client stale; no crash-atomic save guarantee. No downgrade migration exists for new preserve item types/non-Apple jobs. Preserve save backups.
+
+Dried fruit retains vanilla identity/visuals; original dried-apple art/model runtime hookup is pending. Jam/jelly uses vanilla jam visuals. Marmalade, fruit butter, pickling, curing and fermentation remain planned, not implemented. This test upload does not establish MP correctness or a stable release.
 
 [b]Credits[/b]
 Project Director & Designer: B47ANCE
@@ -54,5 +41,3 @@ Development, systems architecture, implementation, testing & documentation: Code
 
 Workshop ID: 3788591331
 Mod ID: B47ANCEDProvisions
-
-[url=https://github.com/B47ANCE/B47ANCEDProvisions]Source code and development history[/url]

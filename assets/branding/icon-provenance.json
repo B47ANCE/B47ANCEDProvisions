@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "created_on": "2026-10-18",
+  "baseline_project_version": "0.8.0-dev.5",
+  "source": "User-approved built-in image-generation cutout of preview.png; master unchanged.",
+  "export": "64x64 RGBA PNG; System.Drawing bicubic export. No text or background fill.",
+  "thumbnail_sha256": "e5331f185067436ec530f6464dfe14600eeb41d4ea0458335013701d14a26ea3",
+  "files": {
+    "assets/branding/provisions-icon-master.png": "145bef96774b93c8165ee36a7c9e12e5c93ca53fe577903b73f467e0ee358c59",
+    "assets/branding/provisions-icon.prompt.txt": "0d2fc36a18a7437ddeccaeb90b7def0d261f26efa5e6bcd7136b3521f64452c2",
+    "assets/branding/export-icon.ps1": "e0f07d9eaf4ba99069c8eb1c8bb1e64bf6a29165111490986e9e389ac8203782",
+    "Contents/mods/B47ANCEDProvisions/42/icon.png": "94a341f6be9320d8dab138c074dbab3ea0a4b46f9b2669212ed51a86814c7f4f"
+  },
+  "runtime_display": "NOT_TESTED"
+}

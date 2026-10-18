@@ -1,8 +1,15 @@
 # Project versioning
 
-Current development version: 0.8.0-dev.4.
+Current development version: 0.8.0-dev.5.
 
-The current 0.8.0-dev.4 checkpoint adds compatible jam/jelly gameplay, four
+The current 0.8.0-dev.5 checkpoint is compatible visual/PATCH-class work within
+the existing 0.8.0 MINOR line: approved transparent icon and first reproducible
+Workshop test packaging. Gameplay/settings/save contracts are unchanged. The user
+explicitly authorized existing-item publication after checks, with G7 and stable
+G8 still BLOCKED. Current packager/uploader: `scripts/workshop_package.py` and
+`Publish-Workshop.ps1`; canonical Workshop text paths remain unchanged.
+
+The preceding 0.8.0-dev.4 checkpoint adds compatible jam/jelly gameplay, four
 sandbox controls and five new native food types. Native timed actions own server
 construction/timing/completion. Results use native food persistence, without a new
 custom ledger or schema. Existing drying contracts remain unchanged. Removing or
@@ -56,9 +63,9 @@ this is not stable-release approval.
 - Historical output: existing `dist/` archives and staging-backups, SHA256SUMS.txt,
   and .steamcmd-last-upload.sha256. Preserve exact bytes and original names.
 - Future current packages: `dist/current/B47ANCEDProvisions-<VERSION>-workshop-ready.zip`,
-  with root VERSION and the declared mod.info member. This is a declared contract,
-  not an existing generator or authorization to package. No build/uploader script
-  exists within this project; a future packaging workflow must read VERSION.
+  with root VERSION, SOURCE.json and the declared mod.info member. The new builder
+  reads committed source and refuses replacement; see PUBLISHING.md. Historical
+  packages/provenance remain protected.
 
 ## Commands
 

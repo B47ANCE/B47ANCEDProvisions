@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.0-dev.5]
+
+- Compatible visual/PATCH-class checkpoint within the 0.8.0 MINOR development line: adopt the approved transparent subject artwork as the mod icon; preserve the thumbnail bytes. No gameplay, settings or save changes.
+- Add reproducible committed-source Workshop packaging, inventory/integrity validation and release provenance for the authorized existing-item MP testing upload.
+- Native SP/dedicated NOT TESTED; G7 and stable G8 BLOCKED. Workshop test distribution is authorized separately; no local deployment or game/server launch.
+
 ## [0.8.0-dev.4]
 
 - Compatible MINOR-line checkpoint: add server-owned jam and strained jelly processing using vanilla timed actions, heat, jars, tools and full-item inventory synchronization. New output types; existing drying and save contracts retained.

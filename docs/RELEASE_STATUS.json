@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "project_version": "0.8.0-dev.5",
+  "distribution": "Workshop MP testing build",
+  "steam_app": "108600",
+  "workshop_id": "3788591331",
+  "mod_id": "B47ANCEDProvisions",
+  "game_version": "42.21",
+  "steam_build": "25485521",
+  "offline": "PASS",
+  "sp": "NOT_TESTED",
+  "dedicated": "NOT_TESTED",
+  "g7": "BLOCKED / NOT TESTED",
+  "stable_g8": "BLOCKED",
+  "icon": "Approved transparent subject-only 64x64 export; native display NOT_TESTED",
+  "thumbnail": "Canonical bytes preserved; Workshop preview update omitted",
+  "runtime_evidence": "No new runtime claims; gameplay unchanged from 0.8.0-dev.4",
+  "commands": "See docs/PUBLISHING.md; package CRC/path/case/hash/source parity verified before upload.",
+  "validation_date": "2026-10-18",
+  "lua_suites": 8,
+  "package_regression_tests": 4
+}
