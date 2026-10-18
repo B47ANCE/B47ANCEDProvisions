@@ -32,7 +32,9 @@ transaction. Vanilla/other mods can still recognize the base type as Apple; see
 
 Original [dried-apple inventory art](assets/dried-apple/README.md) is available as
 a transparent master and 64×64 PNG export. Runtime texture hookup is pending;
-the prototype still displays the vanilla apple icon.
+the prototype still displays the vanilla apple icon. A matching
+[original Blender model](assets/dried-apple/model/README.md) includes a textured
+FBX and editable source; in-game model selection/display remains pending.
 
 `foodWorks.EnableFruitDrying`, `foodWorks.FruitDryingHours` (integer 6–168) and
 `foodWorks.FruitDryingShelfLifeMultiplier` (integer 1–12) are server-authoritative

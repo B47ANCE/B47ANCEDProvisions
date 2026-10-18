@@ -1,0 +1,5 @@
+# Keep the checksummed authoring script identical across Windows/Linux checkouts.
+*.py text eol=lf
+*.blend binary
+*.fbx binary
+*.png binary

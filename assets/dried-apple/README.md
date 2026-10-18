@@ -6,6 +6,10 @@ on 2026-10-17; no third-party image or vanilla artwork was used as input or copi
 The full generation prompt and SHA-256 provenance are retained beside the files.
 No third-party reuse license is asserted by this record.
 
+An original [local Blender model](model/README.md) now matches the three-slice
+concept. It includes an editable master, textured FBX and preview; native model
+selection/display remains pending alongside the icon hookup.
+
 - `dried-apple-master.png`: retained, editable raster master with true alpha.
 - `Item_B47ANCEDProvisions_DriedAppleSlices.png`: 64×64 RGBA inventory export.
 - `export.ps1`: repeatable Windows/System.Drawing size export, preserving alpha.

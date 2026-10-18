@@ -1,0 +1,14 @@
+/* Authoring reference only. NOT loaded by the mod. Scale/axes need native testing.
+   Candidate media/models_X/WorldItems/B47ANCEDProvisions/<FBX basename>.fbx
+   Candidate media/textures/WorldItems/B47ANCEDProvisions/DriedApple_Albedo.png
+   No item replacement, item script, hand attachment or runtime setter is supplied.
+*/
+module B47ANCEDProvisions
+{
+    model DriedAppleSlices_Ground
+    {
+        mesh = WorldItems/B47ANCEDProvisions/B47ANCEDProvisions_DriedAppleSlices,
+        texture = WorldItems/B47ANCEDProvisions/DriedApple_Albedo,
+        scale = 1.0,
+    }
+}
