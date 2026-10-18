@@ -1,6 +1,6 @@
 # Server-owned in-place fruit drying
 
-Project Version: 0.8.0-dev.4
+Project Version: 0.8.0-dev.5
 
 Compatible feature checkpoint within the 0.8.0 MINOR development line. Implemented
 in Lua and tested offline; native SP and dedicated multiplayer **NOT TESTED**.

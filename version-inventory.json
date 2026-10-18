@@ -18,7 +18,12 @@
     {"path": "docs/PRESERVATION_EXPANSION.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
     {"path": "docs/PRESERVATION_EXPANSION_EVIDENCE.json", "pattern": "\"project_version\": \"(?P<version>[^\\\"]+)\""},
     {"path": "docs/SWEET_PRESERVES_EVIDENCE.json", "pattern": "\"project_version\": \"(?P<version>[^\\\"]+)\""},
-    {"path": "docs/SWEET_PRESERVES.md", "pattern": "^Project Version: (?P<version>\\S+)$"}
+    {"path": "docs/SWEET_PRESERVES.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
+    {"path": "docs/PUBLISHING.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
+    {"path": "docs/RELEASE_STATUS.json", "pattern": "\"project_version\": \"(?P<version>[^\\\"]+)\""},
+    {"path": "dist/current/release-provenance.json", "pattern": "\"version\": \"(?P<version>[^\\\"]+)\"", "stage": "release"},
+    {"path": "dist/current/stage/VERSION", "pattern": "^(?P<version>\\S+)$", "stage": "release"},
+    {"path": "dist/current/stage/Contents/mods/B47ANCEDProvisions/42/mod.info", "pattern": "^modversion=(?P<version>\\S+)$", "stage": "release"}
   ],
   "changelog": {"path": "CHANGELOG.md", "pattern": "^## \\[(?P<version>[^\\]]+)\\]$"},
   "packaging": {
@@ -27,6 +32,7 @@
         "glob": "dist/current/*.zip",
         "pattern": "B47ANCEDProvisions-(?P<version>.+)-workshop-ready\\.zip",
         "zip_members": [
+          {"member": "SOURCE.json", "pattern": "\"version\": \"(?P<version>[^\\\"]+)\""},
           {"member": "Contents/mods/B47ANCEDProvisions/42/mod.info", "pattern": "^modversion=(?P<version>[^\\r\\n]+)\\r?$"},
           {"member": "VERSION", "pattern": "^(?P<version>[^\\r\\n]+)\\r?$"}
         ]
@@ -48,6 +54,7 @@
     {"reference": "docs/IDENTITY_MIGRATION.md, docs/FRUIT_DRYING_DESIGN.md, docs/FRUIT_DRYING_API_AUDIT.md and docs/FRUIT_DRYING_EVIDENCE.json", "reason": "Prior versioned Workshop changenotes below the newest entry, and versioned sections of docs/ARCHITECTURE.md, docs/ROADMAP.md, docs/TESTING.md and CHANGELOG.md, retain their original observed versions/evidence."},
     {"reference": "docs/FRUIT_DRYING_PREVIEW.md and docs/FRUIT_DRYING_PREVIEW_EVIDENCE.json", "reason": "Historical 0.8.0-dev.1 read-only prototype evidence; reused only for unchanged preview module, not new drying gameplay."},
     {"reference": "docs/FRUIT_DRYING_NATIVE_HOOKS.md and docs/FRUIT_DRYING_HOOK_EVIDENCE.json", "reason": "Native-hook audit baseline 0.8.0-dev.1 / merged 77771cb; fingerprints and static findings retain their actual baseline. Proposed 0.8.0-dev.2 is an unapplied future gameplay target, not current implementation."},
-    {"reference": "assets/branding/README.md; assets/dried-apple/README.md; assets/dried-apple/model/README.md", "reason": "Retained art-authoring records from 0.8.0-dev.2, unchanged artifacts/validation scope; not current gameplay validation."}
+    {"reference": "assets/branding/README.md; assets/dried-apple/README.md; assets/dried-apple/model/README.md", "reason": "Retained art-authoring records from 0.8.0-dev.2, unchanged artifacts/validation scope; not current gameplay validation."},
+    {"reference": "assets/branding/icon-provenance.json:baseline_project_version", "reason": "Immutable authoring baseline for the selected icon, independent of later project releases."}
   ]
 }

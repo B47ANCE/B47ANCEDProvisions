@@ -1,9 +1,9 @@
 name=B47ANCE’d Provisions
 id=B47ANCEDProvisions
 author=B47ANCE
-description=Vanilla-first food framework foundation with normalized food, freshness, nutrition, freezing, packaging, contamination, and third-party ingredient adapters.
+description=Lua-only fruit drying, apple-assisted jams and strained jellies, with server validation and vanilla food systems. MP testing build; dedicated multiplayer NOT TESTED.
 poster=thumbnail.png
 icon=icon.png
 tags=Build 42;Framework;Food
 versionMin=42.20.3
-modversion=0.8.0-dev.4
+modversion=0.8.0-dev.5

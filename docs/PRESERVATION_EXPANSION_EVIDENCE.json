@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "project_version": "0.8.0-dev.4",
+  "project_version": "0.8.0-dev.5",
   "source_baseline": "2991fde8c462ac4aa70cc7fdf377800b3d74e290",
   "audit_date": "2026-10-17",
   "game_version": "42.21",
@@ -99,5 +99,6 @@
       "lua_exposure": "NOT_PROVEN_BY_CLASS_INSPECTION"
     }
   ],
-  "applicability": "Prior native callback limits remain hash-checked static facts. Jam/jelly now bypass those callbacks with the separately audited native timed-action route; no runtime proof."
+  "applicability": "Prior native callback limits remain hash-checked static facts. Jam/jelly now bypass those callbacks with the separately audited native timed-action route; no runtime proof.",
+  "visual_checkpoint_applicability": "0.8.0-dev.5 changes the icon/version and packaging only. Existing native facts are reused only after installed hashes match; current offline checks are rerun, with SP/dedicated still NOT_TESTED."
 }

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "project_version": "0.8.0-dev.4",
+  "project_version": "0.8.0-dev.5",
   "source_baseline": "91f1b2e2d91a949e7e01eda678525d4bcc9dc422",
   "audit_date": "2026-10-17",
   "game_version": "42.21",
@@ -181,5 +181,6 @@
       "sha256": "80ecbd3bd702db2f992db6cba7cb09c32d775fa6f2a3297e0460874ff5ba20c7",
       "scope": "Static control-flow only; native dispatch/runtime NOT TESTED"
     }
-  ]
+  ],
+  "visual_checkpoint_applicability": "0.8.0-dev.5 changes the icon/version and packaging only. Existing native facts are reused only after installed hashes match; current offline checks are rerun, with SP/dedicated still NOT_TESTED."
 }

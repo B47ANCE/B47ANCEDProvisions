@@ -1,8 +1,12 @@
 # B47ANCE’d Provisions Master Roadmap
 
-Canonical version: 0.8.0-dev.4.
+Canonical version: 0.8.0-dev.5.
 
 ## Implemented
+
+- 0.8.0-dev.5: approved transparent mod icon with original thumbnails retained;
+  reproducible committed-source Workshop test packaging and guarded uploader.
+  Gameplay unchanged; native SP/dedicated NOT TESTED. See [publication](PUBLISHING.md).
 
 - 0.8.0-dev.4: seven apple-assisted jam and strained-jelly choices, sealed/opened
   jars, edible pulp, native server actions and server sandbox controls. Native

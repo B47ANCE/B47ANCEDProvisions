@@ -1,6 +1,6 @@
 # Jams and jellies
 
-Project Version: 0.8.0-dev.4
+Project Version: 0.8.0-dev.5
 
 ## Playable source slice
 

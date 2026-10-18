@@ -1,6 +1,6 @@
 # Vanilla preservation expansion
 
-Project Version: 0.8.0-dev.4
+Project Version: 0.8.0-dev.5
 
 ## Implemented checkpoint
 

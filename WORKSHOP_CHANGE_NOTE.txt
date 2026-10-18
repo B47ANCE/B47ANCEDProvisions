@@ -1,3 +1,13 @@
+[b]Version 0.8.0-dev.5[/b]
+
+[h2]Transparent mod icon and preservation MP test build[/h2]
+
+Use the approved subject-only food/cookware artwork as the mod icon. No lettering or background fill. Project thumbnails retain their original bytes; the Workshop thumbnail and visibility are not updated.
+
+Includes 22 vanilla fruit-drying profiles and seven apple-assisted jam/jelly choices. Jams/jellies use whole vanilla ingredients, tools and a hot powered stove through authenticated server intent plus native timed actions. Jelly returns edible pulp; sealed/opened preserves retain nutrition and relative age, with lid/empty-jar return. Gameplay is unchanged from 0.8.0-dev.4.
+
+MP testing build - dedicated multiplayer NOT TESTED. Native SP NOT TESTED. G7 and stable G8 BLOCKED. Offline checks and package integrity pass; upload success is distribution evidence only. Native action dispatch, heat interruption, concurrent access, drops, eating/container return, save/load, rejoin and dedicated restarts require runtime testing. Delivery/sync failures can lose output or leave a client stale; no crash-atomic save claim or downgrade migration.
+
 [b]Version 0.8.0-dev.4[/b]
 
 [h2]Jams and strained jellies[/h2]
