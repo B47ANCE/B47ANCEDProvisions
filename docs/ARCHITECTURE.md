@@ -17,6 +17,26 @@ Read-only food adapters and the ingredient registry remain existing foundations.
 The current first content process is a separate server-owned in-place fruit
 transformation; native game validation remains a release gate.
 
+## Sweet preserves in 0.8.0-dev.4
+
+`SweetPreserves` supplies bounded ingredient selection, state checks and pure food
+accounting. `SweetPreservesAction` is a new shared vanilla timed-action subclass;
+its server-start proof is absent from constructor/network arguments. A small
+server module authorizes exact intent from the authenticated client-command event
+player and grants one claiming server action permission to commit it. Grants are
+transient, bounded, revocable and expiring. Only the
+server/SP completion mutates inventory. Native action timing, food instances,
+empty containers, stoves, removal synchronization and add-or-drop delivery are
+reused. Outputs are initialized before any debit/publication. No global override,
+recipe callback mutation or custom persistent ledger is
+added. `SweetPreservesClient` only offers state-aware context actions and queues
+intent. New food script types distinguish sealed, opened and spent pulp states.
+
+See [SWEET_PRESERVES.md](SWEET_PRESERVES.md) for exact ingredients, settings, replay
+and interruption checks, native save/delivery failure boundaries and runtime gates.
+This resolves the limited jam/jelly slice without asserting support for other
+preservation families or changing the existing drying transaction.
+
 ## Fruit expansion in 0.8.0-dev.3
 
 `FruitDryingProfiles.lua` defines 22 exact vanilla identities, localized input and

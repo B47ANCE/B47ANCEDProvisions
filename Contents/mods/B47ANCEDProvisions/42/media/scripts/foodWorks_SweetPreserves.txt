@@ -1,0 +1,114 @@
+module foodWorks
+{
+    item JamSealed
+    {
+        ItemType = base:food,
+        DisplayCategory = Food,
+        Weight = 0.5,
+        Icon = JamFruit,
+        StaticModel = JamFruit_Ground,
+        WorldStaticModel = JamFruit_Ground,
+        EatType = Candrink,
+        FoodType = NoExplicit,
+        HungerChange = -1,
+        Calories = 0,
+        Carbohydrates = 0,
+        Lipids = 0,
+        Proteins = 0,
+        IsCookable = false,
+        DaysFresh = 30,
+        DaysTotallyRotten = 60,
+        CantEat = true,
+        Tooltip = Tooltip_foodWorks_Preserves_Sealed,
+    }
+
+    item JellySealed
+    {
+        ItemType = base:food,
+        DisplayCategory = Food,
+        Weight = 0.5,
+        Icon = JamFruit,
+        StaticModel = JamFruit_Ground,
+        WorldStaticModel = JamFruit_Ground,
+        EatType = Candrink,
+        FoodType = NoExplicit,
+        HungerChange = -1,
+        Calories = 0,
+        Carbohydrates = 0,
+        Lipids = 0,
+        Proteins = 0,
+        IsCookable = false,
+        DaysFresh = 30,
+        DaysTotallyRotten = 60,
+        CantEat = true,
+        Tooltip = Tooltip_foodWorks_Preserves_Sealed,
+    }
+
+    item JamOpened
+    {
+        ItemType = base:food,
+        DisplayCategory = Food,
+        Weight = 0.5,
+        Icon = JamFruit,
+        StaticModel = JamFruit_Ground,
+        WorldStaticModel = JamFruit_Ground,
+        EatType = Candrink,
+        FoodType = NoExplicit,
+        HungerChange = -1,
+        Calories = 0,
+        Carbohydrates = 0,
+        Lipids = 0,
+        Proteins = 0,
+        IsCookable = false,
+        DaysFresh = 3,
+        DaysTotallyRotten = 6,
+        ReplaceOnUse = Base.EmptyJar,
+        EvolvedRecipe = Sandwich:3;Pancakes:5;Toast:3;Bread:15;Oatmeal:3,
+        Tooltip = Tooltip_foodWorks_Preserves_Opened,
+    }
+
+    item JellyOpened
+    {
+        ItemType = base:food,
+        DisplayCategory = Food,
+        Weight = 0.5,
+        Icon = JamFruit,
+        StaticModel = JamFruit_Ground,
+        WorldStaticModel = JamFruit_Ground,
+        EatType = Candrink,
+        FoodType = NoExplicit,
+        HungerChange = -1,
+        Calories = 0,
+        Carbohydrates = 0,
+        Lipids = 0,
+        Proteins = 0,
+        IsCookable = false,
+        DaysFresh = 3,
+        DaysTotallyRotten = 6,
+        ReplaceOnUse = Base.EmptyJar,
+        EvolvedRecipe = Sandwich:3;Pancakes:5;Toast:3;Bread:15;Oatmeal:3,
+        Tooltip = Tooltip_foodWorks_Preserves_Opened,
+    }
+
+    item StrainedFruitPulp
+    {
+        ItemType = base:food,
+        DisplayCategory = Food,
+        Weight = 0.5,
+        Icon = Apple,
+        StaticModel = Apple_Ground,
+        WorldStaticModel = Apple_Ground,
+        EatType = EatSmall,
+        FoodType = NoExplicit,
+        HungerChange = -1,
+        Calories = 0,
+        Carbohydrates = 0,
+        Lipids = 0,
+        Proteins = 0,
+        IsCookable = false,
+        DaysFresh = 1,
+        DaysTotallyRotten = 2,
+        Tooltip = Tooltip_foodWorks_Preserves_Pulp,
+    }
+
+}

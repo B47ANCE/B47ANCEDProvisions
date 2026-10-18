@@ -46,6 +46,7 @@ def main():
         ("test_appliance_transactions.lua", [LUA / "shared/foodWorks/ApplianceTransactions.lua"]),
         ("test_preservation_processes.lua", [LUA / "shared/foodWorks/PreservationProcesses.lua"]),
         ("test_apple_drying.lua", [LUA / "server/foodWorks/AppleDryingServer.lua", LUA / "client/foodWorks/AppleDryingClient.lua"]),
+        ("test_sweet_preserves.lua", [LUA / "shared/foodWorks/SweetPreservesAction.lua", LUA / "client/foodWorks/SweetPreservesClient.lua", LUA / "server/foodWorks/SweetPreservesServer.lua"]),
         ("test_load_graph.lua", [LUA / f"{realm}/foodWorks/Load.lua" for realm in ["shared", "server", "client"]]),
     ]
     for name, arguments in cases:
@@ -57,6 +58,14 @@ def main():
         print("PASS " + name, flush=True)
 
     lua = LuaRuntime(unpack_returned_tuples=True)
+    lua.execute('''
+        package.preload["TimedActions/ISBaseTimedAction"]=function()
+            ISBaseTimedAction={}
+            function ISBaseTimedAction:derive(name)
+                local o={Type=name};o.__index=o;setmetatable(o,{__index=self});return o
+            end
+        end
+    ''')
     lua.execute('package.path = ... .. ";" .. package.path', ";".join((LUA / realm).as_posix() + "/?.lua" for realm in ["shared", "client", "server"]))
     loader = lua.eval("dofile")
     shared = loader((LUA / "shared/foodWorks/Load.lua").as_posix())

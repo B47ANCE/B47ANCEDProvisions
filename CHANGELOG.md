@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.0-dev.4]
+
+- Compatible MINOR-line checkpoint: add server-owned jam and strained jelly processing using vanilla timed actions, heat, jars, tools and full-item inventory synchronization. New output types; existing drying and save contracts retained.
+- Preserve ingredient nutrition and relative age, return edible strained pulp, require hot-stove access, and distinguish sealed from opened jars. Server sandbox settings control availability, processing time, shelf life and jelly yield.
+- Eight offline Lua suites pass; installed-source checks are static only. Native SP/dedicated NOT TESTED. G7 and stable G8 BLOCKED. No package, deployment or publication.
+
 ## [0.8.0-dev.3]
 
 - Compatible MINOR-line checkpoint: extend server-owned in-place drying to audited whole vanilla fruits, retaining legacy apple batches and settings. Native SP/dedicated NOT TESTED.

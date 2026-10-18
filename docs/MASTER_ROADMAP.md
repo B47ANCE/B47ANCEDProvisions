@@ -1,8 +1,12 @@
 # B47ANCE’d Provisions Master Roadmap
 
-Canonical version: 0.8.0-dev.3.
+Canonical version: 0.8.0-dev.4.
 
 ## Implemented
+
+- 0.8.0-dev.4: seven apple-assisted jam and strained-jelly choices, sealed/opened
+  jars, edible pulp, native server actions and server sandbox controls. Native
+  SP/dedicated NOT TESTED; [scope and gates](SWEET_PRESERVES.md).
 
 - 0.8.0-dev.3: extend the same-item server process to 22 vanilla fruits and adopt
   the 149-item preservation catalog with explicit implementation status. Sweet

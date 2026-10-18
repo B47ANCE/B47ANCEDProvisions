@@ -1,6 +1,6 @@
 # Vanilla preservation expansion
 
-Project Version: 0.8.0-dev.3
+Project Version: 0.8.0-dev.4
 
 ## Implemented checkpoint
 
@@ -46,7 +46,7 @@ are still vanilla inputs; future preserved outputs require their own contracts.
 | Family | Intended additions | Current status |
 | --- | --- | --- |
 | Fruit drying | The 22 profiles above | Implemented in source; offline tested |
-| Sweet preserves | Jam from pulp; jelly from strained juice; citrus marmalade; apple/pear/peach fruit butter; processed fruit jars; fruit leather | BLOCKED: multi-input nutrient accounting, heat and sealed-container lifecycle |
+| Sweet preserves | Jam and strained jelly for seven vanilla fruit choices, using an additional apple | Implemented via vanilla server timed actions; offline tested. Marmalade, butter, fruit jars and leather remain deferred |
 | Pickling | Cucumber, onion, cauliflower, Brussels sprouts, daikon, turnip, zucchini, garlic, ginger, green onions, grape leaves | BLOCKED: vinegar/water/salt consumption and jar processing |
 | Meat/fish preservation | Prepared salted fish; lean-meat jerky; cut-specific curing/smoking | BLOCKED: ingredient/holder authority, preparation and heat stages |
 | Fermentation | Cabbage sauerkraut first; other brined vegetables later | BLOCKED: authoritative brine consumption, sealed-holder lifecycle and completion |
@@ -63,7 +63,7 @@ accepted by this checkpoint. Required preparation is not inferred from a food
 type. Poison/spoilage must never be cured by drying. Tofu, avocado and lettuce
 remain deferred instead of receiving arbitrary shelf-stable transformations.
 
-## Why the other families are stopped
+## Native callback limits and the alternative sweet-preserve route
 
 Installed evidence is Build 42.21 / Steam build 25485521, inspected without
 executing or modifying game classes. `PRESERVATION_EXPANSION_EVIDENCE.json` binds
@@ -83,17 +83,19 @@ the relevant installed files/classes and current authored files.
    new item, copies condition state, sends the added-item result and removes the
    original. The inspected replacement interval has no nutrition/age-copy call.
    This does not establish a safe generic heat-to-preserved-food transformation.
-4. [UNKNOWN] No complete exposed-Lua model for multi-input debit/recovery plus
-   heated/sealed holder synchronization has been established here. Missing native
-   binding/runtime evidence is not permission to put authority on the client.
+4. [VERIFIED source/static] The new [sweet-preserve route](SWEET_PRESERVES.md)
+   uses native `NetTimedAction` server construction/timing/completion, exact
+   inventory ownership checks, detached food initialization and vanilla
+   `Actions.addOrDropItem` full-item synchronization. It bypasses those native
+   callbacks and accounts for all fruit/sugar values before publication.
 
-These findings do not mean Lua-only jam is impossible. The next route to prove
-is a server-owned preparation transaction producing an inert, unpreserved batch,
-followed by a serialized ingredient/age ledger and an exclusive heated/sealed
-holder. It must account for edible sugar and waste, consume exact additives and
-jar/lid resources once, conserve food across retries, and synchronize final state
-before it becomes usable. Strained jelly also needs an explicit juice/pulp yield.
-Do not enable a template that spawns a fresh edible jar and fixes it afterward.
+Jam and jelly are implemented for Apple, BerryBlack, BerryBlue, Cherry, Grapes,
+Peach and Strewberrie. Each uses an additional apple for pectin, eight SugarCubes,
+an empty jar and pristine lid, tools and attended hot-stove processing. Jelly
+splits fruit values into jelly plus edible pulp; sugar remains in the jar.
+Sealed/opened identities and relative-age transfer are explicit. Other sweet
+processes and pickling/curing/fermentation remain unimplemented. The original
+negative findings remain true; the alternative is not a callback rollback fix.
 
 ## Validation and remaining gates
 

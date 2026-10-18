@@ -9,5 +9,13 @@
   "Sandbox_foodWorks_FruitDryingHours": "Fruit drying hours",
   "Sandbox_foodWorks_FruitDryingHours_tooltip": "Loaded, observed game hours required for new batches. Integer 6–168, step 1; default 48. Unloaded racks and long observation gaps pause drying. No electricity, water or weather simulation is used.",
   "Sandbox_foodWorks_FruitDryingShelfLifeMultiplier": "Dried fruit shelf-life multiplier",
-  "Sandbox_foodWorks_FruitDryingShelfLifeMultiplier_tooltip": "Integer 1–12, step 1; default 6. New batches scale both freshness thresholds and carried age together. Drying never resets age or adds calories. Existing batches keep their saved multiplier."
+  "Sandbox_foodWorks_FruitDryingShelfLifeMultiplier_tooltip": "Integer 1–12, step 1; default 6. New batches scale both freshness thresholds and carried age together. Drying never resets age or adds calories. Existing batches keep their saved multiplier.",
+  "Sandbox_foodWorks_EnableSweetPreserves": "Enable jams and jellies",
+  "Sandbox_foodWorks_EnableSweetPreserves_tooltip": "Allows new server-owned batches at a powered stove heated to at least 100 C. Existing sealed jars can still be opened when disabled.",
+  "Sandbox_foodWorks_SweetPreservesShelfLifeDays": "Sealed jam and jelly fresh days",
+  "Sandbox_foodWorks_SweetPreservesShelfLifeDays_tooltip": "Integer 7-180, step 1; default 30. Rotten threshold is twice this. Carried relative fruit age is retained. Opened jars use 3/6 days. Existing jars keep their native food thresholds.",
+  "Sandbox_foodWorks_SweetPreservesTimeMultiplier": "Jam and jelly action time multiplier",
+  "Sandbox_foodWorks_SweetPreservesTimeMultiplier_tooltip": "Integer 1-5, step 1; default 1. Scales native action duration: jam 600, jelly 900, opening 40 action units. Server timing is authoritative.",
+  "Sandbox_foodWorks_JellyJuiceYieldPercent": "Jelly fruit yield percent",
+  "Sandbox_foodWorks_JellyJuiceYieldPercent_tooltip": "Integer 25-90, step 1; default 70. This fraction of fruit food values goes into jelly; the rest returns as perishable edible pulp. All sugar remains in the jelly. Existing outputs are unchanged."
 }

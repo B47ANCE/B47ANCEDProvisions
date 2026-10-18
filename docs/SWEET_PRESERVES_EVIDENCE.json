@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "project_version": "0.8.0-dev.4",
+  "source_baseline": "91f1b2e2d91a949e7e01eda678525d4bcc9dc422",
+  "audit_date": "2026-10-17",
+  "game_version": "42.21",
+  "steam_build": "25485521",
+  "runtime_status": "NOT_TESTED",
+  "g7": "BLOCKED / NOT TESTED",
+  "stable_g8": "BLOCKED",
+  "provenance": "Read-only installed Lua/script and packaged-class inspection, original authored Lua/scripts and synthetic Lua 5.1 tests. No native class execution, raw source copying or runtime claim. Project fingerprints normalize CRLF to LF; game/class fingerprints are exact bytes.",
+  "vanilla_inputs": [
+    "Base.Apple",
+    "Base.BerryBlack",
+    "Base.BerryBlue",
+    "Base.Cherry",
+    "Base.Grapes",
+    "Base.Peach",
+    "Base.Strewberrie",
+    "Base.SugarCubes",
+    "Base.EmptyJar",
+    "Base.JarLid",
+    "Base.Pot",
+    "Base.KitchenKnife",
+    "Base.Strainer",
+    "Base.CheeseCloth"
+  ],
+  "project_files": [
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/SweetPreserves.lua",
+      "sha256": "08e751fd7fcfd595c8d9b70b6e8fbe528d9945d233cb41a0b1f0b1b308bd8f53"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/SweetPreservesAction.lua",
+      "sha256": "6431dae11f703c8fdca7bc9c2617f03eb5fe55d4582c71ace94b17d5ca57916a"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/SweetPreservesClient.lua",
+      "sha256": "49bb4118cd33ef93fe0fe9938a61dd4a355bf77dfb1ef5bc69fd7d7b2e6978cd"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/scripts/foodWorks_SweetPreserves.txt",
+      "sha256": "d632917b881665895ec4c4108a08604c7da72228ceb1b0a24406fe22ba57c532"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/Load.lua",
+      "sha256": "aed39686edf9916418aa3ad238409fa303e1ed94ae3e961163b6a27b60010780"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/Load.lua",
+      "sha256": "ee3303e252d885fc7bc0c4cbdf6a4c77305e05a4c9f5a686ae831e2f52e548f5"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/sandbox-options.txt",
+      "sha256": "7528772f69833737ffc4d3cfbd18f15bca592e0c782706335c8755459e398434"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/UI.json",
+      "sha256": "85fa972f37e2168f7fff2b58ce8f4180ccef7c1d87a12c539f6b152c9004d546"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/Sandbox.json",
+      "sha256": "e03836df5247d19673da0f11e66cc5bcf3273e411ca8607bb882b642aaa9e337"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/ItemName.json",
+      "sha256": "da0134edb7883cbf9e6e31649797168583d24d7dda6dacceb72f439603ed0747"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/Tooltip.json",
+      "sha256": "975c66917092137601eec5ce6abd9a384d5bc8d2231253617b725ed75910ba3c"
+    },
+    {
+      "path": "scripts/run_checks.py",
+      "sha256": "514d3889f571971246535224e2c0d57d3289b4e9ebe5dffc92f17f4896402f88"
+    },
+    {
+      "path": "scripts/check_sweet_preserves.py",
+      "sha256": "20a233b744ec586a7703556ececb7ce7749afe713f74fc60b7013cbdcac03308"
+    },
+    {
+      "path": "tests/test_sweet_preserves.lua",
+      "sha256": "3bb1f5fd2f0931db84579b05d48d68da8e23a53b6a4920b358c8dafa34694fd9"
+    },
+    {
+      "path": "tests/test_load_graph.lua",
+      "sha256": "3544c8675c20608c43373ec05a235626051824d9801449b90985131ed7074519"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/SweetPreservesServer.lua",
+      "sha256": "678e9ec8d7808527e85f27e453b142695e017fa9e9efbb2894d4779b85e6c0c1"
+    },
+    {
+      "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/Load.lua",
+      "sha256": "a41544de6c87a3f3a62280f8f7615547c1cf2202e3e5482af0d6041a2d3fd57a"
+    }
+  ],
+  "game_files": [
+    {
+      "path": "media/lua/shared/ActionManager.lua",
+      "sha256": "1d79e44a1861916d9173845625a7794308ab9f6e4783909246623148653d12aa"
+    },
+    {
+      "path": "media/lua/shared/TimedActions/ISBaseTimedAction.lua",
+      "sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0"
+    },
+    {
+      "path": "media/lua/shared/TimedActions/ISComfreyCataplasm.lua",
+      "sha256": "95243f2c82f046bfcf1b1bdf34b485522e3cb75b672cdbd63b8e6a7756c01374"
+    },
+    {
+      "path": "media/lua/shared/TimedActions/ISToggleStoveAction.lua",
+      "sha256": "5dea9492eb47b5dcc3a7a233b349497ecd61dfeac62b1f4c474927fec7818002"
+    },
+    {
+      "path": "media/scripts/generated/items/food.txt",
+      "sha256": "408f2091bca9b1059ff8a8fb067076dcda7412903c84007656334ba6ac662e03"
+    },
+    {
+      "path": "media/scripts/generated/items/normal.txt",
+      "sha256": "b76cf5f91dce33567ca2bda305c4e450be297aae6b1fc11b5b34dcb280d74567"
+    },
+    {
+      "path": "media/scripts/generated/items/weapon.txt",
+      "sha256": "742414e701d360a9076099f9842bd9cc65c2d9ba9497af8b0ce470ee147467c5"
+    }
+  ],
+  "native_classes": [
+    {
+      "member": "zombie/core/NetTimedAction.class",
+      "sha256": "d4a3046eeaec409977a756c6ea80b0676229274684012ad51210559ebfcb1090",
+      "scope": "Static control flow and exposed-class/public-method inspection; dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/core/Action.class",
+      "sha256": "4a2fe6aaf0cf73235279946e930b40489ec44859aff64cc19d97976bcc75610d",
+      "scope": "Static control flow and exposed-class/public-method inspection; dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/characters/CharacterTimedActions/LuaTimedActionNew.class",
+      "sha256": "f10236f1e8be9d0822dc144ebe61c42fa1d0e8ded3279c7aa6dd0ffb7291feb0",
+      "scope": "Static control flow and exposed-class/public-method inspection; dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/Lua/LuaManager$Exposer.class",
+      "sha256": "9727656efbc06d7772661775f7a6885c7976b9e09472d7b128a3d5638ea68efa",
+      "scope": "Static control flow and exposed-class/public-method inspection; dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/inventory/types/Food.class",
+      "sha256": "14a5b02878a5608e3a28d3e91110961b3576694badf127dc7fe2749b8393d8b1",
+      "scope": "Static control flow and exposed-class/public-method inspection; dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/inventory/InventoryItem.class",
+      "sha256": "48f01be16d1ef1b76e37638fac6e25ca4eb285ad38ab2f462caa5597318c7f9d",
+      "scope": "Static control flow and exposed-class/public-method inspection; dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/inventory/ItemContainer.class",
+      "sha256": "a2ac7dd6235f91255dc57b91419a2c8609bdb105214cddf7fb445b70507b6f96",
+      "scope": "Static control flow and exposed-class/public-method inspection; dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/iso/objects/IsoStove.class",
+      "sha256": "278f2b1a934dab205896f6e520da29b7264b28e7597f6882b5c2ef90ff60a5bd",
+      "scope": "Static control flow and exposed-class/public-method inspection; dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/network/fields/character/PlayerID.class",
+      "sha256": "d40d1b745a70ad3bf562c15765b9f46a117ecb48aeeabf05597ce646a73e0b56",
+      "scope": "Static control-flow only; native dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/network/PZNetKahluaTableImpl.class",
+      "sha256": "201f0e59502fc5a106f8c9021e0b0d13a30dcb8d0beb9e8934cec390231ddba6",
+      "scope": "Static control-flow only; native dispatch/runtime NOT TESTED"
+    },
+    {
+      "member": "zombie/Lua/LuaManager$GlobalObject.class",
+      "sha256": "80ecbd3bd702db2f992db6cba7cb09c32d775fa6f2a3297e0460874ff5ba20c7",
+      "scope": "Static control-flow only; native dispatch/runtime NOT TESTED"
+    }
+  ]
+}

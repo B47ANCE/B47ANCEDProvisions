@@ -4,15 +4,15 @@ Cooking, food preparation, ingredients, freshness, and food-system infrastructur
 
 B47ANCE’d Provisions provides normalized food identity and properties that future recipes, preservation systems, and compatible mods can share without replacing vanilla behavior prematurely.
 
-[b]Mod Version: 0.8.0-dev.3[/b]
+[b]Mod Version: 0.8.0-dev.4[/b]
 
 [b]Development Status[/b]
 
 MP testing build - dedicated multiplayer NOT TESTED
 
-Development build with in-place drying for 22 vanilla fruit types. Offline checks pass; native SP/dedicated behavior remains untested. This is not a stable release.
+Development build with in-place drying for 22 vanilla fruit types plus apple-assisted jams and strained jellies for seven fruit choices. Offline checks pass; native SP/dedicated behavior remains untested. This is not a stable release.
 
-Sweet preserves (jam, jelly, marmalade and fruit butter), pickling, curing and fermentation are catalogued but remain BLOCKED on multi-input accounting and heat/holder authority. No production recipes for those methods are enabled.
+Jams and jellies use fresh vanilla fruit, an additional apple, whole sugar cubes, an empty jar/lid and tools at a hot powered stove. Jelly returns edible strained pulp. Open sealed jars before eating. Marmalade, fruit butter, pickling, curing and fermentation remain unimplemented.
 
 [h2]Current Features[/h2]
 [list]
@@ -21,6 +21,8 @@ Sweet preserves (jam, jelly, marmalade and fruit butter), pickling, curing and f
 [*]Read-only packaging, taint, freezing/thawing, aging, rotten-replacement, and compost-state inspection
 [*]Optional inventory action showing normalized food, preservation, effect, and nutrition state without changing the item
 [*]Server-owned drying for 22 vanilla fruit types at native small-plant racks; preserves each original item ID/type and nutrients, carries age, reduces weight and removes thirst benefit
+[*]Server-owned jam/jelly actions, sealed/opened jars, edible pulp and carried relative age; vanilla tools, stove heat, inventory synchronization and jam visuals
+[*]Server sandbox preserve availability, processing time, sealed shelf life and jelly yield
 [*]Server sandbox drying hours and shelf-life multiplier; existing batches keep accepted settings; unloaded racks pause progress
 [*]Read-only apple/rack drying prechecks with localized unknown/failed checks; no processing or eligibility authorization
 [*]Recoverable appliance-process transaction contract for exact power and water reservations

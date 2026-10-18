@@ -1,8 +1,34 @@
 # B47ANCE’d Provisions Testing
 
-Project Version: 0.8.0-dev.3
+Project Version: 0.8.0-dev.4
 
-## Fruit expansion checkpoint — October 17, 2026
+## Sweet preserves checkpoint — October 17, 2026
+
+0.8.0-dev.4 adds seven fruit choices for jam and strained jelly. [TESTED offline,
+Lua 5.1] Eight suites pass. The added suite covers each fruit/mode, distinct fixture
+nutrients, aggregate food/mass conservation, sugar retention, configurable juice
+split, relative-age processing/opening, lid return, exact ownership, missing/moved
+inputs, poisoned/stale/frozen/modified food, filled jars, damaged lids, cold/
+unpowered/microwave/blocked stoves, cancel, completion without server start,
+repeated completion, single-claim/expired/revoked/missing grants, client no-op,
+pre-debit setter failure, exact-object removal
+rollback and no retry after output delivery failure. Native action lifecycle is
+simulated; no game/server execution is implied.
+
+```powershell
+python scripts/run_checks.py
+python scripts/check_versions.py --root .
+python scripts/check_sweet_preserves.py --game-root '<installed game root>' --steam-build 25485521
+```
+
+The checker binds source, item definitions/localization, installed build and
+native action/exposure/food/inventory/stove evidence. Exact native dispatch, action
+serialization/timing, overload drops, food eating/evolved recipes/empty-jar return,
+refrigeration/partial eating, save/reload and dedicated contention/rejoin/restart
+remain [RUNTIME GATE]. G7 BLOCKED / NOT TESTED; stable G8 BLOCKED. Details and
+failure boundaries: [SWEET_PRESERVES.md](SWEET_PRESERVES.md). No deploy/publication.
+
+## Historical fruit expansion checkpoint — October 17, 2026
 
 0.8.0-dev.3 extends the production server path to 22 exact vanilla fruit identities.
 [TESTED offline, Lua 5.1] The seven suites pass with each type using different

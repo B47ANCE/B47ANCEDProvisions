@@ -105,5 +105,11 @@
   "UI_foodWorks_FruitDrying_Dried_BerryGeneric4": "Dried wild berries (type 4)",
   "UI_foodWorks_FruitDrying_Input_BerryGeneric5": "Wild berries (type 5)",
   "UI_foodWorks_FruitDrying_Dried_BerryGeneric5": "Dried wild berries (type 5)",
-  "UI_foodWorks_FruitDrying_Start": "Dry %1 (first fresh item of this type in main inventory)"
+  "UI_foodWorks_FruitDrying_Start": "Dry %1 (first fresh item of this type in main inventory)",
+  "UI_foodWorks_Preserves_MakeJam": "Make %1 jam",
+  "UI_foodWorks_Preserves_MakeJelly": "Make %1 jelly (strain pulp)",
+  "UI_foodWorks_Preserves_JamName": "%1 jam",
+  "UI_foodWorks_Preserves_JellyName": "%1 jelly",
+  "UI_foodWorks_Preserves_Open": "Open %1",
+  "UI_foodWorks_Preserves_Unavailable": "Preserving is unavailable: check ingredients, stove access and heat, then try again."
 }

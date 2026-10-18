@@ -15,7 +15,10 @@
     {"path": "WORKSHOP_DESCRIPTION.txt", "pattern": "^\\[b\\]Mod Version: (?P<version>[^\\[]+)\\[/b\\]$"},
     {"path": "workshop.txt", "pattern": "^description=\\[b\\]Mod Version: (?P<version>[^\\[]+)\\[/b\\]$"},
     {"path": "WORKSHOP_CHANGE_NOTE.txt", "pattern": "\\A\\[b\\]Version (?P<version>[^\\[]+)\\[/b\\]"},
-    {"path": "docs/PRESERVATION_EXPANSION.md", "pattern": "^Project Version: (?P<version>\\S+)$"}
+    {"path": "docs/PRESERVATION_EXPANSION.md", "pattern": "^Project Version: (?P<version>\\S+)$"},
+    {"path": "docs/PRESERVATION_EXPANSION_EVIDENCE.json", "pattern": "\"project_version\": \"(?P<version>[^\\\"]+)\""},
+    {"path": "docs/SWEET_PRESERVES_EVIDENCE.json", "pattern": "\"project_version\": \"(?P<version>[^\\\"]+)\""},
+    {"path": "docs/SWEET_PRESERVES.md", "pattern": "^Project Version: (?P<version>\\S+)$"}
   ],
   "changelog": {"path": "CHANGELOG.md", "pattern": "^## \\[(?P<version>[^\\]]+)\\]$"},
   "packaging": {

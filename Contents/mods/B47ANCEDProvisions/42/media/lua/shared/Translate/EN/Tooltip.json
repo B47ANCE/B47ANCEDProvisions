@@ -1,0 +1,5 @@
+{
+  "Tooltip_foodWorks_Preserves_Sealed": "Sealed preserve. Open from the inventory menu before eating. Ingredients retain their relative age.",
+  "Tooltip_foodWorks_Preserves_Opened": "Opened preserve. Eat normally or use in vanilla food preparation. Returns an empty jar when finished.",
+  "Tooltip_foodWorks_Preserves_Pulp": "Edible pulp left after straining jelly. Perishable; fruit nutrients were split between this and the jelly."
+}

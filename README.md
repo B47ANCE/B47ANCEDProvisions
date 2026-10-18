@@ -6,7 +6,7 @@ B47ANCE’d Provisions (formerly foodWorks) provides food inspection, preservati
 and food-system foundations for theWorks ecosystem, using vanilla Build 42 food,
 inventory and entity-resource systems.
 
-- Status: version `0.8.0-dev.3` implements server-owned in-place drying for 22 vanilla fruit types. Offline tests pass; native SP and dedicated multiplayer NOT TESTED. Sweet preserves, pickling, curing and fermentation remain blocked. Development build, not a stable release.
+- Status: version `0.8.0-dev.4` implements drying for 22 vanilla fruit types plus seven apple-assisted jam/jelly choices. Offline tests pass; native SP and dedicated multiplayer NOT TESTED. G7/stable G8 BLOCKED. Development build.
 - Mod ID: `B47ANCEDProvisions`; Workshop item: `3788591331`.
 - Author: B47ANCE; hard mod dependencies: none.
 - Source: [B47ANCE/B47ANCEDProvisions](https://github.com/B47ANCE/B47ANCEDProvisions) (public).
@@ -35,9 +35,28 @@ transaction. Vanilla/other mods still recognize each original base type; see
 
 Supported types and the [149-item preservation catalog](docs/PRESERVATION_CATALOG.csv)
 are documented in the [expansion plan and evidence](docs/PRESERVATION_EXPANSION.md).
-Jam, jelly, marmalade, fruit butter, pickling, salting/smoking and fermentation
-are separate planned processes. Multi-input nutrient accounting and heated/sealed
-holder authority are unresolved; those recipes are not enabled or offered in menus.
+Jams and jellies now have a separate [server-owned process](docs/SWEET_PRESERVES.md).
+Marmalade, fruit butter, pickling, salting/smoking and fermentation remain planned.
+
+## Jams and jellies
+
+Carry a fresh Apple, Blackberry, Blueberry, Cherry, Grapes, Peach or Strawberry,
+an additional apple, eight whole SugarCubes items, an empty jar and pristine lid.
+Keep an empty pot and kitchen knife; jelly also needs a strainer and cheesecloth.
+Stand directly beside a powered, switched-on stove heated to at least 100 C, then
+right-click it to make jam or jelly. Microwaves are excluded. Apple jam/jelly uses
+two apples. All ingredients/tools come from vanilla; no extra mod is required.
+
+Jam keeps all fruit/sugar food values. Jelly defaults to 70% of fruit plus all sugar;
+the remaining fruit values return as edible pulp. Sealed jars must be opened from
+the inventory menu. Opening returns a lid; eating/using the opened preserve uses
+vanilla food behavior and returns an empty jar when finished. Carried relative age
+survives both processing and opening. Vanilla jam icons/models are reused.
+
+The server validates ingredients, stove access/heat, timing and settings, and
+initializes detached outputs before debit/publication. Four sandbox controls cover
+availability, action time, sealed shelf life and jelly yield. Existing drying is
+unchanged. See [recipes, settings, authority and failure limits](docs/SWEET_PRESERVES.md).
 
 Original [dried-apple inventory art](assets/dried-apple/README.md) is available as
 a transparent master and 64×64 PNG export. Runtime texture hookup is pending;

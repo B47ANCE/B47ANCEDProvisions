@@ -2,10 +2,14 @@
   "schema": 1,
   "id": "food",
   "name": "B47ANCE’d Provisions",
-  "version": "0.8.0-dev.3",
-  "source_digest": "558671b2d0bc5162e11851a09252491259f0134d6bf3025d900ced357f5c0cc0",
+  "version": "0.8.0-dev.4",
+  "source_digest": "eac9c578344416012f569603b161fd5eeb06b675e5e71a49b3c567a5e1517b60",
   "reviewed": true,
   "features": [
+    {
+      "status": "Source",
+      "text": "Seven apple-assisted vanilla fruit jam/jelly choices using authenticated server intent grants plus native timed actions, heated powered stoves, exact inventory debit and initialized full-item delivery. Sealed/opened jars, sugar-inclusive nutrition, carried age, configurable jelly/pulp split and lid/empty-jar lifecycle; offline tested only."
+    },
     {
       "status": "Foundation",
       "text": "Original dried-apple art: transparent inventory master/64x64 export plus locally authored three-slice Blender model with varied shapes, curled edges, irregular creases, single albedo atlas, FBX and preview. Offline topology, separated surfaces and round-trip checked; per-item runtime icon/model hookup pending."
@@ -28,14 +32,14 @@
     },
     {
       "status": "Planned",
-      "text": "149 vanilla ingredient identities catalogued for sweet preserves, pickling, salting/smoking, fermentation and additional drying. Those methods are not registered; only the 22 fruit profiles are implemented."
+      "text": "149 vanilla ingredient identities catalogued. Drying supports 22; jam/jelly supports seven apple-assisted choices. Marmalade, fruit butter, pickling, curing, fermentation and further drying remain planned/blocked."
     },
     {
       "status": "Blocked",
-      "text": "Sweet preserves/pickling/curing/fermentation lack a proven multi-input nutrient and heated/sealed-holder contract. Native output-before-callback and first-food inheritance are insufficient. Native SP/dedicated save, transfer, restart and concurrency remain untested."
+      "text": "Other preservation families retain ingredient/heat/holder blockers. Native SP/dedicated action dispatch, food use, saves, drops, reconnect, restart and concurrency require runtime evidence. Native post-publication callback/first-food inheritance remains unsuitable."
     }
   ],
-  "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Each dried fruit retains its original Base type/appearance. Other preservation families remain blocked, not enabled. Loaded sampled time only; no transfer crash atomicity claim. No package/deploy/publication. Legacy identifiers retained.",
+  "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Jam/jelly uses seven whole/default fruit identities, apple pectin, SugarCubes, empty jar/pristine lid and a hot powered non-microwave stove. Drying retains original Base visuals. Native delivery/crash save ordering is not atomic; output delivery failure never retries. No package/deploy/publication. Legacy identifiers retained.",
   "evidence": [
     "assets/branding/README.md",
     "assets/dried-apple/README.md",
@@ -65,7 +69,16 @@
     "docs/PRESERVATION_EXPANSION_EVIDENCE.json",
     "docs/PRESERVATION_CATALOG.csv",
     "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/FruitDryingProfiles.lua",
-    "scripts/check_preservation_expansion.py"
+    "scripts/check_preservation_expansion.py",
+    "docs/SWEET_PRESERVES.md",
+    "docs/SWEET_PRESERVES_EVIDENCE.json",
+    "tests/test_sweet_preserves.lua",
+    "scripts/check_sweet_preserves.py",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/SweetPreserves.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/SweetPreservesAction.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/SweetPreservesClient.lua",
+    "Contents/mods/B47ANCEDProvisions/42/media/scripts/foodWorks_SweetPreserves.txt",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/SweetPreservesServer.lua"
   ],
   "relations": [
     {

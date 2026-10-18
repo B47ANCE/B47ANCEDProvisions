@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "project_version": "0.8.0-dev.3",
+  "project_version": "0.8.0-dev.4",
   "source_baseline": "2991fde8c462ac4aa70cc7fdf377800b3d74e290",
   "audit_date": "2026-10-17",
   "game_version": "42.21",
@@ -9,7 +9,7 @@
   "g7": "BLOCKED / NOT TESTED",
   "stable_g8": "BLOCKED",
   "blocked_families": [
-    "sweet_preserves",
+    "other_sweet_preserves",
     "pickling",
     "curing",
     "fermentation"
@@ -33,11 +33,11 @@
     },
     {
       "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/UI.json",
-      "sha256": "1842caf86017115be2cc34d776ee3afd2234f0f8ead47cc5f3e72ab6a2635afe"
+      "sha256": "85fa972f37e2168f7fff2b58ce8f4180ccef7c1d87a12c539f6b152c9004d546"
     },
     {
       "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/Sandbox.json",
-      "sha256": "3abf18d2a52fa6ffb43abcb44a179946ed89803f8888ba2dcd735024701a2cf4"
+      "sha256": "e03836df5247d19673da0f11e66cc5bcf3273e411ca8607bb882b642aaa9e337"
     },
     {
       "path": "tests/test_apple_drying.lua",
@@ -45,7 +45,7 @@
     },
     {
       "path": "docs/PRESERVATION_CATALOG.csv",
-      "sha256": "cf529ac81a5880ec958c755556282e94bebd8ebb080892019c25dacf2a67da16"
+      "sha256": "50360279a7b9d1140868d05b9bb1972a9b2198fbc76c75d692fb0fc1d536ea54"
     },
     {
       "path": "scripts/check_preservation_expansion.py",
@@ -98,5 +98,6 @@
       "sha256": "8862ede4287ac9563932b90e65d2ffa37ca00c67aebdd2c57ef588db40a6dede",
       "lua_exposure": "NOT_PROVEN_BY_CLASS_INSPECTION"
     }
-  ]
+  ],
+  "applicability": "Prior native callback limits remain hash-checked static facts. Jam/jelly now bypass those callbacks with the separately audited native timed-action route; no runtime proof."
 }

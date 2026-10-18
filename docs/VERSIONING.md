@@ -1,8 +1,15 @@
 # Project versioning
 
-Current development version: 0.8.0-dev.3.
+Current development version: 0.8.0-dev.4.
 
-The current 0.8.0-dev.3 checkpoint is a compatible extension to 22 vanilla fruits.
+The current 0.8.0-dev.4 checkpoint adds compatible jam/jelly gameplay, four
+sandbox controls and five new native food types. Native timed actions own server
+construction/timing/completion. Results use native food persistence, without a new
+custom ledger or schema. Existing drying contracts remain unchanged. Removing or
+downgrading the mod with new items present is unsupported; no stable release is
+approved. See SWEET_PRESERVES.md for the authority and validation limits.
+
+The preceding 0.8.0-dev.3 checkpoint is a compatible extension to 22 vanilla fruits.
 It retains the three sandbox settings and legacy module/network/save keys. New
 jobs optionally bind a whitelisted full type; a missing type still means Apple.
 No downgrade migration for non-Apple jobs is claimed. The broader adopted catalog

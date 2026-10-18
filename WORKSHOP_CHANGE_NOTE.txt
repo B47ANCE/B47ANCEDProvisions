@@ -1,3 +1,13 @@
+[b]Version 0.8.0-dev.4[/b]
+
+[h2]Jams and strained jellies[/h2]
+
+Seven vanilla fruit choices with an additional apple for pectin, whole SugarCubes, an empty jar/pristine lid and tools. Use a hot powered stove through vanilla server timed actions. Jelly returns edible pulp; sugar remains in the jar. Sealed jars must be opened before eating; lids and empty jars return through the opening/native food lifecycle. Nutrition and relative age are retained.
+
+Four server sandbox controls: availability, action time, sealed shelf life and jelly fruit yield. Vanilla inventory synchronization, stove heat and jam visuals are reused. Existing fruit drying is unchanged. Offline tests pass; native food/action integration remains untested.
+
+MP testing build - dedicated multiplayer NOT TESTED. Native SP NOT TESTED; G7 and stable G8 BLOCKED. No package/deployment/publication implied.
+
 [b]Version 0.8.0-dev.3[/b]
 
 [h2]Vanilla fruit-drying expansion[/h2]
