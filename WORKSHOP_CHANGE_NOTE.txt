@@ -1,3 +1,13 @@
+[b]Version 0.8.0-dev.3[/b]
+
+[h2]Vanilla fruit-drying expansion[/h2]
+
+Extends server-owned in-place drying to 22 vanilla fruit types. Every batch retains its exact original type/ID and nutrients, carries age and uses saved server settings. Existing Apple v1 batches remain supported; non-Apple jobs require this version. Original fruit visuals remain.
+
+Adopts the 149-item vanilla preservation catalog. Jam, jelly, marmalade, fruit butter, pickling, curing and fermentation are not implemented: safe multi-input nutrition and heated/sealed-holder contracts remain blocked.
+
+MP testing build - dedicated multiplayer NOT TESTED. Native SP NOT TESTED; G7 and stable G8 BLOCKED. Offline tests only; no publication is implied.
+
 [b]Version 0.8.0-dev.2[/b]
 
 [h2]Server-owned in-place apple drying[/h2]

@@ -34,16 +34,21 @@ function C.send(playerNum,command,object,item)
         result(playerNum,code,M.valid(job) and math.floor(job.credit/job.hours*100) or 0)
     else result(playerNum,"OperationFailed",0) end
 end
-local function firstApple(player)
+local function firstFruits(player)
     local items=read(read(player,"getInventory"),"getItems")
     local n=read(items,"size")
-    if not M.integer(n,0,1000000) then return nil end
+    if not M.integer(n,0,1000000) then return {} end
+    local found,seen={},{}
     for i=0,math.min(n,256)-1 do
         local item=read(items,"get",i)
-        local age,fresh=read(item,"getAge"),read(item,"getOffAge")
-        if read(item,"getFullType")=="Base.Apple" and read(item,"hasModData")==false
-            and M.finite(age) and M.finite(fresh) and age>=0 and age<fresh then return item end
+        local kind=read(item,"getFullType")
+        local s=M.profile(kind) and M.snapshot(item)
+        if s and not seen[kind] and read(item,"hasModData")==false and read(item,"isCustomName")==false
+            and s.age<s.fresh then
+            seen[kind]=true;found[#found+1]=item
+        end
     end
+    return found
 end
 local function carriedBatch(player)
     local items=read(read(player,"getInventory"),"getItems")
@@ -69,8 +74,9 @@ local function options(playerNum,object)
         local vars=type(SandboxVars)=="table" and SandboxVars.foodWorks or nil
         local cfg=M.settings(vars)
         if cfg and cfg.enabled and read(logic,"isRunning")==false then
-            local apple=firstApple(getSpecificPlayer(playerNum))
-            if apple then actions[#actions+1]={"Start","start",apple} end
+            for _,item in ipairs(firstFruits(getSpecificPlayer(playerNum))) do
+                actions[#actions+1]={"Start","start",item}
+            end
         end
     elseif M.integer(count,1,20) then
         for i=0,count-1 do
@@ -95,7 +101,12 @@ function C.fillWorld(playerNum,context,objects,test)
         if #actions>0 then
             if test then ISWorldObjectContextMenu.setTest();return end
             for _,action in ipairs(actions) do
-                context:addOption(text(action[1]),playerNum,C.send,action[2],object,action[3])
+                local label=text(action[1])
+                if action[2]=="start" then
+                    local profile=M.profile(read(action[3],"getFullType"))
+                    label=getText("UI_foodWorks_FruitDrying_Start",getText(profile.input))
+                end
+                context:addOption(label,playerNum,C.send,action[2],object,action[3])
             end
             return
         end

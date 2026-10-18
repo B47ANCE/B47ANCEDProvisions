@@ -34,7 +34,7 @@ def main():
     print("PASS identity, Workshop text, and preserved sandbox identifiers", flush=True)
 
     # Validate exact require-path case without relying on Windows' filesystem case folding.
-    for module in ["API", "ApplianceTransactions", "PreservationProcesses", "AppleDrying", "Load"]:
+    for module in ["API", "ApplianceTransactions", "PreservationProcesses", "AppleDrying", "FruitDryingProfiles", "Load"]:
         assert f"{module}.lua" in {p.name for p in (LUA / "shared/foodWorks").iterdir()}
     for module in ["FoodInspection", "FruitDryingPreview", "AppleDryingClient"]:
         assert module + ".lua" in {p.name for p in (LUA / "client/foodWorks").iterdir()}

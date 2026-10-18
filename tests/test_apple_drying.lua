@@ -268,6 +268,67 @@ for _=1,10 do Events.OnClientCommand.handlers[1]("B47ANCEDProvisions.appleDrying
 assert(#responses==8,"RPC burst work must be bounded")
 
 -- Client UI submits intent only, including SP dispatch and controller test mode.
+-- Exercise the same production server path for every supported fruit, with
+-- deliberately different authored stats so cross-type baseline reuse cannot pass.
+local originalFactory=instanceItem
+local fixtureIndex={}
+for i,kind in ipairs(M.profiles()) do fixtureIndex[kind]=i end
+local function fruitStats(item,kind)
+    item.fullType=kind
+    if kind~="Base.Apple" then
+        local i=assert(fixtureIndex[kind])
+        item.s.fresh=4+i%5;item.s.rotten=item.s.fresh+4
+        item.s.weight=0.1+i/100;item.s.hunger=-0.1-i/1000;item.s.baseHunger=item.s.hunger
+        item.s.calories=30+i*7;item.s.carbs=5+i;item.s.lipids=i/100;item.s.proteins=i/10
+    end
+    return item
+end
+function instanceItem(kind)
+    assert(M.profile(kind),"Factory must never receive an unapproved client-selected type")
+    return fruitStats(originalFactory("Base.Apple"),kind)
+end
+assert(#M.profiles()==22)
+local copy=M.profiles();copy[1]="Base.Beef";assert(M.profiles()[1]=="Base.Apple")
+for _,kind in ipairs(M.profiles()) do
+    item=fruitStats(reset(0.5),kind)
+    local before=M.snapshot(item)
+    assert(request("start")=="Started",kind)
+    job=privateJob(item)
+    assert(M.kind(job)==kind and (kind~="Base.Apple" or job.fullType==nil),"Legacy Apple v1 representation remains unchanged")
+    if kind~="Base.Apple" then
+        -- A copied or malicious public Apple marker cannot retarget this job.
+        item.data[M.KEY].fullType="Base.Apple"
+        assert(request("status")=="drying" and privateJob(item).fullType==kind)
+    end
+    run(6)
+    assert(job.phase=="done" and item:getFullType()==kind and item:getID()==10,kind)
+    assert(item.s.calories==before.calories and item.s.carbs==before.carbs and item.s.lipids==before.lipids and item.s.proteins==before.proteins)
+    assert(item.s.hunger==before.hunger and M.close(item.s.weight,before.weight/4))
+    assert(M.close(item.s.age,4.5) and item.s.fresh==before.fresh*6 and item.s.rotten==before.rotten*6)
+    assert(item.s.name==getText(M.profile(kind).dried))
+    assert(request("collect")=="Collected" and items[1]==item)
+    assert(request("collect")=="InvalidState" and #adds==1)
+end
+item=fruitStats(reset(),"Base.Pear");item.poison=1
+assert(request("start")=="InvalidApple" and items[1]==item)
+item=fruitStats(reset(),"Base.Banana");item.s.calories=item.s.calories/2
+assert(request("start")=="InvalidApple","Partial/modified non-Apple input must be rejected")
+item=fruitStats(reset(0.5),"Base.Mango");assert(request("start")=="Started")
+item.fail="setOffAge";run(6);job=privateJob(item)
+assert(job.phase=="converting" and job.fullType=="Base.Mango")
+globalStore=scalarCopy(globalStore);item.data[M.KEY]=scalarCopy(item.data[M.KEY])
+API.AppleDryingServer=nil;Events.OnClientCommand=event();Events.EveryTenMinutes=event();S=dofile(arg[1])
+item.fail=nil;now=now+1/6;S.tick();job=privateJob(item)
+assert(job.phase=="done" and job.fullType=="Base.Mango" and item.s.age>=4.5 and item.s.age<5)
+assert(request("collect")=="Collected" and #adds==1,"A reloaded partial fruit conversion must finish once without rescaling age")
+item=fruitStats(reset(),"Base.Pear");assert(request("start")=="Started")
+item.fullType="Base.Banana"
+assert(request("status")=="InvalidState" and request("collect")=="InvalidState","Private job binds exact item type as well as ID")
+for _,kind in ipairs({"Base.Beef","Base.Rosehips","Base.Watermelon","Base.BerryPoisonIvy","Base.Basil","OtherMod.Apple"}) do
+    item=reset();item.fullType=kind
+    assert(request("start")=="InvalidApple" and items[1]==item and #input.items==0,"Unsupported process must not start: "..kind)
+end
+
 item=reset();server=false;client=true
 ISInventoryPane={getActualItems=function(selected)return selected end}
 local tested=0;ISWorldObjectContextMenu={setTest=function()tested=tested+1 end}
@@ -280,6 +341,12 @@ C.fillWorld(0,context,{station},true);assert(tested==1 and #context.options==0)
 C.fillWorld(0,context,{station},false);assert(#context.options==1)
 local option=context.options[1];option.fn(option.target,unpack(option.args))
 assert(#clientRequests==1 and clientRequests[1].command=="start" and #input.items==0 and items[1]==item)
+local pear=fruitStats(apple(11,0.5),"Base.Pear");pear.container=inventory;items[#items+1]=pear
+local another=fruitStats(apple(12,0.5),"Base.Pear");another.container=inventory;items[#items+1]=another
+context.options={};C.fillWorld(0,context,{station},false)
+assert(#context.options==2,"Expose one exact-item start choice per supported fruit type")
+local pearOption=context.options[2];pearOption.fn(pearOption.target,unpack(pearOption.args))
+assert(clientRequests[#clientRequests].args.id==11 and #input.items==0,"Client only sends exact-item intent")
 Events.OnServerCommand.handlers[1]("B47ANCEDProvisions.appleDrying","result",{code="Started",ui=0,progress=0})
 assert(#messages==1 and callMessage==nil,"No leaked UI globals")
 client=false

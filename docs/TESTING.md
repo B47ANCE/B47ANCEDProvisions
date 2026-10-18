@@ -1,8 +1,35 @@
 # B47ANCE’d Provisions Testing
 
-Project Version: 0.8.0-dev.2
+Project Version: 0.8.0-dev.3
 
-## In-place apple-drying checkpoint — October 17, 2026
+## Fruit expansion checkpoint — October 17, 2026
+
+0.8.0-dev.3 extends the production server path to 22 exact vanilla fruit identities.
+[TESTED offline, Lua 5.1] The seven suites pass with each type using different
+fixture weights/nutrients, exact type/ID binding, carried age, unchanged nutrients,
+localized names, repeated collection and forged public-type rejection. Altered,
+poisoned and unsupported fruit/other-food inputs fail closed. Original Apple v1
+representation and all interruption/restart/access regressions remain covered.
+
+```powershell
+python scripts/check_preservation_expansion.py --game-root '<verified installed game root>' --steam-build 25485521
+```
+
+The new checker binds the 149 catalog identities, current runtime source and
+static native blockers. All 149 IDs were checked against installed Base food
+definitions; the catalog does not register recipes. Native first-food inheritance
+and output-before-callback/heat-replacement limitations remain barriers to sweet
+preserves, pickling, curing and fermentation. Current process fingerprints are
+refreshed after the changed source/tests; unchanged native persistence findings
+are reused only after their installed hashes match. This is no new runtime proof.
+
+[RUNTIME GATE] Every supported fruit needs native SP and dedicated tests, especially
+foraged instances with variable nutrients/metadata and native registered defaults.
+New fruit jobs, legacy Apple jobs, interrupted conversions, same-ID collection,
+save/reload and reconnect require disposable fixtures. G7 and stable G8 BLOCKED.
+No game/server launch, package, deployment or publication.
+
+## Historical in-place apple-drying checkpoint — October 17, 2026
 
 0.8.0-dev.2 adds the server-owned alternative documented in APPLE_DRYING.md.
 Earlier sections below retain their historical versions and evidence scopes.

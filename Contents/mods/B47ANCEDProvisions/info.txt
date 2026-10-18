@@ -2,5 +2,5 @@ B47ANCE’d Provisions — STEAM WORKSHOP INFO
 
 Status: Food-state inspection API and optional read-only inventory report; not yet a gameplay release.
 Author: B47ANCE
-Version: 0.8.0-dev.2
+Version: 0.8.0-dev.3
 Internal Mod ID: B47ANCEDProvisions

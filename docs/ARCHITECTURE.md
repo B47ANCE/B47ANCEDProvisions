@@ -14,8 +14,24 @@ Provider boundaries:
 - uiWorks owns presentation components; foodWorks supplies food-domain data.
 
 Read-only food adapters and the ingredient registry remain existing foundations.
-The current first content process is a separate server-owned in-place apple
+The current first content process is a separate server-owned in-place fruit
 transformation; native game validation remains a release gate.
+
+## Fruit expansion in 0.8.0-dev.3
+
+`FruitDryingProfiles.lua` defines 22 exact vanilla identities, localized input and
+result labels. The existing AppleDrying modules retain their public names and
+server-owned lifecycle. A non-Apple job adds an optional `fullType` to its private
+v1 record; absent type still means Apple. Both ID and full type must match the
+physical item. Native registered defaults are compared using that same type,
+never an Apple baseline for another fruit. Old Apple v1 jobs remain valid.
+
+The 149-item catalog records intended methods and their separate implementation
+status. Jam/jelly/marmalade, pickling, curing and fermentation are not registered.
+Their multi-input nutrition and heated/sealed-holder contracts remain blocked;
+post-create correction is not a pre-output authority model. See
+[expansion limits and evidence](PRESERVATION_EXPANSION.md). No client authority,
+custom Java or duplicated vanilla jarring/drying is substituted.
 
 ## Identity compatibility
 
@@ -23,7 +39,7 @@ Version 0.7.0 uses Mod ID `B47ANCEDProvisions`; the legacy `foodWorks` API,
 module paths, sandbox option and persistence keys remain stable. No gameplay,
 state ownership, server authority, networking or sandbox behavior changes.
 
-## In-place preservation in 0.8.0-dev.2
+## Original in-place preservation in 0.8.0-dev.2
 
 `AppleDrying.lua` is a pure inspection/state model; `AppleDryingServer.lua` alone
 owns shared state and food writes. `AppleDryingClient.lua` supplies ordinary

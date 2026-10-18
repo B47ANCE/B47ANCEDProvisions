@@ -1,20 +1,27 @@
-# Server-owned in-place apple drying
+# Server-owned in-place fruit drying
 
-Project Version: 0.8.0-dev.2
+Project Version: 0.8.0-dev.3
 
 Compatible feature checkpoint within the 0.8.0 MINOR development line. Implemented
 in Lua and tested offline; native SP and dedicated multiplayer **NOT TESTED**.
 This changes the original proposed implementation rather than weakening its
 authority, calorie-conservation or no-refresh requirements.
 
+The 0.8.0-dev.3 extension accepts 22 exact vanilla fruit types through the legacy
+AppleDrying modules. See [supported types and blocked families](PRESERVATION_EXPANSION.md).
+All references to the original Apple below also describe the same-item lifecycle
+for the accepted fruit. New non-Apple jobs bind their exact full type; omitted
+type remains the original Apple v1 representation. This additive format is not a
+downgrade migration; old code cannot process the new fruit jobs.
+
 ## Player flow
 
-1. Carry a whole, fresh, unmodified apple directly in your main inventory. Stand
+1. Carry a whole, fresh, unmodified supported fruit directly in your main inventory. Stand
    on or cardinally beside an empty native small-plant drying rack, without a wall,
    window or door edge in between. Both Herb Drying Rack variants are candidates.
-2. Right-click the rack and choose **Dry one apple (first fresh apple in main
-   inventory)**. The server rechecks the exact item, actor, rack and configuration.
-   The first fresh apple among at most 256 direct inventory entries is sampled;
+2. Right-click the rack and choose **Dry [fruit]**. The server rechecks the exact
+   item, type, actor, rack and configuration. The first fresh item of each supported
+   fruit type among at most 256 direct inventory entries is sampled;
    a partially eaten/modified sample is rejected rather than silently substituted.
 3. Leave it to dry. Default: 48 observed, loaded game hours. Use **Check
    apple-drying progress**. Long observation gaps/unloaded racks pause progress;
@@ -40,16 +47,18 @@ native craft registration, native start call, second native-job clock, or generi
 PreservationProcesses job over the same input. The sole timer is this server
 process, invoked every ten game minutes and on explicit server inspection.
 
-The result remains `Base.Apple`, named **Dried apple slices**, with its vanilla
-apple icon/model. `B47ANCEDProvisions.DriedAppleSlices` is not registered. This
+The Apple result remains `Base.Apple`, named **Dried apple slices**; other accepted
+fruit keeps its own original type and vanilla icon/model with its localized dried
+name. `B47ANCEDProvisions.DriedAppleSlices` is not registered. This
 identity choice removes the cross-item consume/create transaction. Vanilla and
 other mods can still recognize its base type as Apple; recipes that require a
 whole/default apple may reject its modified thirst/weight. No third-party
-compatibility or new artwork is claimed.
+compatibility or runtime artwork hookup is claimed. Original apple art/model source
+is retained under assets, outside the runtime tree.
 
 Calories, carbohydrates, lipids, proteins, hunger and other food effects are not
 rewritten. Whole/default integrity is checked against an unowned native default
-Apple comparison object; it is never added to an inventory, rack or world.
+comparison object of the exact supported full type; it is never added to an inventory, rack or world.
 Poison, taint, cooking, freezing/thawing, extra ingredients/spices, custom names,
 nonempty foreign ModData, partial weight/effects and unsupported getters reject
 new batches. Unmodified getters avoid confusing native stale-food presentation

@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "project_version": "0.8.0-dev.2",
-  "source_baseline": "efa8cc1db7b80d0fad7c04fa7f9c83355ccae841",
+  "project_version": "0.8.0-dev.3",
+  "source_baseline": "2991fde8c462ac4aa70cc7fdf377800b3d74e290",
   "audit_date": "2026-10-17",
   "game_version": "42.21",
   "steam_build": "25485521",
@@ -214,10 +214,10 @@
       "id": "P01",
       "scope": "project",
       "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/AppleDrying.lua",
-      "sha256": "70306cf8a721a06892d4a3caa391245dff13348a03f522d27a43f783e6f6b4f4",
+      "sha256": "6f212a9fc3f55820a1eedc556ae8f7c79f5e8d0df050a914afed9ee351a38b6e",
       "lines": [
         1,
-        134
+        143
       ],
       "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
       "runtime_status": "NOT_TESTED"
@@ -226,10 +226,10 @@
       "id": "P02",
       "scope": "project",
       "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/AppleDryingServer.lua",
-      "sha256": "ec4b467c7f5c977692cfa8fe9731b140338d15b32362ad8ac3ad3385eeb316fe",
+      "sha256": "6bd6cac0bd08df20ccedd8fb43ca5d714747bf352dfa409adeb5454a1d19486b",
       "lines": [
         1,
-        389
+        390
       ],
       "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
       "runtime_status": "NOT_TESTED"
@@ -238,10 +238,10 @@
       "id": "P03",
       "scope": "project",
       "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/AppleDryingClient.lua",
-      "sha256": "59c5029878395a295b69e52dc16eb40cc7e0d6f4ff61863d3bf87469d9d0a41c",
+      "sha256": "889ffa5fbfd37a9ef821cc5378bfa5f86c1a7b9d517ba4a520bfd855f012af63",
       "lines": [
         1,
-        124
+        135
       ],
       "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
       "runtime_status": "NOT_TESTED"
@@ -286,10 +286,10 @@
       "id": "P07",
       "scope": "project",
       "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/UI.json",
-      "sha256": "2de487764f7f74326907f089b0dbe3d95359c52d17cef563f1547e2b232fda37",
+      "sha256": "1842caf86017115be2cc34d776ee3afd2234f0f8ead47cc5f3e72ab6a2635afe",
       "lines": [
         1,
-        65
+        109
       ],
       "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
       "runtime_status": "NOT_TESTED"
@@ -298,7 +298,7 @@
       "id": "P08",
       "scope": "project",
       "path": "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/Translate/EN/Sandbox.json",
-      "sha256": "7efd8878e1537f1c3e584057b79b3648b4944a95ac47586db948bb8143597212",
+      "sha256": "3abf18d2a52fa6ffb43abcb44a179946ed89803f8888ba2dcd735024701a2cf4",
       "lines": [
         1,
         13
@@ -310,10 +310,10 @@
       "id": "P09",
       "scope": "project",
       "path": "tests/test_apple_drying.lua",
-      "sha256": "9d369c2101cf2339b0cab4af841c4645e9b83204348d71ecc86649b9f1e15f2d",
+      "sha256": "641be1e6a713a17fc43671caa7c63a400d1f14fb3e36fbc09319454220c9cdc4",
       "lines": [
         1,
-        294
+        361
       ],
       "statement": "Current authored source/test fingerprint; project text permits Git LF/CRLF conversion only.",
       "runtime_status": "NOT_TESTED"
@@ -377,5 +377,6 @@
   ],
   "runtime_status": "NOT_TESTED",
   "g7": "BLOCKED / NOT TESTED",
-  "stable_g8": "BLOCKED"
+  "stable_g8": "BLOCKED",
+  "applicability": "Current fruit extension source/test fingerprints. Existing native persistence facts reused only after matching installed hashes. Native SP/dedicated NOT TESTED."
 }

@@ -1,8 +1,13 @@
 # B47ANCE’d Provisions Master Roadmap
 
-Canonical version: 0.8.0-dev.2.
+Canonical version: 0.8.0-dev.3.
 
 ## Implemented
+
+- 0.8.0-dev.3: extend the same-item server process to 22 vanilla fruits and adopt
+  the 149-item preservation catalog with explicit implementation status. Sweet
+  preserves, pickling, curing and fermentation remain blocked on ingredient and
+  heated/sealed-holder contracts; see [expansion](PRESERVATION_EXPANSION.md).
 
 - 0.8.0-dev.2: server-owned in-place apple drying at native small-plant racks,
   preserving item ID/nutrition, with configurable observed hours/shelf life and

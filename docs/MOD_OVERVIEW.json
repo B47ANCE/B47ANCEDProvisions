@@ -2,8 +2,8 @@
   "schema": 1,
   "id": "food",
   "name": "B47ANCE’d Provisions",
-  "version": "0.8.0-dev.2",
-  "source_digest": "f8741cbdb1ba198db4f8805b3443790f354c8a3a4ad7a0701aef86f34245491a",
+  "version": "0.8.0-dev.3",
+  "source_digest": "558671b2d0bc5162e11851a09252491259f0134d6bf3025d900ced357f5c0cc0",
   "reviewed": true,
   "features": [
     {
@@ -12,7 +12,7 @@
     },
     {
       "status": "Source",
-      "text": "Server-owned in-place apple drying in native racks: same ID/nutrients, carried age, private server ledger and copied item snapshots, saved settings, exact actor/item/access checks, carried-batch recovery and full-item resource sync. Offline only."
+      "text": "Server-owned in-place drying for 22 exact vanilla fruit types: same ID/type/nutrients and carried age, private type-bound ledger, settings snapshots, resume/cancel/collect and native resource synchronization. Legacy Apple v1 jobs retained; offline only."
     },
     {
       "status": "Source",
@@ -28,14 +28,14 @@
     },
     {
       "status": "Planned",
-      "text": "Distinct dried-food item/native recipe and broader preservation processes remain planned. The first implemented alternative retains Base.Apple identity and uses its own server timer without a native craft."
+      "text": "149 vanilla ingredient identities catalogued for sweet preserves, pickling, salting/smoking, fermentation and additional drying. Those methods are not registered; only the 22 fruit profiles are implemented."
     },
     {
       "status": "Blocked",
-      "text": "Native Lua dispatch, save/load/auto-rot under interrupted conversion, transfer crash ordering, station destruction, late join/rejoin, dedicated contention/restart and stable-release validation remain untested. Original native-recipe route is still blocked."
+      "text": "Sweet preserves/pickling/curing/fermentation lack a proven multi-input nutrient and heated/sealed-holder contract. Native output-before-callback and first-food inheritance are insufficient. Native SP/dedicated save, transfer, restart and concurrency remain untested."
     }
   ],
-  "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Dried result keeps Base.Apple identity and vanilla appearance. Loaded sampled time only; unloaded/long gaps pause. Native transfer crash atomicity is not claimed. No package/deploy/publication. Legacy identifiers retained.",
+  "limits": "Native SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. Each dried fruit retains its original Base type/appearance. Other preservation families remain blocked, not enabled. Loaded sampled time only; no transfer crash atomicity claim. No package/deploy/publication. Legacy identifiers retained.",
   "evidence": [
     "assets/branding/README.md",
     "assets/dried-apple/README.md",
@@ -60,7 +60,12 @@
     "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/AppleDrying.lua",
     "Contents/mods/B47ANCEDProvisions/42/media/lua/server/foodWorks/AppleDryingServer.lua",
     "Contents/mods/B47ANCEDProvisions/42/media/lua/client/foodWorks/AppleDryingClient.lua",
-    "tests/test_apple_drying.lua"
+    "tests/test_apple_drying.lua",
+    "docs/PRESERVATION_EXPANSION.md",
+    "docs/PRESERVATION_EXPANSION_EVIDENCE.json",
+    "docs/PRESERVATION_CATALOG.csv",
+    "Contents/mods/B47ANCEDProvisions/42/media/lua/shared/foodWorks/FruitDryingProfiles.lua",
+    "scripts/check_preservation_expansion.py"
   ],
   "relations": [
     {

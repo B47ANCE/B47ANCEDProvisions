@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.0-dev.3]
+
+- Compatible MINOR-line checkpoint: extend server-owned in-place drying to audited whole vanilla fruits, retaining legacy apple batches and settings. Native SP/dedicated NOT TESTED.
+- Adopt the vanilla-only preservation catalog. Multi-ingredient sweet preserves, pickling, curing and fermentation remain blocked pending safe ingredient accounting and heat/holder authority. No recipes are advertised as implemented for those methods.
+- G7 BLOCKED / NOT TESTED; stable G8 BLOCKED. No package, deployment or publication.
+
 ## [0.8.0-dev.2]
 
 - Adopt the user's supplied project thumbnail unchanged in the current preview/thumbnail slots and README; preserve the separate mod icon and historical packages.

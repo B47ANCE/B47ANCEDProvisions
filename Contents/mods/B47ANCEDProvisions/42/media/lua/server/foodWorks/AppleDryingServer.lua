@@ -38,7 +38,7 @@ local function authoritative(item)
     local id=read(item,"getID")
     if not store or not M.integer(id,-2147483648,2147483647) then return nil end
     local job=store.jobs[tostring(id)]
-    if M.valid(job) and job.itemId==id then return job end
+    if M.valid(job) and job.itemId==id and M.kind(job)==read(item,"getFullType") then return job end
 end
 local function mirror(item,job)
     -- Never alias a private ledger table with client-visible/native item ModData.
@@ -91,10 +91,11 @@ local function ownData(item)
     for key in pairs(data) do if key~=M.KEY then return false end end
     return true
 end
-local function baseline()
+local function baseline(fullType)
     if type(instanceItem)~="function" then return nil end
     -- Unowned comparison object only; never added to an inventory/resource/world.
-    return M.snapshot(instanceItem("Base.Apple"))
+    if not M.profile(fullType) then return nil end
+    return M.snapshot(instanceItem(fullType))
 end
 local function anchor(object,create)
     local store=registry()
@@ -129,8 +130,8 @@ local function commit(item,job)
     if not M.valid(job) or job.phase~="converting" or not ownData(item) or not capable(item,SETTERS) then return false end
     local s=M.snapshot(item)
     local base=M.base(job)
-    local standard=baseline()
-    if not s or not M.matches(base,standard) then return false end
+    local standard=baseline(M.kind(job))
+    if not s or s.fullType~=M.kind(job) or not M.matches(base,standard) then return false end
     -- Replays only finish this item's existing conversion. They never recreate it.
     for _,field in ipairs({"hunger","baseHunger","calories","carbs","lipids","proteins","unhappy","boredom","pain","flu","sickness","fatigue","endurance"}) do
         if not M.close(s[field],base[field]) then return false end
@@ -148,7 +149,7 @@ local function commit(item,job)
     call(item,"setWeight",base.weight/4)
     call(item,"setCustomWeight",true)
     call(item,"setThirstChange",0)
-    call(item,"setName",getText("UI_foodWorks_AppleDrying_DriedName"))
+    call(item,"setName",getText(M.profile(M.kind(job)).dried))
     call(item,"setCustomName",true)
     local expected=M.base(job)
     expected.weight=expected.weight/4;expected.thirst=0
@@ -168,7 +169,7 @@ local function update(object,input,logic,item,key)
     if not M.finite(now) then return nil end
     if job.phase=="converting" then mirror(item,job);commit(item,job);mirror(item,job);sync(input);return job end
     local snapshot=M.snapshot(item)
-    if not ownData(item) or read(item,"isCustomName")~=false or not M.matches(M.base(job),baseline()) or not snapshot or snapshot.age>=snapshot.rotten then
+    if not ownData(item) or read(item,"isCustomName")~=false or not M.matches(M.base(job),baseline(M.kind(job))) or not snapshot or snapshot.age>=snapshot.rotten then
         job.phase="failed"
     elseif read(logic,"isRunning")~=false or read(input,"getItemAmount")~=1 then
         job.last=math.max(job.last,now) -- pause while a native/foreign operation owns the rack
@@ -240,7 +241,7 @@ local function request(player,command,args)
             or not ownData(item) or not capable(item,SETTERS) then return "InvalidState" end
         call(item,"updateAge")
         local snapshot=M.snapshot(item)
-        if not snapshot or not M.matches(M.base(job),baseline()) then return "InvalidApple" end
+        if not snapshot or not M.matches(M.base(job),baseline(M.kind(job))) then return "InvalidApple" end
         if job.phase~="converting" and (not M.matches(snapshot,M.base(job)) or snapshot.age>=snapshot.rotten
             or read(item,"isCustomName")~=false) then return "InvalidApple" end
         local key=track(object)
@@ -264,7 +265,7 @@ local function request(player,command,args)
             or read(item,"hasModData")~=false or read(item,"isCustomName")~=false then return "InvalidApple" end
         call(item,"updateAge")
         local snapshot=M.snapshot(item)
-        if not M.matches(snapshot,baseline()) then return "InvalidApple" end
+        if not M.matches(snapshot,baseline(read(item,"getFullType"))) then return "InvalidApple" end
         local store=registry()
         if not store then return "Capacity" end
         if store.jobs[tostring(args.id)]~=nil then return "InvalidState" end

@@ -1,8 +1,14 @@
 # Project versioning
 
-Current development version: 0.8.0-dev.2.
+Current development version: 0.8.0-dev.3.
 
-The current 0.8.0-dev.2 checkpoint is a compatible gameplay addition within the
+The current 0.8.0-dev.3 checkpoint is a compatible extension to 22 vanilla fruits.
+It retains the three sandbox settings and legacy module/network/save keys. New
+jobs optionally bind a whitelisted full type; a missing type still means Apple.
+No downgrade migration for non-Apple jobs is claimed. The broader adopted catalog
+marks unimplemented methods BLOCKED rather than presenting them as production.
+
+The initial 0.8.0-dev.2 checkpoint was a compatible gameplay addition within the
 0.8.0 MINOR line: server-owned in-place apple drying, three sandbox controls and
 new independently versioned v1 job/index keys. Existing Lua/API/sandbox/save
 identifiers remain intact. The same Apple becomes the saved dried result; no new

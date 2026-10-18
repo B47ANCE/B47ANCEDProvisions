@@ -1,8 +1,12 @@
 -- Pure inspection/state model. Only the server module may apply gameplay changes.
 local API=require "foodWorks/API"
+local Profiles=require "foodWorks/FruitDryingProfiles"
 if API.AppleDrying then return API.AppleDrying end
 local M={KEY="foodWorks.appleDrying.v1",INDEX="foodWorks.appleDrying.index.v1",STATION="foodWorks.appleDrying.rack.v1"}
 API.AppleDrying=M
+M.profile=Profiles.get
+M.profiles=Profiles.list
+function M.kind(job) return job and job.fullType or "Base.Apple" end
 local F={age="getAge",fresh="getOffAge",rotten="getOffAgeMax",weight="getActualWeight",
     hunger="getHungChange",baseHunger="getBaseHunger",thirst="getThirstChangeUnmodified",calories="getCalories",
     carbs="getCarbohydrates",lipids="getLipids",proteins="getProteins",unhappy="getUnhappyChangeUnmodified",boredom="getBoredomChangeUnmodified",
@@ -31,12 +35,13 @@ function M.settings(vars)
     return {enabled=vars.EnableFruitDrying~=false,hours=hours,multiplier=shelf}
 end
 function M.snapshot(item)
-    if M.read(item,"getFullType")~="Base.Apple" then return nil end
+    local fullType=M.read(item,"getFullType")
+    if not M.profile(fullType) then return nil end
     for _,flag in ipairs({"isFrozen","isFreezing","isThawing","isCooked","isBurnt","isTainted","isPoison","haveExtraItems","hasSpices"}) do
         if M.read(item,flag)~=false then return nil end
     end
     if M.read(item,"getPoisonPower")~=0 or M.read(item,"getFreezingTime")~=0 then return nil end
-    local s={}
+    local s={fullType=fullType}
     for key,getter in pairs(F) do
         s[key]=M.read(item,getter)
         if not M.finite(s[key]) or math.abs(s[key])>1000000 then return nil end
@@ -46,7 +51,7 @@ function M.snapshot(item)
     return s
 end
 function M.matches(a,b)
-    if not a or not b then return false end
+    if not a or not b or a.fullType~=b.fullType then return false end
     for _,key in ipairs(BASE) do if not M.close(a[key],b[key]) then return false end end
     return true
 end
@@ -70,7 +75,8 @@ function M.valid(job)
         or not M.finite(job.ageFloor) or job.ageFloor<0 or job.ageFloor>1000000
         or not M.finite(job.credit) or job.credit<0 or job.credit>job.hours
         or not ({drying=true,ready=true,converting=true,done=true,failed=true})[job.phase] then return false end
-    local allowed={v=true,itemId=true,anchor=true,hours=true,multiplier=true,started=true,last=true,ageFloor=true,credit=true,phase=true,targetAge=true,targetAt=true}
+    if not M.profile(M.kind(job)) then return false end
+    local allowed={v=true,itemId=true,anchor=true,hours=true,multiplier=true,started=true,last=true,ageFloor=true,credit=true,phase=true,targetAge=true,targetAt=true,fullType=true}
     for _,key in ipairs(BASE) do
         local field="b_"..key
         allowed[field]=true
@@ -92,15 +98,18 @@ function M.valid(job)
     return true
 end
 function M.base(job)
-    local s={}
+    local s={fullType=M.kind(job)}
     for _,key in ipairs(BASE) do s[key]=job["b_"..key] end
     return s
 end
 function M.begin(snapshot,settings,anchor,now,itemId)
-    if not snapshot or snapshot.age>=snapshot.fresh or not settings or not settings.enabled
+    if type(snapshot)~="table" or not M.profile(snapshot.fullType) or snapshot.age>=snapshot.fresh or not settings or not settings.enabled
         or not M.finite(now) or now<0 then return nil end
     local job={v=1,itemId=itemId,phase="drying",anchor=anchor,hours=settings.hours,multiplier=settings.multiplier,
         started=now,last=now,ageFloor=snapshot.age,credit=0}
+    -- Omitted type remains the existing v1 Apple contract. Non-apple jobs bind an
+    -- exact audited vanilla identity in the private ledger; public copies cannot choose it.
+    if snapshot.fullType~="Base.Apple" then job.fullType=snapshot.fullType end
     for _,key in ipairs(BASE) do job["b_"..key]=snapshot[key] end
     return M.valid(job) and job or nil
 end

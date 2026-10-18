@@ -6,16 +6,16 @@ B47ANCE’d Provisions (formerly foodWorks) provides food inspection, preservati
 and food-system foundations for theWorks ecosystem, using vanilla Build 42 food,
 inventory and entity-resource systems.
 
-- Status: version `0.8.0-dev.2` implements server-owned in-place apple drying. Offline tests pass; native SP and dedicated multiplayer NOT TESTED. Development build, not a stable release.
+- Status: version `0.8.0-dev.3` implements server-owned in-place drying for 22 vanilla fruit types. Offline tests pass; native SP and dedicated multiplayer NOT TESTED. Sweet preserves, pickling, curing and fermentation remain blocked. Development build, not a stable release.
 - Mod ID: `B47ANCEDProvisions`; Workshop item: `3788591331`.
 - Author: B47ANCE; hard mod dependencies: none.
 - Source: [B47ANCE/B47ANCEDProvisions](https://github.com/B47ANCE/B47ANCEDProvisions) (public).
 
-## Apple drying
+## Fruit drying
 
-Carry a whole fresh apple in your main inventory, stand beside an empty native
-small-plant drying rack, and right-click **Dry one apple (first fresh apple in main
-inventory)**. Check progress, cancel to recover the actual aged apple, or collect
+Carry a whole fresh supported fruit in your main inventory, stand beside an empty native
+small-plant drying rack, and choose **Dry [fruit]**. One start action is offered per
+supported type found in the bounded scan. Check progress, cancel to recover the actual aged fruit, or collect
 the dried result. The server validates the actor, exact item, rack, access and
 settings, using a private ledger rather than trusting public item metadata. Defaults: 48 observed loaded game hours and a sixfold shelf-life factor.
 Unloaded racks and long observation gaps pause progress; food still ages. Carried
@@ -26,11 +26,18 @@ and hunger. Weight becomes one quarter; thirst benefit becomes zero. Age and bot
 freshness thresholds scale together, so old food is not refreshed. Poisoned,
 tainted, frozen, cooked, partly eaten, modified or unsupported inputs are rejected.
 
-The output remains `Base.Apple`, marked/named **Dried apple slices**, with the
-vanilla apple appearance. No new item type or native recipe is registered. This
+Each output retains its original vanilla type and appearance, with a localized
+dried name (for example `Base.Apple` named **Dried apple slices** or `Base.Grapes`
+named **Raisins**). No new item type or native recipe is registered. This
 avoids the native recipe's post-output callback and a second consume/create
-transaction. Vanilla/other mods can still recognize the base type as Apple; see
+transaction. Vanilla/other mods still recognize each original base type; see
 [behavior, configuration and limits](docs/APPLE_DRYING.md).
+
+Supported types and the [149-item preservation catalog](docs/PRESERVATION_CATALOG.csv)
+are documented in the [expansion plan and evidence](docs/PRESERVATION_EXPANSION.md).
+Jam, jelly, marmalade, fruit butter, pickling, salting/smoking and fermentation
+are separate planned processes. Multi-input nutrient accounting and heated/sealed
+holder authority are unresolved; those recipes are not enabled or offered in menus.
 
 Original [dried-apple inventory art](assets/dried-apple/README.md) is available as
 a transparent master and 64×64 PNG export. Runtime texture hookup is pending;
