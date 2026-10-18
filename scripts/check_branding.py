@@ -13,7 +13,10 @@ def main():
     for name in ['preview.png', 'Contents/mods/B47ANCEDProvisions/thumbnail.png']:
         assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == record['thumbnail_sha256']
     for name, expected in record['files'].items():
-        assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected
+        data = (ROOT / name).read_bytes()
+        if Path(name).suffix != '.png':
+            data = data.replace(b'\r\n', b'\n')
+        assert hashlib.sha256(data).hexdigest() == expected, name
     with Image.open(SOURCE / '42/icon.png') as im:
         assert im.size == (64, 64) and im.mode == 'RGBA'
         alpha = im.getchannel('A')

@@ -36,3 +36,6 @@ and authoring hashes; the master and prompt remain source assets, not runtime
 payload. In-game icon rendering is NOT TESTED. The original supplied-thumbnail
 provenance and earlier package records remain historical. Packaging/publication
 is now explicitly authorized for MP testing; see `docs/PUBLISHING.md`.
+
+Authoring-text provenance hashes normalize CRLF to LF, matching the pinned Git
+line endings in a fresh Windows checkout. PNG hashes remain exact bytes.
