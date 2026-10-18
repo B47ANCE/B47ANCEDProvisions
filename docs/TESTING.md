@@ -9,7 +9,8 @@ from 0.8.0-dev.4 except the canonical API version mirror. The current eight Lua
 suites, branding alpha/hash check, package regression tests and installed-source
 checks are rerun. The exact command list and artifact integrity/provenance contract
 are in [PUBLISHING.md](PUBLISHING.md); current status is in RELEASE_STATUS.json.
-The two thumbnail PNGs retain SHA-256 e5331f185067436ec530f6464dfe14600eeb41d4ea0458335013701d14a26ea3.
+Fresh Windows checkout validation also checks LF-normalized authoring-text
+provenance, with exact PNG bytes retained. The two thumbnail PNGs retain SHA-256 e5331f185067436ec530f6464dfe14600eeb41d4ea0458335013701d14a26ea3.
 Runtime icon display, SP and dedicated remain NOT TESTED. G7 and stable G8 BLOCKED.
 Workshop MP test distribution is authorized; it is not runtime verification.
 
